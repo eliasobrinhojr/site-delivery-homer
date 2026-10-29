@@ -1,0 +1,251 @@
+/*
+ * Guaraná do Homer · componentes de referência do site
+ * Depende de tokens.css. Celular primeiro; telas maiores em @media (min-width: 600px / 1024px).
+ * Os nomes são sugestão: o site em Astro pode virar cada bloco num componente.
+ */
+
+body {
+  margin: 0;
+  background: var(--cor-fundo);
+  color: var(--cor-texto);
+  font-family: var(--fonte-texto);
+  font-size: var(--texto-base);
+  line-height: var(--entrelinha-texto);
+}
+
+.gh-container {
+  max-width: var(--largura-max);
+  margin-inline: auto;
+  padding-inline: var(--margem-lateral);
+}
+
+/* ---------- Tipografia ---------- */
+.gh-titulo-lg,
+.gh-titulo-md,
+.gh-titulo-sm {
+  font-family: var(--fonte-titulo);
+  font-weight: var(--peso-titulo);
+  line-height: var(--entrelinha-titulo);
+  margin: 0;
+}
+.gh-titulo-lg { font-size: var(--titulo-lg); }
+.gh-titulo-md { font-size: var(--titulo-md); color: var(--cor-marca); }
+.gh-titulo-sm { font-size: var(--titulo-sm); color: var(--cor-marca); }
+
+.gh-rotulo {
+  font-size: var(--texto-sm);
+  font-weight: var(--peso-forte);
+  letter-spacing: var(--espaco-caixa-alta);
+  text-transform: uppercase;
+  color: var(--cor-marca);
+}
+
+.gh-texto-suave { color: var(--cor-texto-suave); }
+
+/* ---------- Botões ---------- */
+.gh-botao {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--esp-2);
+  min-height: var(--alvo-toque);
+  padding: 0 var(--esp-6);
+  border: 2px solid transparent;
+  border-radius: var(--raio-pilula);
+  background: var(--cor-acao);
+  color: var(--cor-acao-texto);
+  font: var(--peso-forte) var(--texto-base) / 1 var(--fonte-texto);
+  text-decoration: none;
+  cursor: pointer;
+}
+.gh-botao:hover { background: var(--cor-acao-hover); }
+.gh-botao:focus-visible { outline: 3px solid var(--cor-foco); outline-offset: 3px; }
+.gh-botao svg { width: 20px; height: 20px; flex: 0 0 auto; }
+
+.gh-botao--contorno {
+  background: transparent;
+  border-color: var(--cor-texto);
+  color: var(--cor-texto);
+}
+.gh-botao--contorno:hover { background: var(--cor-superficie); }
+
+/* Para usar dentro de áreas vermelhas */
+.gh-botao--polpa {
+  background: var(--gh-polpa);
+  color: var(--gh-semente);
+}
+.gh-botao--polpa:hover { background: var(--gh-creme); }
+.gh-botao--polpa:focus-visible { outline-color: var(--gh-polpa); }
+
+/* RF-01: botão "Pedir" sempre à vista no celular, sem rolar */
+.gh-botao-fixo {
+  position: fixed;
+  left: var(--margem-lateral);
+  right: var(--margem-lateral);
+  bottom: calc(var(--esp-4) + env(safe-area-inset-bottom, 0px));
+  z-index: 20;
+  box-shadow: 0 6px 20px rgba(43, 27, 23, 0.25);
+}
+@media (min-width: 1024px) {
+  .gh-botao-fixo { display: none; } /* no computador o botão fica no cabeçalho */
+}
+
+/* ---------- Faixas do topo ---------- */
+/* RF-07: aberto ou fechado agora */
+.gh-faixa-status {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--esp-2);
+  min-height: 36px;
+  padding: var(--esp-1) var(--esp-4);
+  background: var(--cor-superficie);
+  font-size: var(--texto-sm);
+  font-weight: var(--peso-forte);
+}
+.gh-faixa-status::before {
+  content: "";
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--gh-verde);
+}
+.gh-faixa-status[data-estado="fechado"]::before { background: var(--gh-vermelho); }
+
+/* RF-13: aviso do dia ("fechados hoje", "esgotou o abacate") */
+.gh-faixa-aviso {
+  padding: var(--esp-2) var(--esp-4);
+  background: var(--gh-semente);
+  color: var(--gh-polpa);
+  font-size: var(--texto-sm);
+  font-weight: var(--peso-forte);
+  text-align: center;
+}
+
+/* ---------- Cabeçalho ---------- */
+.gh-cabecalho {
+  background: var(--cor-superficie);
+  border-bottom: 1px solid var(--cor-borda);
+}
+.gh-cabecalho__barra {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--esp-4);
+  min-height: var(--altura-cabecalho);
+}
+/* Celular: logo-texto.svg (sem selo) com 32–36 px de altura; a partir de 600 px: logo-linha.svg */
+.gh-cabecalho__logo img { display: block; height: 34px; width: auto; max-width: 62vw; }
+@media (min-width: 600px) {
+  .gh-cabecalho__logo img { height: 42px; max-width: none; }
+}
+@media (min-width: 1024px) {
+  .gh-cabecalho__logo img { height: 48px; }
+}
+
+/* ---------- Cartões ---------- */
+.gh-cartao {
+  background: var(--cor-superficie);
+  border-radius: var(--raio-lg);
+  padding: var(--esp-6);
+}
+
+.gh-sabor {
+  display: flex;
+  flex-direction: column;
+  gap: var(--esp-2);
+  background: var(--cor-superficie);
+  border-radius: var(--raio-lg);
+  overflow: hidden;
+}
+.gh-sabor__foto {
+  aspect-ratio: 4 / 5;
+  background: var(--gh-vermelho);
+  object-fit: cover;
+  width: 100%;
+}
+.gh-sabor__corpo { padding: var(--esp-4) var(--esp-5) var(--esp-6); display: flex; flex-direction: column; gap: var(--esp-2); }
+.gh-sabor__nome { font: var(--peso-titulo) var(--titulo-sm) / 1 var(--fonte-titulo); color: var(--cor-marca); margin: 0; }
+
+/* ---------- Selos ---------- */
+.gh-selo-turbo,
+.gh-selo-origem {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--esp-1);
+  padding: var(--esp-1) var(--esp-3);
+  border-radius: var(--raio-pilula);
+  font-size: var(--texto-xs);
+  font-weight: var(--peso-forte);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.gh-selo-turbo { background: var(--cor-turbo); color: var(--cor-turbo-texto); } /* âmbar só aqui */
+.gh-selo-origem { background: var(--cor-origem); color: var(--gh-polpa); }
+.gh-selo-turbo svg,
+.gh-selo-origem svg { width: 16px; height: 16px; }
+
+/* ---------- Preço ---------- */
+.gh-preco {
+  font-family: var(--fonte-titulo);
+  font-weight: var(--peso-titulo);
+  font-size: var(--texto-xl);
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+.gh-preco small { font-size: 0.6em; margin-right: 0.15em; }
+
+/* Tabela do cardápio */
+.gh-tabela { width: 100%; border-collapse: collapse; font-variant-numeric: tabular-nums; }
+.gh-tabela th,
+.gh-tabela td { padding: var(--esp-3) var(--esp-2); border-bottom: 1px solid var(--cor-borda); text-align: left; }
+.gh-tabela th { font-size: var(--texto-sm); }
+.gh-tabela td:not(:first-child),
+.gh-tabela th:not(:first-child) { text-align: right; }
+.gh-tabela-rolagem { overflow-x: auto; }
+
+/* ---------- Avisos obrigatórios (RF-06) ---------- */
+.gh-aviso {
+  display: flex;
+  gap: var(--esp-3);
+  align-items: flex-start;
+  padding: var(--esp-4);
+  background: var(--cor-superficie);
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio-md);
+  font-size: var(--texto-sm);
+}
+.gh-aviso svg { width: 22px; height: 22px; flex: 0 0 auto; color: var(--cor-marca); }
+.gh-aviso--turbo { border-color: var(--cor-turbo); }
+.gh-aviso--turbo svg { color: var(--gh-semente); }
+
+/* ---------- Seções ---------- */
+.gh-secao { padding-block: var(--esp-12); }
+.gh-secao--vermelha { background: var(--gh-vermelho); color: var(--gh-polpa); }
+.gh-secao--vermelha .gh-titulo-md,
+.gh-secao--vermelha .gh-titulo-sm,
+.gh-secao--vermelha .gh-rotulo { color: var(--gh-polpa); }
+
+/* Traço da assinatura como divisor decorativo */
+.gh-divisor {
+  display: block;
+  width: min(280px, 70%);
+  height: auto;
+  margin: var(--esp-6) auto;
+}
+
+/* ---------- Rodapé ---------- */
+.gh-rodape {
+  background: var(--gh-semente);
+  color: var(--gh-creme);
+  padding-block: var(--esp-12) calc(var(--esp-16) + var(--alvo-toque)); /* espaço do botão fixo */
+  font-size: var(--texto-sm);
+}
+.gh-rodape a { color: var(--gh-polpa); }
+@media (min-width: 1024px) {
+  .gh-rodape { padding-bottom: var(--esp-12); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; transition: none !important; }
+}

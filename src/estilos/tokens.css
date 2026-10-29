@@ -1,0 +1,97 @@
+/*
+ * Guaraná do Homer · tokens de marca do site
+ * Fonte única das cores, fontes e medidas. Nenhuma tela usa código de cor solto.
+ * Paleta: cores da fruta aberta + creme do copo (Estudo de Cores, 29/10/2026).
+ * Breakpoints (RNF-01): celular 360–599 px · tablet 600–1023 px · computador 1024 px ou mais.
+ */
+:root {
+  /* Paleta oficial (não trocar códigos) */
+  --gh-creme: #F5E9D6;      /* fundo principal, ~50% */
+  --gh-vermelho: #B5252B;   /* marca, botões, títulos de destaque, ~25% */
+  --gh-semente: #2B1B17;    /* texto e contornos, ~10% */
+  --gh-polpa: #FFFDF8;      /* letra sobre vermelho, cartões, ~10% */
+  --gh-verde: #2E5E3E;      /* só detalhe: folha, selo "de Maués"; nunca fundo, ~3% */
+  --gh-ambar: #E8892B;      /* só Modo Turbo; texto nele sempre em Semente, ~2% */
+
+  /* Apoio derivado da paleta (estados e texto secundário) */
+  --gh-vermelho-escuro: #8F1D22; /* hover/pressionado do botão; Polpa sobre ele 8,7:1 */
+  --gh-texto-suave: #6B5148;     /* texto secundário; 6,0:1 no Creme, 7,1:1 na Polpa */
+  --gh-borda: #E3D2B6;           /* linhas e divisórias no Creme; nunca texto */
+
+  /* Papéis (use estes nas telas) */
+  --cor-fundo: var(--gh-creme);
+  --cor-superficie: var(--gh-polpa);
+  --cor-texto: var(--gh-semente);
+  --cor-texto-suave: var(--gh-texto-suave);
+  --cor-marca: var(--gh-vermelho);
+  --cor-acao: var(--gh-vermelho);
+  --cor-acao-hover: var(--gh-vermelho-escuro);
+  --cor-acao-texto: var(--gh-polpa);
+  --cor-turbo: var(--gh-ambar);
+  --cor-turbo-texto: var(--gh-semente);
+  --cor-origem: var(--gh-verde);
+  --cor-borda: var(--gh-borda);
+  --cor-foco: var(--gh-semente);
+
+  /* Fontes: Baloo 2 nos títulos, Nunito Sans no texto e preços.
+     A assinatura "Homer" vive só nos SVGs do logo (texto em curvas). */
+  --fonte-titulo: "Baloo 2", "Fredoka", system-ui, sans-serif;
+  --fonte-texto: "Nunito Sans", "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --peso-titulo: 800;
+  --peso-texto: 400;
+  --peso-forte: 800;
+
+  /* Escala de texto em rem (acompanha o tamanho de fonte do celular, RNF-07) */
+  --texto-xs: 0.8125rem;   /* 13 px: legendas, avisos curtos */
+  --texto-sm: 0.9375rem;   /* 15 px */
+  --texto-base: 1.0625rem; /* 17 px: corpo */
+  --texto-lg: 1.25rem;     /* 20 px */
+  --texto-xl: 1.5rem;      /* 24 px */
+  --titulo-sm: clamp(1.5rem, 1.25rem + 1vw, 1.875rem);
+  --titulo-md: clamp(1.875rem, 1.4rem + 2vw, 2.75rem);
+  --titulo-lg: clamp(2.375rem, 1.6rem + 3.4vw, 4.25rem);
+  --entrelinha-titulo: 1.02;
+  --entrelinha-texto: 1.5;
+  --espaco-caixa-alta: 0.18em; /* rótulos em caixa alta */
+
+  /* Espaços (base 4 px) */
+  --esp-1: 0.25rem;
+  --esp-2: 0.5rem;
+  --esp-3: 0.75rem;
+  --esp-4: 1rem;
+  --esp-5: 1.25rem;
+  --esp-6: 1.5rem;
+  --esp-8: 2rem;
+  --esp-10: 2.5rem;
+  --esp-12: 3rem;
+  --esp-16: 4rem;
+
+  /* Formas */
+  --raio-sm: 8px;
+  --raio-md: 16px;
+  --raio-lg: 24px;
+  --raio-pilula: 999px;
+  --sombra-cartao: 0 2px 14px rgba(43, 27, 23, 0.12);
+
+  /* Layout e toque */
+  --largura-max: 1200px;
+  --margem-lateral: 16px;
+  --alvo-toque: 48px; /* RNF-07 */
+  --altura-cabecalho: 64px;
+}
+
+/*
+ * Tokens do site (derivados da paleta acima; adicionados no desenvolvimento, 29/10/2026).
+ * Cores do líquido do copo ilustrado por sabor: tons do próprio produto, só dentro da ilustração.
+ */
+:root {
+  --copo-tradicional: #E6CDA4;
+  --copo-tradicional-espuma: #F3E3C7;
+  --copo-abacate: #D3D6A2;
+  --copo-abacate-espuma: #E7E9C6;
+  --copo-banana: #EBD49B;
+  --copo-banana-espuma: #F6E7C0;
+  --status-aberto: #2E5E3E;
+  --sombra-flutuante: 0 6px 20px rgba(43, 27, 23, 0.25);
+  --linha-sobre-vermelho: rgba(255, 253, 248, 0.35);
+}

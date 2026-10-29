@@ -1,0 +1,162 @@
+// Página inicial. Estrutura aprovada em 29/10/2026 (canvas "Site Guaraná do Homer · Esboço").
+
+export const inicio = {
+  pt: {
+    titulo: 'Guaraná do Homer · Guaraná batido nos Ingleses e no Santinho',
+    descricao: 'Guaraná batido cremoso, feito na hora com guaraná em pó de Maués, amendoim e castanha. Delivery nos Ingleses e no Santinho, em Florianópolis. A partir de R$ 17.',
+    hero: {
+      rotulo: 'Tradição do Norte do Brasil, agora nos Ingleses',
+      titulo: 'Em Belém, tem fila na praça por',
+      destaque: 'um copo deste.',
+      lead: 'Guaraná em pó de Maués, amendoim e castanha de caju, batidos com gelo até virar creme. Aqui na Ilha ainda é novidade: a gente bate na hora que o seu pedido chega e entrega em até 40 minutos.',
+      provar: 'Quero provar o primeiro',
+      verCardapio: 'Ver o cardápio',
+      precoAntes: 'Copo de 300 ml a partir de',
+      precoDepois: 'pedindo direto, sem taxa de aplicativo',
+      anotacoes: [
+        { nome: 'Guaraná em pó de Maués', sub: 'o coração do copo' },
+        { nome: 'Amendoim torrado e castanha de caju', sub: 'dão o corpo' },
+        { nome: 'Leite e gelo', sub: 'batidos até virar creme' }
+      ],
+      carimbo: ['Batido', 'na hora', 'do pedido'],
+      altCopo: 'Copo de guaraná batido com o selo da casa'
+    },
+    prova: {
+      rotulo: 'Primeira vez?',
+      titulo: 'Tem gosto de quê?',
+      p1: 'Não é o refrigerante de guaraná. É uma bebida cremosa, gelada, que se toma de canudo e lembra um milk-shake de amendoim com castanha.',
+      p2: 'O guaraná em pó deixa um amarguinho bom no fim de cada gole. A doçura você escolhe: menos doce, normal ou mais doce, sem pagar nada a mais.',
+      fichaTitulo: 'Ficha de prova',
+      fichaSub: 'Tradicional · 500 ml',
+      notaDe: 'de 5',
+      notas: [
+        { nome: 'Cremosidade', nota: 5, texto: 'Escorre devagar da colher. Grosso, mas passa no canudo.' },
+        { nome: 'Amendoim e castanha', nota: 4, texto: 'Tostado, lembra paçoca. É o sabor que aparece primeiro.' },
+        { nome: 'Doçura', nota: 3, texto: 'Na medida. Dá para pedir menos doce ou mais doce.' },
+        { nome: 'Amargor do guaraná', nota: 2, texto: 'Leve, no fim do gole. No Modo Turbo ele fica mais presente.' }
+      ],
+      cafeina: 'Tem cafeína do guaraná: cerca de 90 a 110 mg no copo de 500 ml. Contém leite, amendoim e castanha de caju. Não recomendado para crianças, gestantes, lactantes e pessoas sensíveis à cafeína.'
+    },
+    norte: {
+      rotulo: 'Como se toma lá em cima',
+      titulo: 'No Norte é costume de fim de tarde. Aqui, quase ninguém provou.',
+      p1: 'Em Belém, quando o calor aperta, tem fila na Praça Brasil pelo copo gelado. Em Fortaleza, tem barraca que bate guaraná há quase trinta anos. É coisa de família: tem gente que toma desde criança, com o pai.',
+      p2: 'A gente trouxe esse costume para os Ingleses e o Santinho, com o guaraná em pó de Maués e o liquidificador ligado só quando o seu pedido chega.',
+      rota: {
+        origem: 'Maués (AM)',
+        origemSub: 'onde nasce o guaraná em pó',
+        destino: 'Ingleses, Florianópolis (SC)',
+        destinoSub: 'onde o copo é batido',
+        distancia: 'quase 3.000 km',
+        alt: 'Rota de Maués, no Amazonas, até os Ingleses, em Florianópolis: quase 3.000 quilômetros'
+      }
+    },
+    assinatura: {
+      titulo: 'A receita do pai',
+      texto: 'Homer é o apelido que os amigos da rua deram pro meu pai. Agora é ele quem bate o seu guaraná, na hora.',
+      cta: 'Conheça a nossa história',
+      altLogo: 'Guaraná do Homer · receita do pai, batido na hora'
+    },
+    comoPedir: {
+      rotulo: 'Como pedir',
+      titulo: 'Do pedido ao copo gelado em até 40 minutos',
+      passos: [
+        { titulo: 'Você pede', texto: 'Pelo site ou direto no WhatsApp. A mensagem já vai pronta.', tempo: '1 minuto' },
+        { titulo: 'Paga no Pix', texto: 'A gente confirma o bairro e manda a chave. Sem taxa de aplicativo.', tempo: 'até 2 minutos' },
+        { titulo: 'Batemos na hora', texto: 'Tudo pesado, liquidificador ligado só agora. Copo lacrado e etiquetado.', tempo: 'até 5 minutos' },
+        { titulo: 'Chega na sua porta', texto: 'Em bolsa térmica, nos Ingleses e no Santinho.', tempo: 'até 35 minutos' }
+      ],
+      diretoTitulo: 'Peça direto e pague menos',
+      diretoTexto: 'Pelo site ou pelo WhatsApp você paga o preço da casa, sem taxa de aplicativo.',
+      diretoIfood: 'Também estamos no iFood, se preferir.'
+    },
+    duvidas: {
+      rotulo: 'Perguntas',
+      titulo: 'Antes do primeiro gole',
+      sub: 'Não achou a sua? Manda no WhatsApp que a gente responde.',
+      todas: 'Ver todas as perguntas',
+      eventosTitulo: 'Festa, academia ou pousada?',
+      eventosTexto: 'Fazemos pedidos grandes, com nota fiscal para empresas.',
+      eventosCta: 'Pedir orçamento'
+    }
+  },
+  es: {
+    titulo: 'Guaraná do Homer · Guaraná batido en Ingleses y Santinho',
+    descricao: 'Guaraná batido cremoso, hecho en el momento con guaraná en polvo de Maués, maní y castaña. Delivery en Ingleses y Santinho, Florianópolis. Desde R$ 17.',
+    hero: {
+      rotulo: 'Tradición del norte de Brasil, ahora en Ingleses',
+      titulo: 'En Belém hacen fila en la plaza por',
+      destaque: 'un vaso como este.',
+      lead: 'Guaraná en polvo de Maués, maní y castaña de cajú, batidos con hielo hasta volverse crema. Acá en la Isla todavía es novedad: lo batimos cuando llega tu pedido y lo entregamos en hasta 40 minutos.',
+      provar: 'Quiero probar el primero',
+      verCardapio: 'Ver el menú',
+      precoAntes: 'Vaso de 300 ml desde',
+      precoDepois: 'pidiendo directo, sin tarifa de aplicación',
+      anotacoes: [
+        { nome: 'Guaraná en polvo de Maués', sub: 'el corazón del vaso' },
+        { nome: 'Maní tostado y castaña de cajú', sub: 'le dan cuerpo' },
+        { nome: 'Leche y hielo', sub: 'batidos hasta volverse crema' }
+      ],
+      carimbo: ['Batido', 'en el', 'momento'],
+      altCopo: 'Vaso de guaraná batido con el sello de la casa'
+    },
+    prova: {
+      rotulo: '¿Primera vez?',
+      titulo: '¿A qué sabe?',
+      p1: 'No es la gaseosa de guaraná. Es una bebida cremosa y helada, que se toma con sorbete y recuerda a un licuado de maní con castaña.',
+      p2: 'El guaraná en polvo deja un amarguito rico al final de cada trago. El dulzor lo elegís vos: menos dulce, normal o más dulce, sin pagar nada extra.',
+      fichaTitulo: 'Ficha de cata',
+      fichaSub: 'Tradicional · 500 ml',
+      notaDe: 'de 5',
+      notas: [
+        { nome: 'Cremosidad', nota: 5, texto: 'Cae despacio de la cuchara. Espeso, pero pasa por el sorbete.' },
+        { nome: 'Maní y castaña', nota: 4, texto: 'Tostado, parecido a la paçoca. Es el sabor que aparece primero.' },
+        { nome: 'Dulzor', nota: 3, texto: 'Justo. Se puede pedir menos dulce o más dulce.' },
+        { nome: 'Amargor del guaraná', nota: 2, texto: 'Suave, al final del trago. En el Modo Turbo se nota más.' }
+      ],
+      cafeina: 'Tiene cafeína del guaraná: cerca de 90 a 110 mg en el vaso de 500 ml. Contiene leche, maní y castaña de cajú. No recomendado para niños, embarazadas, mujeres en lactancia ni personas sensibles a la cafeína.'
+    },
+    norte: {
+      rotulo: 'Cómo se toma allá arriba',
+      titulo: 'En el norte es costumbre de fin de tarde. Acá, casi nadie lo probó.',
+      p1: 'En Belém, cuando aprieta el calor, se hace fila en la Plaza Brasil por el vaso helado. En Fortaleza hay un puesto que bate guaraná hace casi treinta años. Es cosa de familia: hay quien lo toma desde chico, con el papá.',
+      p2: 'Trajimos esa costumbre a Ingleses y Santinho, con el guaraná en polvo de Maués y la licuadora encendida solo cuando llega tu pedido.',
+      rota: {
+        origem: 'Maués (AM)',
+        origemSub: 'donde nace el guaraná en polvo',
+        destino: 'Ingleses, Florianópolis (SC)',
+        destinoSub: 'donde se bate el vaso',
+        distancia: 'casi 3.000 km',
+        alt: 'Ruta de Maués, en el Amazonas, hasta Ingleses, en Florianópolis: casi 3.000 kilómetros'
+      }
+    },
+    assinatura: {
+      titulo: 'La receta del papá',
+      texto: 'Homer es el apodo que le pusieron a mi papá los amigos del barrio. Ahora es él quien bate tu guaraná, en el momento.',
+      cta: 'Conocé nuestra historia',
+      altLogo: 'Guaraná do Homer · receta del papá, batido en el momento'
+    },
+    comoPedir: {
+      rotulo: 'Cómo pedir',
+      titulo: 'Del pedido al vaso helado en hasta 40 minutos',
+      passos: [
+        { titulo: 'Pedís', texto: 'Por el sitio o directo por WhatsApp. El mensaje ya va escrito.', tempo: '1 minuto' },
+        { titulo: 'Pagás con Pix', texto: 'Confirmamos el barrio y te mandamos la clave. Sin tarifa de aplicación.', tempo: 'hasta 2 minutos' },
+        { titulo: 'Lo batimos en el momento', texto: 'Todo pesado, licuadora encendida recién ahora. Vaso sellado y etiquetado.', tempo: 'hasta 5 minutos' },
+        { titulo: 'Llega a tu puerta', texto: 'En bolsa térmica, en Ingleses y Santinho.', tempo: 'hasta 35 minutos' }
+      ],
+      diretoTitulo: 'Pedí directo y pagá menos',
+      diretoTexto: 'Por el sitio o por WhatsApp pagás el precio de la casa, sin tarifa de aplicación.',
+      diretoIfood: 'También estamos en iFood, si preferís.'
+    },
+    duvidas: {
+      rotulo: 'Preguntas',
+      titulo: 'Antes del primer trago',
+      sub: '¿No encontraste la tuya? Mandala por WhatsApp y te respondemos.',
+      todas: 'Ver todas las preguntas',
+      eventosTitulo: '¿Fiesta, gimnasio o posada?',
+      eventosTexto: 'Hacemos pedidos grandes, con factura para empresas.',
+      eventosCta: 'Pedir presupuesto'
+    }
+  }
+};

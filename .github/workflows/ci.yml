@@ -1,0 +1,61 @@
+# Verificação automática de toda proposta de mudança (pull request) e de todo push na main.
+# Falhou, não publica. O check obrigatório na proteção da main é "ci-ok".
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  site:
+    name: Testes, build e verificação
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Testes (regras do cardápio, horário, WhatsApp e site gerado)
+        run: npm test
+      - name: Build
+        run: npm run build
+      - name: Verificação do site gerado
+        run: node scripts/verificar.mjs
+      - name: Prévia para baixar
+        uses: actions/upload-artifact@v4
+        with:
+          name: site-${{ github.sha }}
+          path: dist/
+          include-hidden-files: true
+          retention-days: 14
+
+  titulo-pr:
+    name: Título do PR no padrão
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Conventional Commits (feat:, fix:, chore:, docs:...)
+        env:
+          TITULO: ${{ github.event.pull_request.title }}
+        run: |
+          echo "$TITULO" | grep -Eq '^(feat|fix|chore|docs|style|refactor|test|ci|perf|conteudo)(\([a-z0-9-]+\))?: .+' \
+            || { echo "Título fora do padrão: $TITULO"; exit 1; }
+
+  ci-ok:
+    name: ci-ok
+    if: always()
+    needs: [site, titulo-pr]
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          [ "${{ needs.site.result }}" = "success" ] || exit 1
+          [ "${{ needs.titulo-pr.result }}" = "success" ] || [ "${{ needs.titulo-pr.result }}" = "skipped" ] || exit 1

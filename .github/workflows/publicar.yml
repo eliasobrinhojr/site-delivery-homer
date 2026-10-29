@@ -1,0 +1,39 @@
+# Publicação: a cada merge na main (que só entra com PR aprovado e CI verde), gera o site e
+# grava o conteúdo de dist/ no ramo "publicacao". A Hostinger publica esse ramo pelo Git do hPanel
+# (mesmo fluxo do site da Draxora). Voltar uma versão = reverter o commit na main.
+name: Publicar
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: publicar
+  cancel-in-progress: false
+
+jobs:
+  publicar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    environment: producao
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm test
+      - run: npm run build
+      - run: node scripts/verificar.mjs
+      - name: Gravar dist/ no ramo publicacao
+        run: |
+          cd dist
+          git init -q -b publicacao
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -q -m "Publicação de ${GITHUB_SHA::7}"
+          git push -f "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git" publicacao

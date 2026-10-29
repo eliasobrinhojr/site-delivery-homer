@@ -1,0 +1,18 @@
+{
+  "name": "site-guarana-do-homer",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Site da Guaraná do Homer: guaraná batido feito na hora, delivery nos Ingleses e no Santinho (Florianópolis).",
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "dev": "node scripts/build.mjs && node scripts/servir.mjs",
+    "servir": "node scripts/servir.mjs",
+    "test": "node --test \"testes/**/*.test.mjs\"",
+    "verificar": "node scripts/build.mjs && node scripts/verificar.mjs",
+    "og": "node scripts/gerar-og.mjs"
+  }
+}
