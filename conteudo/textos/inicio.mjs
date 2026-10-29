@@ -3,7 +3,7 @@
 export const inicio = {
   pt: {
     titulo: 'Guaraná do Homer · Guaraná batido nos Ingleses e no Santinho',
-    descricao: 'Guaraná batido cremoso, feito na hora com guaraná em pó do Amazonas, amendoim e castanha. Delivery nos Ingleses e no Santinho, em Florianópolis. A partir de R$ 17.',
+    descricao: 'Guaraná batido cremoso, feito na hora com guaraná em pó do Amazonas, amendoim e castanha. Delivery nos Ingleses e no Santinho, em Florianópolis. A partir de R$ 17 (preço estimado).',
     hero: {
       rotulo: 'Guaraná do Amazonas, batido nos Ingleses',
       titulo: 'Em Manaus, tem carrinho na rua',
@@ -82,7 +82,7 @@ export const inicio = {
   },
   es: {
     titulo: 'Guaraná do Homer · Guaraná batido en Ingleses y Santinho',
-    descricao: 'Guaraná batido cremoso, hecho en el momento con guaraná en polvo del Amazonas, maní y castaña. Delivery en Ingleses y Santinho, Florianópolis. Desde R$ 17.',
+    descricao: 'Guaraná batido cremoso, hecho en el momento con guaraná en polvo del Amazonas, maní y castaña. Delivery en Ingleses y Santinho, Florianópolis. Desde R$ 17 (precio estimado).',
     hero: {
       rotulo: 'Guaraná del Amazonas, batido en Ingleses',
       titulo: 'En Manaos hay carritos en la calle',

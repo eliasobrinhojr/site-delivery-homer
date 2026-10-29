@@ -1,4 +1,4 @@
-import { esc, icone, rotulo, botaoWhatsapp, botaoPedido, botaoIfood, monteSeuCopo, reais, faixaMg, avisoAlergenicos, copoSvg, seloTurbo, seloOrigem, linhaEmpresa, avisoPix } from '../componentes.mjs';
+import { esc, icone, rotulo, botaoWhatsapp, botaoPedido, botaoIfood, monteSeuCopo, reais, faixaMg, avisoAlergenicos, copoSvg, seloTurbo, seloOrigem, linhaEmpresa, avisoPix, avisoPrecos, perguntasVisiveis } from '../componentes.mjs';
 import { cardapioPagina, guaranaPagina, sobrePagina, comoPedirPagina, diretoPagina, eventosPagina, privacidadePagina, erroPagina } from '../../conteudo/textos/paginas.mjs';
 import { perguntas } from '../../conteudo/textos/perguntas.mjs';
 import { equipe as textosEquipe } from '../../conteudo/textos/equipe.mjs';
@@ -36,7 +36,7 @@ export function paginaCardapio(lang) {
     ...(tm.cafeinaTurbo ? [`<tr><th scope="row">${esc(c.modoTurbo)} ${tm.ml} ml</th><td>${esc(faixaMg(tm.cafeinaTurbo, lang))}</td></tr>`] : [])
   ]).join('');
   const corpo = [
-    topo(t, { extra: `<div class="acoes">${botaoPedido({ origem: 'cardapio', lang, texto: c.pedirWhatsapp })}${botaoIfood(lang)}</div>` }),
+    topo(t, { extra: `<div class="acoes">${botaoPedido({ origem: 'cardapio', lang, texto: c.pedirWhatsapp })}${botaoIfood(lang)}</div>${avisoPrecos(lang, { classe: 'aviso-precos--topo' })}` }),
     secao(`<h2 class="gh-titulo-md">${esc(t.saboresTitulo)}</h2><div class="sabores">${cartoes}</div>`),
     secao(`<div class="cardapio__grade">
 <div class="gh-cartao"><h2 class="gh-titulo-sm">${esc(t.precosTitulo)}</h2><div class="gh-tabela-rolagem"><table class="gh-tabela"><thead><tr><th scope="col">${esc(t.colTamanho)}</th><th scope="col">${esc(t.colSabores)}</th><th scope="col">${esc(t.colTurbo)}</th></tr></thead><tbody>${linhasPreco}</tbody></table></div>
@@ -137,7 +137,8 @@ export function paginaDireto(lang) {
 <div class="compara__aqui"><p>${esc(t.destaqueDireto)}</p><p class="compara__valor">${esc(reais(quinhentos.preco))}</p></div>
 <div class="compara__app"><p>${esc(t.destaqueIfood)}</p><p class="compara__valor">${esc(reais(quinhentos.precoIfood))}</p></div>
 </div>
-<div class="acoes acoes--centro">${botaoPedido({ origem: 'direto', lang, texto: t.cta })}</div>`),
+<div class="acoes acoes--centro">${botaoPedido({ origem: 'direto', lang, texto: t.cta })}</div>
+${avisoPrecos(lang, { classe: 'aviso-precos--centro' })}`),
     secao(`<div class="cardapio__grade">
 <div class="gh-cartao"><div class="gh-tabela-rolagem"><table class="gh-tabela"><thead><tr><th scope="col">${esc(t.colTamanho)}</th><th scope="col">${esc(t.colDireto)}</th><th scope="col">${esc(t.colIfood)}</th></tr></thead><tbody>${linhas}</tbody></table></div></div>
 ${cupom}
@@ -166,11 +167,11 @@ export function paginaPerguntas(lang) {
   const c = comum[lang];
   const corpo = [
     topo(t),
-    secao(`<div class="faq-lista">${faqHtml(lang, t.itens, { abrirPrimeira: false })}</div>
+    secao(`<div class="faq-lista">${faqHtml(lang, perguntasVisiveis(t.itens), { abrirPrimeira: false })}</div>
 <div class="avisos">${avisoAlergenicos(lang, { turbo: true })}</div>
 <div class="acoes acoes--centro">${botaoWhatsapp({ origem: 'duvida', lang, texto: c.pedirWhatsapp })}</div>`)
   ].join('\n');
-  return { rotaId: 'perguntas', titulo: t.titulo, descricao: t.descricao, corpo, schemas: [schemaFaq(t.itens)] };
+  return { rotaId: 'perguntas', titulo: t.titulo, descricao: t.descricao, corpo, schemas: [schemaFaq(perguntasVisiveis(t.itens))] };
 }
 
 export function paginaPrivacidade(lang) {

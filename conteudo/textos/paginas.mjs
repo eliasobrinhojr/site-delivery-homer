@@ -3,7 +3,7 @@
 export const cardapioPagina = {
   pt: {
     titulo: 'Cardápio · Guaraná do Homer',
-    descricao: 'Guaraná batido Tradicional, de Abacate ou de Banana, em 300, 500 e 700 ml. Modo Turbo, doçura grátis e adicionais. Preço direto a partir de R$ 17.',
+    descricao: 'Guaraná batido Tradicional, de Abacate ou de Banana, em 300, 500 e 700 ml. Modo Turbo, doçura grátis e adicionais. Preço direto estimado a partir de R$ 17.',
     rotulo: 'Cardápio',
     h1: 'Um guaraná, três sabores',
     lead: 'Escolha o sabor, o tamanho e a doçura. Pedindo pelo site ou pelo WhatsApp você paga o preço da casa.',
@@ -30,7 +30,7 @@ export const cardapioPagina = {
   },
   es: {
     titulo: 'Menú · Guaraná do Homer',
-    descricao: 'Guaraná batido Tradicional, de Palta o de Banana, en 300, 500 y 700 ml. Modo Turbo, dulzor sin costo y extras. Precio directo desde R$ 17.',
+    descricao: 'Guaraná batido Tradicional, de Palta o de Banana, en 300, 500 y 700 ml. Modo Turbo, dulzor sin costo y extras. Precio directo estimado desde R$ 17.',
     rotulo: 'Menú',
     h1: 'Un guaraná, tres sabores',
     lead: 'Elegí el sabor, el tamaño y el dulzor. Pidiendo por el sitio o por WhatsApp pagás el precio de la casa.',

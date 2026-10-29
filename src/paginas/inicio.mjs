@@ -1,4 +1,4 @@
-import { esc, icone, rotulo, botaoWhatsapp, botaoPedido, botaoIfood, monteSeuCopo, pontos, reais, seloOrigem } from '../componentes.mjs';
+import { esc, icone, rotulo, botaoWhatsapp, botaoPedido, botaoIfood, monteSeuCopo, pontos, reais, seloOrigem, perguntasVisiveis } from '../componentes.mjs';
 import { inicio } from '../../conteudo/textos/inicio.mjs';
 import { perguntas } from '../../conteudo/textos/perguntas.mjs';
 import { comum } from '../../conteudo/textos/comum.mjs';
@@ -20,7 +20,7 @@ ${rotulo(t.rotulo)}
 ${botaoPedido({ origem: 'provar', lang, texto: t.provar })}
 <a class="gh-botao gh-botao--contorno" href="${caminho(lang, 'cardapio')}">${esc(t.verCardapio)}</a>
 </div>
-<p class="hero__preco">${esc(t.precoAntes)} <strong>${esc(reais(precoMinimo()))}</strong> · ${esc(t.precoDepois)}</p>
+<p class="hero__preco">${esc(t.precoAntes)} <strong>${esc(reais(precoMinimo()))}</strong>${loja.precosEstimados ? ` <span class="selo-estimado">${esc(comum[lang].precos.selo)}</span>` : ''} · ${esc(t.precoDepois)}</p>
 </div>
 <div class="hero__painel">
 ${seloOrigem(lang)}
@@ -123,7 +123,7 @@ export function faqHtml(lang, itens, { abrirPrimeira = true } = {}) {
 
 function duvidas(lang) {
   const t = inicio[lang].duvidas;
-  const itens = perguntas[lang].itens.filter((q) => q.inicio);
+  const itens = perguntasVisiveis(perguntas[lang].itens).filter((q) => q.inicio);
   return `<section class="gh-secao duvidas" aria-labelledby="duvidas-titulo">
 <div class="gh-container duvidas__grade">
 <div>

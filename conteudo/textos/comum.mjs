@@ -40,6 +40,11 @@ export const comum = {
       mei: 'MEI',
       direitos: 'Guaraná do Homer'
     },
+    precos: {
+      selo: 'preço estimado',
+      titulo: 'Preços estimados',
+      texto: 'Os valores do site são uma estimativa e podem mudar até a inauguração: ainda estamos ajustando a produção e a operação. Os preços definitivos saem junto com a data de abertura.'
+    },
     pix: {
       titulo: 'Chave Pix',
       chave: 'A chave é sempre o CNPJ da loja:',
@@ -94,6 +99,11 @@ export const comum = {
       cnpj: 'CNPJ',
       mei: 'MEI',
       direitos: 'Guaraná do Homer'
+    },
+    precos: {
+      selo: 'precio estimado',
+      titulo: 'Precios estimados',
+      texto: 'Los valores del sitio son una estimación y pueden cambiar hasta la inauguración: todavía estamos ajustando la producción y la operación. Los precios definitivos salen junto con la fecha de apertura.'
     },
     pix: {
       titulo: 'Clave Pix',
