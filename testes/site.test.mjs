@@ -61,6 +61,18 @@ test('a área de entrega é Ingleses e Santinho', async () => {
   assert.match(html, /Santinho/);
 });
 
+test('RF-28 a retirada aparece em Como pedir, no monte o seu e nas perguntas, em PT e ES', async () => {
+  const como = await ler('/como-pedir/index.html');
+  assert.match(como, /Prefere buscar\?/);
+  assert.match(como, /Sem taxa de entrega, para quem mora em qualquer bairro/);
+  assert.match(como, /O endereço vai junto com a confirmação do pedido/);
+  assert.match(como, /Vou%20retirar|retirar/);
+  assert.match(await ler('/es/como-pedir/index.html'), /¿Preferís retirarlo\?/);
+  assert.match(await ler('/cardapio/index.html'), /name="recebimento" value="retirada"/);
+  assert.match(await ler('/perguntas/index.html'), /Posso retirar o pedido\?/);
+  assert.match(await ler('/es/perguntas/index.html'), /¿Puedo retirar el pedido\?/);
+});
+
 test('o idioma alterna para a mesma página no outro idioma', async () => {
   assert.match(await ler('/cardapio/index.html'), /class="nav__idioma" href="\/es\/cardapio\/"/);
   assert.match(await ler('/es/cardapio/index.html'), /class="nav__idioma" href="\/cardapio\/"/);
