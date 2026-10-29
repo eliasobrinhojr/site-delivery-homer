@@ -20,6 +20,16 @@ backend: não há formulário, banco, PHP nem dado pessoal guardado no servidor.
 | Sem dependências de npm (nada para ser comprometido) | `docs/decisoes.md` D1 |
 | Ações do GitHub atualizadas pelo Dependabot | `.github/dependabot.yml` |
 
+## Modo equipe (RF-29)
+
+- Antes da inauguração, os botões de pedido só convidam ("Abrimos em breve · me avise"). A equipe libera os pedidos
+  num aparelho em `/equipe/`, com a frase da equipe, por 30 dias.
+- Só o **hash SHA-256** da frase fica em `conteudo/loja.mjs`; a frase nunca vai para o repositório nem para a URL.
+  Trocar: `npm run senha-equipe -- "frase nova"` (desativa todos os aparelhos) e publicar.
+- É uma **trava leve**: o site é estático e o código é público, então quem souber programar consegue contornar.
+  O pior que acontece é chegar um pedido no WhatsApp antes da hora. Controle de acesso de verdade só na fase 3.
+- `/equipe/` fica fora do menu, do sitemap e da busca (`noindex` e `Disallow` no robots.txt).
+
 ## Ao ativar o pixel da Meta ou o GA4
 
 1. Preencher `loja.analytics` em `conteudo/loja.mjs`.

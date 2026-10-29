@@ -28,7 +28,8 @@ export async function verificar() {
 
   for (const arquivo of htmls) {
     const html = await readFile(arquivo, 'utf8');
-    const e404 = arquivo.endsWith('404.html');
+    // Páginas fora da busca (404 e área da equipe) não têm canonical nem hreflang.
+    const e404 = /<meta name="robots" content="noindex">/.test(html);
     const texto = html.replace(/<script[\s\S]*?<\/script>/g, '').replace(/<[^>]+>/g, ' ');
 
     if (!/<html lang="(pt-BR|es)">/.test(html)) erro(arquivo, 'sem lang no <html>');

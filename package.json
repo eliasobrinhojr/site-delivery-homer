@@ -13,6 +13,7 @@
     "servir": "node scripts/servir.mjs",
     "test": "node --test \"testes/**/*.test.mjs\"",
     "verificar": "node scripts/build.mjs && node scripts/verificar.mjs",
-    "og": "node scripts/gerar-og.mjs"
+    "og": "node scripts/gerar-og.mjs",
+    "senha-equipe": "node scripts/senha-equipe.mjs"
   }
 }

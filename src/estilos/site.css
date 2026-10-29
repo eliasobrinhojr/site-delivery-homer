@@ -339,3 +339,22 @@ h1, h2, h3 { text-wrap: balance; }
 
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
 @media print { .gh-cabecalho, .gh-botao-fixo-area, .gh-faixa-status, .cookies { display: none !important; } }
+
+/* RF-29: antes da inauguração, botão de pedido vira "Abrimos em breve · me avise" (convite, não pedido). */
+.gh-botao--breve { background: var(--gh-polpa); color: var(--gh-vermelho); border: 2px solid var(--gh-vermelho); }
+.gh-botao--breve:hover { background: var(--gh-creme); color: var(--gh-vermelho-escuro); }
+.gh-botao-fixo.gh-botao--breve { background: var(--gh-polpa); }
+
+/* RF-29: faixa do modo equipe, sempre no topo. */
+.faixa-equipe { position: sticky; top: 0; z-index: 60; display: flex; gap: var(--esp-3); align-items: center; justify-content: center; flex-wrap: wrap; padding: var(--esp-2) var(--esp-4); background: var(--gh-semente); color: var(--gh-polpa); font-weight: 800; font-size: var(--texto-sm); text-align: center; }
+.faixa-equipe__sair { font: inherit; padding: var(--esp-1) var(--esp-3); border: 2px solid var(--gh-polpa); border-radius: var(--raio-pilula); background: transparent; color: var(--gh-polpa); cursor: pointer; min-height: 32px; }
+
+/* RF-29: área da equipe. */
+.equipe { max-width: 560px; display: grid; gap: var(--esp-4); }
+.equipe__form { display: grid; gap: var(--esp-3); }
+.equipe__rotulo { font-weight: 800; }
+.equipe__campo { font: inherit; min-height: 48px; padding: var(--esp-2) var(--esp-4); border: 2px solid var(--cor-borda); border-radius: var(--raio-md); background: var(--gh-polpa); color: var(--gh-semente); }
+.equipe__campo:focus-visible { outline: 3px solid var(--gh-vermelho); outline-offset: 2px; }
+.equipe__estado { font-weight: 700; min-height: 1.5em; }
+.equipe__estado[data-ativo="sim"] { color: var(--gh-verde); }
+.equipe__estado[data-ativo="erro"] { color: var(--gh-vermelho); }

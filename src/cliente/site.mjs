@@ -1,6 +1,9 @@
 // Comportamentos comuns a todas as páginas. Tudo é melhoria: sem JavaScript o site continua completo.
 import { loja } from '../../conteudo/loja.mjs';
 import { estadoLoja, textoEstado } from '../lib/horario.mjs';
+import { linkWhatsApp, mensagem } from '../lib/whatsapp.mjs';
+import { CHAVE_EQUIPE, equipeAtiva, lerRegistro, paraTeste } from '../lib/equipe.mjs';
+import { equipe as textosEquipe } from '../../conteudo/textos/equipe.mjs';
 
 const lang = document.documentElement.lang.startsWith('es') ? 'es' : 'pt';
 const CHAVE_IDIOMA = 'gh-idioma';
@@ -26,6 +29,47 @@ function lembrarIdioma() {
   if (!ler(CHAVE_IDIOMA)) gravar(CHAVE_IDIOMA, lang);
 }
 
+// RF-29: no modo equipe (aparelho ativado em /equipe/), os pedidos funcionam antes da inauguração, como teste.
+const lerArmazenamento = () => { try { return localStorage; } catch { return null; } };
+export const modoEquipe = () => equipeAtiva(lerRegistro(lerArmazenamento()), loja.equipe);
+
+function faixaEquipe() {
+  if (!modoEquipe() || document.querySelector('[data-faixa-equipe]')) return;
+  const te = textosEquipe[lang];
+  const faixa = document.createElement('div');
+  faixa.className = 'faixa-equipe';
+  faixa.dataset.faixaEquipe = '';
+  const texto = document.createElement('span');
+  texto.textContent = te.faixa;
+  const sair = document.createElement('button');
+  sair.type = 'button';
+  sair.className = 'faixa-equipe__sair';
+  sair.textContent = te.sair;
+  sair.addEventListener('click', () => {
+    try { localStorage.removeItem(CHAVE_EQUIPE); } catch { /* navegação privada */ }
+    location.reload();
+  });
+  faixa.append(texto, sair);
+  document.body.prepend(faixa);
+  document.documentElement.classList.add('modo-equipe');
+}
+
+// RF-29: botões de pedido. Antes da inauguração o público vê "Abrimos em breve · me avise";
+// quando a loja abre (ou no modo equipe) o mesmo botão vira o pedido de verdade.
+function botoesPedido(estado) {
+  const equipe = modoEquipe();
+  const liberado = equipe || estado.tipo !== 'pre-inauguracao';
+  for (const botao of document.querySelectorAll('a[data-pedido]')) {
+    const origem = liberado ? botao.dataset.pedido : 'inauguracao';
+    const texto = mensagem(origem, lang);
+    botao.href = linkWhatsApp(loja.whatsapp, equipe ? paraTeste(texto) : texto);
+    botao.dataset.origem = origem;
+    if (botao.classList.contains('gh-botao')) botao.classList.toggle('gh-botao--breve', !liberado);
+    botao.querySelector('span').textContent = liberado ? botao.dataset.textoPedido : botao.dataset.textoBreve;
+    botao.querySelector('use')?.setAttribute('href', `/marca/icones.svg#i-${liberado ? 'conversa' : 'relogio'}`);
+  }
+}
+
 // RF-07: faixa "Aberto agora · até 20h" / "Fechado agora · abrimos quinta às 13h".
 export function atualizarStatus(agora = new Date()) {
   const faixa = document.querySelector('[data-status]');
@@ -34,6 +78,7 @@ export function atualizarStatus(agora = new Date()) {
   faixa.dataset.estado = estado.tipo;
   faixa.querySelector('[data-status-texto]').textContent = textoEstado(estado, lang);
   document.dispatchEvent(new CustomEvent('gh:estado', { detail: estado }));
+  botoesPedido(estado);
   return estado;
 }
 
@@ -93,6 +138,7 @@ function eventosPedido() {
 
 idiomaInicial();
 lembrarIdioma();
+faixaEquipe();
 atualizarStatus();
 setInterval(atualizarStatus, 60_000);
 menu();
