@@ -38,12 +38,13 @@ export function horaLocal(agora, fuso) {
 
 /**
  * Estado da loja agora.
- * - { tipo: 'pre-inauguracao', data }
+ * - { tipo: 'pre-inauguracao', data }  (data null quando inauguracao = 'em-breve')
  * - { tipo: 'aberto', fecha: '20:00' }
  * - { tipo: 'fechado', abreDia: 0-6, abre: '13:00', quando: 'hoje' | 'amanha' | 'dia' }
  */
 export function estadoLoja(agora, { horarios, fuso, inauguracao }) {
   const local = horaLocal(agora, fuso);
+  if (inauguracao === 'em-breve') return { tipo: 'pre-inauguracao', data: null };
   if (inauguracao && local.data < inauguracao) return { tipo: 'pre-inauguracao', data: inauguracao };
 
   const hoje = horarios[local.dia];
@@ -66,6 +67,7 @@ export function estadoLoja(agora, { horarios, fuso, inauguracao }) {
 export function textoEstado(estado, lang = 'pt') {
   const es = lang === 'es';
   if (estado.tipo === 'pre-inauguracao') {
+    if (!estado.data) return es ? 'Inauguramos pronto' : 'Inauguração em breve';
     const [, mes, dia] = estado.data.split('-').map(Number);
     const meses = es
       ? ['enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio', 'julio', 'agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre']
