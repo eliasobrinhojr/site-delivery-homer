@@ -31,6 +31,10 @@ export const loja = {
   // RF-29: modo equipe. Antes da inauguração, só aparelhos ativados em /equipe/ fazem pedido (de teste).
   // Aqui fica só o hash da frase, nunca a frase. Trocar a frase: npm run senha-equipe -- "frase nova"
   // (todos os aparelhos ativados com a frase antiga saem do modo equipe).
+  // RF-30: true = os preços do site são estimativa e podem mudar até a inauguração (avisos em todo lugar com preço).
+  // Quando os preços forem definidos, troque para false e tire "(preço estimado)" das descrições e prévias.
+  precosEstimados: true,
+
   equipe: {
     hash: '9b443a2a5d18548ce0f64693ca987bfd3a0528a9be9d5b6a132c006a361a75aa',
     validadeDias: 30

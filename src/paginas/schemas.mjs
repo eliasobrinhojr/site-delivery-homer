@@ -25,7 +25,8 @@ export function schemaLoja(lang) {
     logo: `${loja.dominio}/icon-512.png`,
     image: `${loja.dominio}/og/og-inicio-${lang}.png`,
     servesCuisine: lang === 'es' ? 'Guaraná batido' : 'Guaraná batido',
-    priceRange: `R$ ${Math.min(...precos)}–${Math.max(...precos)}`,
+    // RF-30: preço estimado não vai para o Google; volta quando os preços forem definitivos.
+    ...(loja.precosEstimados ? {} : { priceRange: `R$ ${Math.min(...precos)}–${Math.max(...precos)}` }),
     hasMenu: loja.dominio + caminho(lang, 'cardapio'),
     address: { '@type': 'PostalAddress', addressLocality: 'Florianópolis', addressRegion: 'SC', addressCountry: 'BR' },
     areaServed: loja.bairros.map((b) => ({ '@type': 'Place', name: `${b.nome}, Florianópolis` })),

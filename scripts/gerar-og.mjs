@@ -20,8 +20,8 @@ try {
 
 const PECAS = {
   pt: {
-    padrao: ['O guaraná batido mais cremoso da Ilha', 'Feito na hora, com guaraná em pó do Amazonas. A partir de R$ 17.'],
-    inicio: ['Guaraná do Amazonas, batido na Ilha', 'Em Manaus, tem carrinho na rua só para este copo. A partir de R$ 17.'],
+    padrao: ['O guaraná batido mais cremoso da Ilha', 'Feito na hora, com guaraná em pó do Amazonas. Preço estimado: a partir de R$ 17.'],
+    inicio: ['Guaraná do Amazonas, batido na Ilha', 'Em Manaus, tem carrinho na rua só para este copo. Preço estimado: a partir de R$ 17.'],
     cardapio: ['Cardápio', 'Tradicional, Abacate e Banana. 300, 500 e 700 ml. Modo Turbo.'],
     'o-guarana': ['O guaraná', 'Um copo do Amazonas, batido aqui na Ilha.'],
     sobre: ['Uma família do Norte que escolheu a Ilha', 'De Manaus para Florianópolis, com a receita do pai.'],
@@ -32,8 +32,8 @@ const PECAS = {
     privacidade: ['Privacidade', 'Como cuidamos dos seus dados.']
   },
   es: {
-    padrao: ['El guaraná batido más cremoso de la Isla', 'Hecho en el momento, con guaraná en polvo del Amazonas. Desde R$ 17.'],
-    inicio: ['Guaraná del Amazonas, batido en la Isla', 'En Manaos hay carritos en la calle solo para este vaso. Desde R$ 17.'],
+    padrao: ['El guaraná batido más cremoso de la Isla', 'Hecho en el momento, con guaraná en polvo del Amazonas. Precio estimado: desde R$ 17.'],
+    inicio: ['Guaraná del Amazonas, batido en la Isla', 'En Manaos hay carritos en la calle solo para este vaso. Precio estimado: desde R$ 17.'],
     cardapio: ['Menú', 'Tradicional, Palta y Banana. 300, 500 y 700 ml. Modo Turbo.'],
     'o-guarana': ['El guaraná', 'Un vaso del Amazonas, batido acá en la Isla.'],
     sobre: ['Una familia del norte que eligió la Isla', 'De Manaos a Florianópolis, con la receta del papá.'],

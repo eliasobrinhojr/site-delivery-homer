@@ -374,3 +374,12 @@ h1, h2, h3 { text-wrap: balance; }
   .historia__passo { padding-left: 0; padding-top: var(--esp-8); }
   .historia__passo::before { top: 0; }
 }
+
+/* RF-30: preços estimados até a inauguração. */
+.selo-estimado { display: inline-block; margin-left: var(--esp-1); padding: 0 var(--esp-2); border: 1px solid var(--gh-vermelho); border-radius: var(--raio-pilula); color: var(--gh-vermelho); font-size: var(--texto-xs); font-weight: 800; text-transform: uppercase; letter-spacing: 0.06em; vertical-align: 0.1em; }
+.aviso-precos { border-color: var(--gh-vermelho); background: var(--gh-polpa); }
+.aviso-precos p { margin: 0; }
+.aviso-precos .aviso-precos__titulo { font-weight: 800; color: var(--gh-vermelho); margin: 0 0 var(--esp-1); }
+.aviso-precos--topo { margin-top: var(--esp-6); max-width: 720px; }
+.aviso-precos--centro { margin: var(--esp-6) auto 0; max-width: 720px; }
+.aviso-precos--compacto { margin-top: var(--esp-3); font-size: var(--texto-xs); }

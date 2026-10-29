@@ -23,6 +23,16 @@ export function linhaEmpresa(lang) {
   return [loja.nome, loja.nomeEmpresarial, r.mei, `${r.cnpj} ${loja.cnpj}`].filter(Boolean).join(' · ');
 }
 
+/** Perguntas que dependem de uma situação (ex.: preços estimados, RF-30) só aparecem enquanto ela vale. */
+export const perguntasVisiveis = (itens) => itens.filter((q) => !q.precosEstimados || loja.precosEstimados);
+
+/** RF-30: aviso de que os preços são estimativa até a inauguração. Vazio quando os preços forem definitivos. */
+export function avisoPrecos(lang, { classe = '' } = {}) {
+  if (!loja.precosEstimados) return '';
+  const p = comum[lang].precos;
+  return `<div class="gh-aviso aviso-precos ${classe}" role="note">${icone('alerta', { tamanho: 24 })}<div><p class="aviso-precos__titulo">${esc(p.titulo)}</p><p>${esc(p.texto)}</p></div></div>`;
+}
+
 /** Chave Pix = CNPJ, com aviso contra Pix falso (RF-14). Vazio se a chave não for o CNPJ. */
 export function avisoPix(lang) {
   if (!loja.pixNoCnpj || !loja.cnpj) return '';
@@ -135,6 +145,7 @@ ${recebimentoHtml}
 </div>
 <a class="gh-botao monte__pedir" href="${esc(wa('cardapio', lang))}" target="_blank" rel="noopener" data-saida="link" data-origem="monte">${icone('conversa')}<span data-saida="botao">${esc(t.pedir)}</span></a>
 <p class="monte__estado" data-saida="estado" hidden></p>
+${avisoPrecos(lang, { classe: 'aviso-precos--compacto' })}
 <noscript><p class="monte__semjs">${esc(t.semJs)}</p></noscript>
 <p class="monte__aviso">${esc(t.aviso)}</p>
 </div>

@@ -82,6 +82,17 @@ test('RF-29 a área da equipe existe, fica fora da busca e não guarda a frase',
   assert.doesNotMatch(await ler('/index.html'), /href="\/equipe\//, 'sem link público para a área da equipe');
 });
 
+test('RF-30 enquanto os preços são estimados, todo lugar com preço avisa', async () => {
+  const inicio = await ler('/index.html');
+  assert.match(inicio, /class="selo-estimado">preço estimado</);
+  assert.match(inicio, /Os preços já são definitivos\?/);
+  assert.doesNotMatch(inicio, /"priceRange"/, 'preço estimado não vai para o Google');
+  for (const p of ['/cardapio/index.html', '/direto/index.html', '/es/cardapio/index.html']) {
+    assert.match(await ler(p), /class="gh-aviso aviso-precos[^"]*"[\s\S]*?(Preços estimados|Precios estimados)/, p);
+  }
+  assert.match(await ler('/perguntas/index.html'), /Os preços já são definitivos\?/);
+});
+
 test('a área de entrega é Ingleses e Santinho', async () => {
   const html = await ler('/como-pedir/index.html');
   assert.match(html, /Ingleses/);
