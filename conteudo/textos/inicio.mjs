@@ -53,7 +53,7 @@ export const inicio = {
     },
     assinatura: {
       titulo: 'A receita do pai',
-      texto: 'Homer é o apelido que os amigos da rua deram pro meu pai, lá em Manaus. Agora é ele quem bate o seu guaraná, na hora.',
+      texto: 'Homer é o apelido que os amigos da rua deram pro meu pai, lá em Manaus. Hoje a família toda mora na Ilha, e é ele quem bate o seu guaraná, na hora.',
       cta: 'Conheça a nossa história',
       altLogo: 'Guaraná do Homer · receita do pai, batido na hora'
     },
@@ -132,7 +132,7 @@ export const inicio = {
     },
     assinatura: {
       titulo: 'La receta del papá',
-      texto: 'Homer es el apodo que le pusieron a mi papá los amigos del barrio, allá en Manaos. Ahora es él quien bate tu guaraná, en el momento.',
+      texto: 'Homer es el apodo que le pusieron a mi papá los amigos del barrio, allá en Manaos. Hoy toda la familia vive en la Isla, y es él quien bate tu guaraná, en el momento.',
       cta: 'Conocé nuestra historia',
       altLogo: 'Guaraná do Homer · receta del papá, batido en el momento'
     },
