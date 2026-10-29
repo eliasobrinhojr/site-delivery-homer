@@ -17,6 +17,13 @@ test('RF-07 antes da inauguração mostra a data', () => {
   assert.equal(textoEstado(estado, 'es'), 'Inauguramos el 28 de noviembre');
 });
 
+test('RF-07 inauguração sem data: "em breve" bloqueia pedidos e não mostra data', () => {
+  const estado = estadoLoja(sp('2027-03-06T15:00:00'), { ...loja, inauguracao: 'em-breve' });
+  assert.deepEqual(estado, { tipo: 'pre-inauguracao', data: null });
+  assert.equal(textoEstado(estado), 'Inauguração em breve');
+  assert.equal(textoEstado(estado, 'es'), 'Inauguramos pronto');
+});
+
 test('RF-07 sábado 15h está aberto até 20h', () => {
   const estado = estadoLoja(sp('2026-11-28T15:00:00'), loja);
   assert.deepEqual(estado, { tipo: 'aberto', fecha: '20:00' });

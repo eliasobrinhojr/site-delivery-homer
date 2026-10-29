@@ -24,7 +24,9 @@ export const loja = {
   pixNoCnpj: true,
 
   // Antes desta data o site convida para a inauguração em vez de aceitar pedidos.
-  inauguracao: '2026-11-28',
+  // 'em-breve' = ainda sem data (decisão de 29/10/2026: primeiro o digital, depois cozinha e treino).
+  // Quando a data for definida, troque por 'AAAA-MM-DD'.
+  inauguracao: 'em-breve',
   fuso: 'America/Sao_Paulo',
 
   // Dias da semana: 0 = domingo, 1 = segunda ... 6 = sábado. Horário de São Paulo.
