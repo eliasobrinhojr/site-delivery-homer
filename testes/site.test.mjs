@@ -46,6 +46,15 @@ test('RF-14 privacidade e eventos mostram quem é a empresa', async () => {
   assert.match(await ler('/eventos/index.html'), /cadastro de fornecedor: Guaraná do Homer · MEI · CNPJ 69\.883\.553\/0001-36/);
 });
 
+test('RF-14 Como pedir e /direto mostram a chave Pix (CNPJ) com o aviso contra Pix falso, em PT e ES', async () => {
+  for (const p of ['/como-pedir/index.html', '/direto/index.html']) {
+    const html = await ler(p);
+    assert.match(html, /Chave Pix<\/h2><p>A chave é sempre o CNPJ da loja: <strong class="aviso-pix__chave">69\.883\.553\/0001-36<\/strong>/, p);
+    assert.match(html, /Não pague e chame a gente no WhatsApp/, p);
+  }
+  assert.match(await ler('/es/como-pedir/index.html'), /Clave Pix<\/h2>.*69\.883\.553\/0001-36.*No pagues/s);
+});
+
 test('a área de entrega é Ingleses e Santinho', async () => {
   const html = await ler('/como-pedir/index.html');
   assert.match(html, /Ingleses/);

@@ -62,7 +62,7 @@ export const inicio = {
       titulo: 'Do pedido ao copo gelado em até 40 minutos',
       passos: [
         { titulo: 'Você pede', texto: 'Pelo site ou direto no WhatsApp. A mensagem já vai pronta.', tempo: '1 minuto' },
-        { titulo: 'Paga no Pix', texto: 'A gente confirma o bairro e manda a chave. Sem taxa de aplicativo.', tempo: 'até 2 minutos' },
+        { titulo: 'Paga no Pix', texto: 'A gente confirma o bairro e manda a chave Pix, que é o CNPJ da loja. Sem taxa de aplicativo.', tempo: 'até 2 minutos' },
         { titulo: 'Batemos na hora', texto: 'Tudo pesado, liquidificador ligado só agora. Copo lacrado e etiquetado.', tempo: 'até 5 minutos' },
         { titulo: 'Chega na sua porta', texto: 'Em bolsa térmica, nos Ingleses e no Santinho.', tempo: 'até 35 minutos' }
       ],
@@ -141,7 +141,7 @@ export const inicio = {
       titulo: 'Del pedido al vaso helado en hasta 40 minutos',
       passos: [
         { titulo: 'Pedís', texto: 'Por el sitio o directo por WhatsApp. El mensaje ya va escrito.', tempo: '1 minuto' },
-        { titulo: 'Pagás con Pix', texto: 'Confirmamos el barrio y te mandamos la clave. Sin tarifa de aplicación.', tempo: 'hasta 2 minutos' },
+        { titulo: 'Pagás con Pix', texto: 'Confirmamos el barrio y te mandamos la clave Pix, que es el CNPJ del local. Sin tarifa de aplicación.', tempo: 'hasta 2 minutos' },
         { titulo: 'Lo batimos en el momento', texto: 'Todo pesado, licuadora encendida recién ahora. Vaso sellado y etiquetado.', tempo: 'hasta 5 minutos' },
         { titulo: 'Llega a tu puerta', texto: 'En bolsa térmica, en Ingleses y Santinho.', tempo: 'hasta 35 minutos' }
       ],

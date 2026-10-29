@@ -315,6 +315,10 @@ h1, h2, h3 { text-wrap: balance; }
 .gh-rodape a:hover { color: var(--gh-polpa); text-decoration: underline; }
 .rodape__legal { margin-top: var(--esp-10); padding-top: var(--esp-6); border-top: 1px solid var(--gh-texto-suave); font-size: var(--texto-xs); display: grid; gap: var(--esp-2); }
 .rodape__legal p { margin: 0; }
+.aviso-pix { grid-column: 1 / -1; font-size: var(--texto-base); }
+.aviso-pix p { margin: var(--esp-1) 0 0; }
+.aviso-pix .gh-titulo-sm { margin: 0; }
+.aviso-pix__chave { white-space: nowrap; }
 .eventos__empresa { margin-top: var(--esp-4); font-size: var(--texto-sm); }
 @media (min-width: 600px) { .rodape__grade { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (min-width: 1024px) {

@@ -19,6 +19,9 @@ export const loja = {
   // Nome empresarial igual ao do cartão CNPJ. Para MEI, a Receita usa "69.883.553 NOME DO TITULAR".
   // null = o site mostra só "Guaraná do Homer · MEI · CNPJ".
   nomeEmpresarial: null,
+  // A chave Pix dos pedidos diretos é o CNPJ (decisão de 29/10/2026). true = Como pedir e /direto mostram a chave
+  // com o aviso "chave ou nome diferentes? não pague", contra golpe do Pix falso.
+  pixNoCnpj: true,
 
   // Antes desta data o site convida para a inauguração em vez de aceitar pedidos.
   inauguracao: '2026-11-28',

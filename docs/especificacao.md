@@ -13,8 +13,9 @@ atualize este arquivo junto.
 - Canais: iFood (cliente novo), site e WhatsApp (recompra, preço direto). Pagamento direto por Pix antes do preparo.
 - Horário do MVP: quinta a domingo, 13h às 20h. Inauguração: 28/11/2026.
 - WhatsApp dos pedidos: (92) 99259-4820 (número pessoal do pai até a inauguração).
-- Empresa: MEI, CNPJ 69.883.553/0001-36 (desde 29/10/2026). Nome empresarial (padrão da Receita para MEI:
-  "69.883.553 NOME DO TITULAR") ainda não publicado.
+- Empresa: MEI, CNPJ 69.883.553/0001-36 (desde 29/10/2026). A chave Pix dos pedidos diretos é o CNPJ.
+  Nome empresarial (padrão da Receita para MEI: "69.883.553 NOME DO TITULAR"): aprovado para o site em 29/10,
+  aguardando o texto exato do cartão CNPJ.
 - Público extra: turistas argentinos → site em espanhol.
 
 ## Fases
@@ -48,7 +49,7 @@ atualize este arquivo junto.
 | RF-11 | Medição só depois do aceite de cookies | `site.mjs`, `loja.analytics` |
 | RF-12 | Prévia ao compartilhar (título, descrição, imagem) | `layout.mjs`, `publico/og/` |
 | RF-13 | Aviso do dia no topo | `loja.aviso` |
-| RF-14 | Identificação da empresa: "Guaraná do Homer · MEI · CNPJ" no rodapé de todas as páginas, controlador na privacidade, dados para cadastro de fornecedor em eventos, `taxID` nos dados do Google (Decreto 7.962/2013, art. 2º; LGPD, art. 9º) | `loja.cnpj`, `linhaEmpresa()` em `componentes.mjs`; dígitos conferidos em `testes/loja.test.mjs` |
+| RF-14 | Identificação da empresa: "Guaraná do Homer · MEI · CNPJ" no rodapé de todas as páginas, controlador na privacidade, dados para cadastro de fornecedor em eventos, `taxID` nos dados do Google; chave Pix = CNPJ, mostrada em Como pedir e /direto com aviso contra Pix falso (Decreto 7.962/2013, art. 2º; LGPD, art. 9º) | `loja.cnpj`, `linhaEmpresa()` em `componentes.mjs`; dígitos conferidos em `testes/loja.test.mjs` |
 | RF-20 | Monte o seu (sabor, tamanho, Turbo, doçura, até 3 adicionais) | `componentes.mjs`, `monte.mjs` |
 | RF-21 | Carrinho com vários copos e combo | **pendente (fase 2)** — regra do combo pronta em `totalPedido` |
 | RF-22/23 | Dados de entrega e taxa por bairro | **pendente (fase 2)** — bairros em `loja.bairros` |
@@ -84,7 +85,9 @@ RNF-13 UTM em anúncios, bio e QR code, RNF-14 site estático com CDN, RNF-15 co
 
 ## Pontos em aberto (decisão do Elias)
 
-- **Nome empresarial no site:** o Decreto 7.962/2013 (art. 2º, I) pede nome empresarial e CNPJ em destaque. Para MEI,
-  o nome empresarial inclui o nome do titular. Campo pronto: `loja.nomeEmpresarial` (null = não aparece).
-- **Endereço físico:** o mesmo artigo (inciso II) pede endereço físico e eletrônico, o que conflita com a regra
-  "endereço da cozinha nunca aparece". Hoje o site mostra só Florianópolis (SC) e o WhatsApp.
+- **Nome empresarial no site:** aprovado em 29/10 (Decreto 7.962/2013, art. 2º, I). Falta o texto exato do cartão
+  CNPJ para preencher `loja.nomeEmpresarial`; ele aparece no rodapé, na privacidade, em eventos, no aviso do Pix e
+  como `legalName` nos dados do Google.
+- **Endereço físico:** decisão de 29/10: **o site continua sem endereço** (só Florianópolis, SC, WhatsApp e CNPJ),
+  mantendo a regra de nunca mostrar a cozinha, mesmo sem atender à letra do art. 2º, II. Rever se houver endereço
+  comercial ou fiscal separado da casa.

@@ -40,6 +40,12 @@ export const comum = {
       mei: 'MEI',
       direitos: 'Guaraná do Homer'
     },
+    pix: {
+      titulo: 'Chave Pix',
+      chave: 'A chave é sempre o CNPJ da loja:',
+      nome: 'Antes de pagar, confira se o banco mostra o nome',
+      golpe: 'Chave ou nome diferentes? Não pague e chame a gente no WhatsApp.'
+    },
     deMaues: 'De Maués (AM)',
     modoTurbo: 'Modo Turbo',
     aPartirDe: 'a partir de',
@@ -88,6 +94,12 @@ export const comum = {
       cnpj: 'CNPJ',
       mei: 'MEI',
       direitos: 'Guaraná do Homer'
+    },
+    pix: {
+      titulo: 'Clave Pix',
+      chave: 'La clave es siempre el CNPJ del local:',
+      nome: 'Antes de pagar, revisá que el banco muestre el nombre',
+      golpe: '¿Clave o nombre distintos? No pagues y escribinos por WhatsApp.'
     },
     deMaues: 'De Maués (AM)',
     modoTurbo: 'Modo Turbo',

@@ -1,4 +1,4 @@
-import { esc, icone, rotulo, botaoWhatsapp, botaoIfood, monteSeuCopo, reais, faixaMg, avisoAlergenicos, copoSvg, seloTurbo, seloOrigem, linhaEmpresa } from '../componentes.mjs';
+import { esc, icone, rotulo, botaoWhatsapp, botaoIfood, monteSeuCopo, reais, faixaMg, avisoAlergenicos, copoSvg, seloTurbo, seloOrigem, linhaEmpresa, avisoPix } from '../componentes.mjs';
 import { cardapioPagina, guaranaPagina, sobrePagina, comoPedirPagina, diretoPagina, eventosPagina, privacidadePagina, erroPagina } from '../../conteudo/textos/paginas.mjs';
 import { perguntas } from '../../conteudo/textos/perguntas.mjs';
 import { comum } from '../../conteudo/textos/comum.mjs';
@@ -109,6 +109,7 @@ ${loja.ifood ? `<div class="gh-cartao"><h2 class="gh-titulo-sm">${esc(t.ifoodTit
 <div class="gh-cartao"><h2 class="gh-titulo-sm">${esc(t.areaTitulo)}</h2><ul class="lista-icones">${bairros}</ul><p>${esc(t.areaTexto)}</p></div>
 <div class="gh-cartao"><h2 class="gh-titulo-sm">${esc(t.horarioTitulo)}</h2><p>${esc(maiuscula(resumoHorarios(loja.horarios, lang)))}.</p><h2 class="gh-titulo-sm">${esc(t.tempoTitulo)}</h2><p>${esc(t.tempoTexto)}</p></div>
 <div class="gh-cartao"><h2 class="gh-titulo-sm">${esc(t.politicaTitulo)}</h2><p>${esc(t.politicaTexto)}</p></div>
+${avisoPix(lang)}
 </div>`, 'fundo-polpa')
   ].join('\n');
   return { rotaId: 'comoPedir', titulo: t.titulo, descricao: t.descricao, corpo };
@@ -136,6 +137,7 @@ export function paginaDireto(lang) {
 <div class="gh-cartao"><div class="gh-tabela-rolagem"><table class="gh-tabela"><thead><tr><th scope="col">${esc(t.colTamanho)}</th><th scope="col">${esc(t.colDireto)}</th><th scope="col">${esc(t.colIfood)}</th></tr></thead><tbody>${linhas}</tbody></table></div></div>
 ${cupom}
 <div class="gh-cartao"><h2 class="gh-titulo-sm">${esc(t.comoTitulo)}</h2><p>${esc(t.comoTexto)}</p></div>
+${avisoPix(lang)}
 </div>`, 'fundo-polpa')
   ].join('\n');
   return { rotaId: 'direto', titulo: t.titulo, descricao: t.descricao, corpo };

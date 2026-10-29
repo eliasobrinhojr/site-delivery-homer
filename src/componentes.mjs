@@ -21,6 +21,14 @@ export function linhaEmpresa(lang) {
   return [loja.nome, loja.nomeEmpresarial, r.mei, `${r.cnpj} ${loja.cnpj}`].filter(Boolean).join(' · ');
 }
 
+/** Chave Pix = CNPJ, com aviso contra Pix falso (RF-14). Vazio se a chave não for o CNPJ. */
+export function avisoPix(lang) {
+  if (!loja.pixNoCnpj || !loja.cnpj) return '';
+  const p = comum[lang].pix;
+  const nome = loja.nomeEmpresarial ? ` ${p.nome} <strong>${esc(loja.nomeEmpresarial)}</strong>.` : '';
+  return `<div class="gh-aviso aviso-pix">${icone('alerta', { tamanho: 24 })}<div><h2 class="gh-titulo-sm">${esc(p.titulo)}</h2><p>${esc(p.chave)} <strong class="aviso-pix__chave">${esc(loja.cnpj)}</strong>.${nome}</p><p>${esc(p.golpe)}</p></div></div>`;
+}
+
 export function botaoWhatsapp({ origem, lang, texto, classe = '', variante = '' }) {
   const v = variante ? ` gh-botao--${variante}` : '';
   return `<a class="gh-botao${v} ${classe}" href="${esc(wa(origem, lang))}" target="_blank" rel="noopener" data-origem="${esc(origem)}">${icone('conversa')}<span>${esc(texto)}</span></a>`;
