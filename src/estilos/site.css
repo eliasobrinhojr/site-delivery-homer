@@ -369,7 +369,7 @@ h1, h2, h3 { text-wrap: balance; }
 .historia__passo p { margin: 0; }
 .historia__fechamento { margin: var(--esp-10) 0 0; font-family: var(--fonte-titulo); font-weight: 800; font-size: var(--texto-xl); line-height: 1.2; color: var(--gh-semente); max-width: 680px; }
 @media (min-width: 1024px) {
-  .historia { grid-template-columns: repeat(5, minmax(0, 1fr)); gap: var(--esp-6); }
+  .historia { grid-auto-flow: column; grid-auto-columns: minmax(0, 1fr); gap: var(--esp-6); }
   .historia::before { left: 8px; right: 8px; top: 7px; bottom: auto; border-left: 0; border-top: 2px dashed var(--gh-vermelho); }
   .historia__passo { padding-left: 0; padding-top: var(--esp-8); }
   .historia__passo::before { top: 0; }
