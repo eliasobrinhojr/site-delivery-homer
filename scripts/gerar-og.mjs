@@ -71,7 +71,7 @@ p{font:400 28px/1.35 N;color:#2B1B17;margin:0}
 .s{position:absolute;top:32px;left:32px;background:#2E5E3E;color:#FFFDF8;font:800 16px N;letter-spacing:.12em;padding:8px 16px;border-radius:999px}
 .f{display:flex;justify-content:space-between;margin-top:auto;padding-top:28px;font:800 20px N;color:#B5252B}.f span:last-child{color:#2B1B17}
 </style></head><body><div class="l"><img src="${logo}" alt=""><h1>${titulo}</h1><p>${texto}</p>
-<div class="f"><span>guaranadohomer.com.br</span><span>${comum[lang].areaCurta.split(' · ')[0]}</span></div></div>
+<div class="f"><span>dohomer.com.br</span><span>${comum[lang].areaCurta.split(' · ')[0]}</span></div></div>
 <div class="r"><span class="s">DE MAUÉS (AM)</span><img src="${copo}" alt=""></div></body></html>`;
 
 await mkdir(join(PUBLICO, 'og'), { recursive: true });

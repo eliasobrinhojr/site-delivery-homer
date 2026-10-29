@@ -3,7 +3,7 @@
 
 export const loja = {
   nome: 'Guaraná do Homer',
-  dominio: 'https://guaranadohomer.com.br',
+  dominio: 'https://dohomer.com.br',
 
   // WhatsApp que recebe os pedidos: só números, com 55 + DDD.
   // Hoje é o número pessoal do pai; na inauguração ele troca por um número só da loja.
@@ -11,8 +11,8 @@ export const loja = {
 
   // Preencher quando existirem (o botão ou link correspondente aparece sozinho).
   ifood: null, // ex.: 'https://www.ifood.com.br/delivery/florianopolis-sc/guarana-do-homer-...'
-  instagram: null, // ex.: 'https://www.instagram.com/guaranadohomer/'
-  emailContato: null, // ex.: 'contato@guaranadohomer.com.br'
+  instagram: null, // ex.: 'https://www.instagram.com/dohomer/'
+  emailContato: null, // ex.: 'contato@dohomer.com.br'
 
   // Empresa (RF-14). Aparece no rodapé de todas as páginas, na privacidade, em eventos e nos dados do Google.
   cnpj: '69.883.553/0001-36', // MEI; os testes conferem os dígitos verificadores

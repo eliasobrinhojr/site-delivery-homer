@@ -13,7 +13,7 @@
 ## D2 · Flutter só para o sistema e o app (29/10/2026)
 
 O Flutter Web desenha a página num canvas, o Google lê mal e o primeiro carregamento é pesado. Ele fica para o
-sistema de pedidos, cozinha, painel e app (fases 3 e 4), em `pedir.guaranadohomer.com.br`, em outro repositório.
+sistema de pedidos, cozinha, painel e app (fases 3 e 4), em `pedir.dohomer.com.br`, em outro repositório.
 O cardápio é a fonte única: `conteudo/cardapio.mjs` será exportado em JSON para o Flutter.
 
 ## D3 · Fontes servidas pelo próprio site em WOFF (29/10/2026)
@@ -39,3 +39,10 @@ brotli; dá para trocar por WOFF2 depois sem mudar nenhuma tela.
 
 O "monte o seu copo" calcula preço, código de produção e cafeína no navegador e abre o WhatsApp com a mensagem
 pronta (`wa.me`). Nada é gravado em servidor. O backend só entra na fase 3 (Pix automático, push, nota fiscal).
+
+## D6 · Domínio dohomer.com.br (29/10/2026)
+
+- **Decisão:** o site fica em `https://dohomer.com.br`, registrado no CNPJ. "do Homer" é a marca-mãe: hoje o
+  Guaraná do Homer; depois, saladas de frutas, pizzas e a loja física, sem trocar de domínio.
+- **Consequência:** o nome no site continua "Guaraná do Homer". O sistema de pedidos usará `pedir.dohomer.com.br`.
+  Trocar o domínio é editar `loja.dominio` em `conteudo/loja.mjs` e rodar `npm run og`.
