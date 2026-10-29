@@ -1,4 +1,4 @@
-import { esc, icone, rotulo, botaoWhatsapp, botaoIfood, monteSeuCopo, pontos, reais, seloOrigem } from '../componentes.mjs';
+import { esc, icone, rotulo, botaoWhatsapp, botaoPedido, botaoIfood, monteSeuCopo, pontos, reais, seloOrigem } from '../componentes.mjs';
 import { inicio } from '../../conteudo/textos/inicio.mjs';
 import { perguntas } from '../../conteudo/textos/perguntas.mjs';
 import { comum } from '../../conteudo/textos/comum.mjs';
@@ -17,7 +17,7 @@ ${rotulo(t.rotulo)}
 <h1 class="gh-titulo-lg hero__titulo" id="hero-titulo">${esc(t.titulo)} <em>${esc(t.destaque)}</em></h1>
 <p class="hero__lead">${esc(t.lead)}</p>
 <div class="acoes">
-${botaoWhatsapp({ origem: 'provar', lang, texto: t.provar })}
+${botaoPedido({ origem: 'provar', lang, texto: t.provar })}
 <a class="gh-botao gh-botao--contorno" href="${caminho(lang, 'cardapio')}">${esc(t.verCardapio)}</a>
 </div>
 <p class="hero__preco">${esc(t.precoAntes)} <strong>${esc(reais(precoMinimo()))}</strong> · ${esc(t.precoDepois)}</p>
@@ -111,7 +111,7 @@ ${rotulo(t.rotulo)}
 ${passosHtml(lang)}
 <div class="direto-faixa">
 <div><h3 class="direto-faixa__titulo">${esc(t.diretoTitulo)}</h3><p>${esc(t.diretoTexto)}${loja.ifood ? ` ${esc(t.diretoIfood)}` : ''}</p></div>
-<div class="acoes">${botaoWhatsapp({ origem: 'cardapio', lang, texto: c.pedirWhatsapp })}${botaoIfood(lang, { variante: 'polpa' })}</div>
+<div class="acoes">${botaoPedido({ origem: 'cardapio', lang, texto: c.pedirWhatsapp })}${botaoIfood(lang, { variante: 'polpa' })}</div>
 </div>
 </div>
 </section>`;

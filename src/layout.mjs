@@ -1,5 +1,5 @@
 // Estrutura comum de todas as páginas: <head> com SEO e compartilhamento, cabeçalho, faixas, rodapé.
-import { esc, icone, wa, botaoWhatsapp, linhaEmpresa } from './componentes.mjs';
+import { esc, icone, wa, botaoWhatsapp, botaoPedido, linhaEmpresa, antesDaInauguracao } from './componentes.mjs';
 import { comum } from '../conteudo/textos/comum.mjs';
 import { loja } from '../conteudo/loja.mjs';
 import { caminho, outroIdioma, rota } from './rotas.mjs';
@@ -68,7 +68,7 @@ function cabecalhoHtml({ lang, rotaId }) {
 <ul class="nav__lista nav__lista--menu">${navLinks}</ul>
 </details>
 <a class="nav__idioma" href="${caminho(outro, rota(rotaId) ? rotaId : 'inicio')}" hreflang="${comum[outro].lang}" lang="${comum[outro].lang}" data-idioma="${outro}">${icone('idioma', { tamanho: 18 })}<span>${outro.toUpperCase()}</span><span class="sr-only"> · ${esc(c.trocarIdioma)}</span></a>
-<a class="gh-botao nav__pedir" href="${esc(wa('provar', lang))}" target="_blank" rel="noopener" data-origem="cabecalho">${esc(c.pedir)}</a>
+${botaoPedido({ origem: 'provar', lang, texto: c.pedir, classe: 'nav__pedir', curto: true })}
 </nav>
 </div>
 </header>`;
@@ -86,7 +86,8 @@ function rodapeHtml({ lang }) {
   const r = c.rodape;
   const links = (ids) => ids.map((id) => `<li><a href="${caminho(lang, id)}">${esc(c.nav[id])}</a></li>`).join('');
   const peca = [
-    `<li><a href="${esc(wa('cardapio', lang))}" target="_blank" rel="noopener" data-origem="rodape">WhatsApp</a></li>`,
+    // RF-29: antes da inauguração o link do rodapé também só convida ("me avise"), nunca faz pedido.
+    `<li><a href="${esc(wa(antesDaInauguracao() ? 'inauguracao' : 'cardapio', lang))}" target="_blank" rel="noopener" data-origem="${antesDaInauguracao() ? 'inauguracao' : 'rodape'}" data-pedido="cardapio" data-texto-pedido="WhatsApp" data-texto-breve="WhatsApp"><span>WhatsApp</span></a></li>`,
     loja.ifood ? `<li><a href="${esc(loja.ifood)}" target="_blank" rel="noopener">iFood</a></li>` : '',
     loja.instagram ? `<li><a href="${esc(loja.instagram)}" target="_blank" rel="noopener">Instagram</a></li>` : '',
     `<li><a href="${caminho(lang, 'direto')}">${esc(c.nav.direto)}</a></li>`
@@ -141,7 +142,7 @@ ${cabecalhoHtml(p)}
 ${p.corpo}
 </main>
 ${rodapeHtml(p)}
-<div class="gh-botao-fixo-area">${botaoWhatsapp({ origem: 'provar', lang: p.lang, texto: c.pedirWhatsapp, classe: 'gh-botao-fixo' })}</div>
+<div class="gh-botao-fixo-area">${botaoPedido({ origem: 'provar', lang: p.lang, texto: c.pedirWhatsapp, classe: 'gh-botao-fixo' })}</div>
 ${cookiesHtml(p)}
 </body>
 </html>

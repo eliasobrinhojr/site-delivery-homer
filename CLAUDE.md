@@ -75,3 +75,5 @@ npm run og            # refaz as imagens de prévia (precisa do Playwright: npm 
 - Fotos de 14–15/11 substituem o copo ilustrado (`publico/marca/copo-provisorio.svg`), mesmo enquadramento 4:5.
 - Ficha de prova (página inicial): textos de sabor a confirmar na degustação de 9–22/11.
 - Número do WhatsApp é o pessoal do pai; trocar em `conteudo/loja.mjs` quando houver o número da loja.
+- Antes da inauguração, pedidos só no **modo equipe** (`/equipe/`, RF-29). A frase nunca entra no repositório:
+  `npm run senha-equipe -- "frase"` grava só o hash.

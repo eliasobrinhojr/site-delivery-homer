@@ -12,7 +12,8 @@ publica sozinho.
 | CNPJ e nome empresarial | `conteudo/loja.mjs` | `cnpj` (formato 00.000.000/0000-00; o teste confere os dígitos), `nomeEmpresarial` |
 | "Fechados hoje", "esgotou o abacate" | `conteudo/loja.mjs` | `aviso.pt` e `aviso.es` (vazio = sem faixa) |
 | Cupom do cartão do iFood | `conteudo/loja.mjs` | `cupomSegundaCompra` (até 15%) |
-| Data de inauguração | `conteudo/loja.mjs` | `inauguracao` |
+| Data de inauguração | `conteudo/loja.mjs` | `inauguracao` (`'em-breve'` = sem data; botões de pedido viram "Abrimos em breve") |
+| Frase da equipe (pedidos de teste) | `npm run senha-equipe -- "frase"` | grava só o hash em `equipe.hash` |
 | Preços | `conteudo/cardapio.mjs` | `tamanhos`, `adicionais` |
 | Sabor ou adicional esgotado hoje | `conteudo/cardapio.mjs` | `esgotados` (ex.: `['A']`) |
 | Qualquer texto | `conteudo/textos/*.mjs` | o português e o espanhol ficam lado a lado |

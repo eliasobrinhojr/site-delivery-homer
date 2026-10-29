@@ -1,6 +1,7 @@
-import { esc, icone, rotulo, botaoWhatsapp, botaoIfood, monteSeuCopo, reais, faixaMg, avisoAlergenicos, copoSvg, seloTurbo, seloOrigem, linhaEmpresa, avisoPix } from '../componentes.mjs';
+import { esc, icone, rotulo, botaoWhatsapp, botaoPedido, botaoIfood, monteSeuCopo, reais, faixaMg, avisoAlergenicos, copoSvg, seloTurbo, seloOrigem, linhaEmpresa, avisoPix } from '../componentes.mjs';
 import { cardapioPagina, guaranaPagina, sobrePagina, comoPedirPagina, diretoPagina, eventosPagina, privacidadePagina, erroPagina } from '../../conteudo/textos/paginas.mjs';
 import { perguntas } from '../../conteudo/textos/perguntas.mjs';
+import { equipe as textosEquipe } from '../../conteudo/textos/equipe.mjs';
 import { comum } from '../../conteudo/textos/comum.mjs';
 import { sabores, tamanhos, adicionais, regras } from '../../conteudo/cardapio.mjs';
 import { loja } from '../../conteudo/loja.mjs';
@@ -35,7 +36,7 @@ export function paginaCardapio(lang) {
     ...(tm.cafeinaTurbo ? [`<tr><th scope="row">${esc(c.modoTurbo)} ${tm.ml} ml</th><td>${esc(faixaMg(tm.cafeinaTurbo, lang))}</td></tr>`] : [])
   ]).join('');
   const corpo = [
-    topo(t, { extra: `<div class="acoes">${botaoWhatsapp({ origem: 'cardapio', lang, texto: c.pedirWhatsapp })}${botaoIfood(lang)}</div>` }),
+    topo(t, { extra: `<div class="acoes">${botaoPedido({ origem: 'cardapio', lang, texto: c.pedirWhatsapp })}${botaoIfood(lang)}</div>` }),
     secao(`<h2 class="gh-titulo-md">${esc(t.saboresTitulo)}</h2><div class="sabores">${cartoes}</div>`),
     secao(`<div class="cardapio__grade">
 <div class="gh-cartao"><h2 class="gh-titulo-sm">${esc(t.precosTitulo)}</h2><div class="gh-tabela-rolagem"><table class="gh-tabela"><thead><tr><th scope="col">${esc(t.colTamanho)}</th><th scope="col">${esc(t.colSabores)}</th><th scope="col">${esc(t.colTurbo)}</th></tr></thead><tbody>${linhasPreco}</tbody></table></div>
@@ -69,7 +70,7 @@ export function paginaGuarana(lang) {
 <div class="gh-cartao gh-cartao--turbo">${seloTurbo(lang)}<h3 class="gh-titulo-sm">${esc(t.turboTitulo)}</h3><p>${esc(t.turboTexto)}</p></div></div>
 </div>
 <div class="avisos">${avisoAlergenicos(lang, { turbo: true })}</div>
-<div class="acoes acoes--centro">${botaoWhatsapp({ origem: 'provar', lang, texto: c.pedirWhatsapp })}<a class="gh-botao gh-botao--contorno" href="${caminho(lang, 'cardapio')}">${esc(c.nav.cardapio)}</a></div>`)
+<div class="acoes acoes--centro">${botaoPedido({ origem: 'provar', lang, texto: c.pedirWhatsapp })}<a class="gh-botao gh-botao--contorno" href="${caminho(lang, 'cardapio')}">${esc(c.nav.cardapio)}</a></div>`)
   ].join('\n');
   return { rotaId: 'guarana', titulo: t.titulo, descricao: t.descricao, corpo };
 }
@@ -90,7 +91,7 @@ export function paginaSobre(lang) {
 </div>`),
     secao(`<h2 class="gh-titulo-md">${esc(t.valoresTitulo)}</h2><ol class="valores">${valores}</ol>
 <img class="gh-divisor" src="/marca/traco-assinatura.svg" alt="" width="560" height="90" loading="lazy">
-<div class="acoes acoes--centro">${botaoWhatsapp({ origem: 'provar', lang, texto: c.pedirWhatsapp })}</div>`, 'fundo-polpa')
+<div class="acoes acoes--centro">${botaoPedido({ origem: 'provar', lang, texto: c.pedirWhatsapp })}</div>`, 'fundo-polpa')
   ].join('\n');
   return { rotaId: 'sobre', titulo: t.titulo, descricao: t.descricao, corpo };
 }
@@ -104,10 +105,10 @@ export function paginaComoPedir(lang) {
     topo(t),
     secao(passosHtml(lang, { nivel: 'h2' })),
     secao(`<div class="cardapio__grade">
-<div class="gh-cartao"><h2 class="gh-titulo-sm">${esc(t.whatsappTitulo)}</h2><ul class="lista-icones">${itens}</ul>${botaoWhatsapp({ origem: 'cardapio', lang, texto: c.pedirWhatsapp })}</div>
+<div class="gh-cartao"><h2 class="gh-titulo-sm">${esc(t.whatsappTitulo)}</h2><ul class="lista-icones">${itens}</ul>${botaoPedido({ origem: 'cardapio', lang, texto: c.pedirWhatsapp })}</div>
 ${loja.ifood ? `<div class="gh-cartao"><h2 class="gh-titulo-sm">${esc(t.ifoodTitulo)}</h2><p>${esc(t.ifoodTexto)}</p>${botaoIfood(lang)}</div>` : ''}
 <div class="gh-cartao"><h2 class="gh-titulo-sm">${esc(t.areaTitulo)}</h2><ul class="lista-icones">${bairros}</ul><p>${esc(t.areaTexto)}</p></div>
-${loja.retirada ? `<div class="gh-cartao" id="retirada"><h2 class="gh-titulo-sm">${esc(t.retiradaTitulo)}</h2><ul class="lista-icones">${t.retiradaItens.map((i) => `<li>${icone('sacola', { tamanho: 20 })}<span>${esc(i)}</span></li>`).join('')}</ul>${botaoWhatsapp({ origem: 'retirada', lang, texto: t.retiradaCta })}</div>` : ''}
+${loja.retirada ? `<div class="gh-cartao" id="retirada"><h2 class="gh-titulo-sm">${esc(t.retiradaTitulo)}</h2><ul class="lista-icones">${t.retiradaItens.map((i) => `<li>${icone('sacola', { tamanho: 20 })}<span>${esc(i)}</span></li>`).join('')}</ul>${botaoPedido({ origem: 'retirada', lang, texto: t.retiradaCta })}</div>` : ''}
 <div class="gh-cartao"><h2 class="gh-titulo-sm">${esc(t.horarioTitulo)}</h2><p>${esc(maiuscula(resumoHorarios(loja.horarios, lang)))}.</p><h2 class="gh-titulo-sm">${esc(t.tempoTitulo)}</h2><p>${esc(t.tempoTexto)}</p></div>
 <div class="gh-cartao"><h2 class="gh-titulo-sm">${esc(t.politicaTitulo)}</h2><p>${esc(t.politicaTexto)}</p></div>
 ${avisoPix(lang)}
@@ -133,7 +134,7 @@ export function paginaDireto(lang) {
 <div class="compara__aqui"><p>${esc(t.destaqueDireto)}</p><p class="compara__valor">${esc(reais(quinhentos.preco))}</p></div>
 <div class="compara__app"><p>${esc(t.destaqueIfood)}</p><p class="compara__valor">${esc(reais(quinhentos.precoIfood))}</p></div>
 </div>
-<div class="acoes acoes--centro">${botaoWhatsapp({ origem: 'direto', lang, texto: t.cta })}</div>`),
+<div class="acoes acoes--centro">${botaoPedido({ origem: 'direto', lang, texto: t.cta })}</div>`),
     secao(`<div class="cardapio__grade">
 <div class="gh-cartao"><div class="gh-tabela-rolagem"><table class="gh-tabela"><thead><tr><th scope="col">${esc(t.colTamanho)}</th><th scope="col">${esc(t.colDireto)}</th><th scope="col">${esc(t.colIfood)}</th></tr></thead><tbody>${linhas}</tbody></table></div></div>
 ${cupom}
@@ -191,4 +192,23 @@ export function paginaErro(lang) {
 <a class="gh-botao" href="${caminho(lang, 'inicio')}">${esc(t.voltar)}</a>
 </div></section>`;
   return { rotaId: 'erro', titulo: t.titulo, descricao: t.descricao, corpo, noindex: true };
+}
+
+// RF-29: área da equipe. Página fora do menu e da busca; o JavaScript (equipe.mjs) confere a frase pelo hash.
+export function paginaEquipe(lang) {
+  const t = textosEquipe[lang];
+  const corpo = `<section class="gh-secao"><div class="gh-container equipe">
+${rotulo(t.h1)}
+<h1 class="gh-titulo-lg">${esc(t.h1)}</h1>
+<p>${esc(t.lead)}</p>
+<noscript><p class="gh-aviso">${esc(t.semJs)}</p></noscript>
+<form class="equipe__form" data-equipe-form>
+<label class="equipe__rotulo" for="frase-equipe">${esc(t.rotulo)}</label>
+<input class="equipe__campo" id="frase-equipe" name="frase" type="password" autocomplete="current-password" required>
+<button class="gh-botao" type="submit">${esc(t.entrar)}</button>
+</form>
+<p class="equipe__estado" data-equipe-estado role="status" aria-live="polite"></p>
+<div class="acoes"><a class="gh-botao gh-botao--contorno" href="${caminho(lang, 'inicio')}">${esc(t.voltar)}</a><button class="gh-botao gh-botao--contorno" type="button" data-equipe-sair hidden>${esc(t.sairLongo)}</button></div>
+</div></section>`;
+  return { rotaId: 'equipe', titulo: t.titulo, descricao: t.descricao, corpo, noindex: true, scripts: ['equipe.mjs'] };
 }

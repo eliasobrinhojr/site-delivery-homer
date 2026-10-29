@@ -10,7 +10,7 @@ import { IDIOMAS, rotas, caminho } from '../src/rotas.mjs';
 import { paginaInicio } from '../src/paginas/inicio.mjs';
 import {
   paginaCardapio, paginaGuarana, paginaSobre, paginaComoPedir, paginaDireto,
-  paginaEventos, paginaPerguntas, paginaPrivacidade, paginaErro
+  paginaEventos, paginaPerguntas, paginaPrivacidade, paginaErro, paginaEquipe
 } from '../src/paginas/internas.mjs';
 import { loja } from '../conteudo/loja.mjs';
 
@@ -32,7 +32,7 @@ const GERADORES = {
 // Arquivos JavaScript que vão para o navegador (mesma árvore relativa, para os imports funcionarem).
 const JS_CLIENTE = [
   'src/cliente', 'src/lib',
-  'conteudo/loja.mjs', 'conteudo/cardapio.mjs', 'conteudo/textos/monte.mjs'
+  'conteudo/loja.mjs', 'conteudo/cardapio.mjs', 'conteudo/textos/monte.mjs', 'conteudo/textos/equipe.mjs'
 ];
 const CSS = ['src/estilos/tokens.css', 'src/estilos/componentes.css', 'src/estilos/site.css'];
 
@@ -79,7 +79,7 @@ function sitemap() {
   return `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">\n${urls.join('\n')}\n</urlset>\n`;
 }
 
-const robots = () => `User-agent: *\nAllow: /\nDisallow: /js/\n\nSitemap: ${loja.dominio}/sitemap.xml\n`;
+const robots = () => `User-agent: *\nAllow: /\nDisallow: /js/\nDisallow: /equipe/\n\nSitemap: ${loja.dominio}/sitemap.xml\n`;
 
 export async function construir() {
   await rm(DIST, { recursive: true, force: true });
@@ -101,6 +101,8 @@ export async function construir() {
   // 404 em português na raiz e em espanhol em /es/404.html (o servidor usa a da raiz).
   await gravar('/404.html', pagina({ lang: 'pt', ativos, ...paginaErro('pt') }));
   await gravar('/es/404.html', pagina({ lang: 'es', ativos, ...paginaErro('es') }));
+  // RF-29: área da equipe, fora do menu, do sitemap e da busca (noindex + robots).
+  await gravar('/equipe/index.html', pagina({ lang: 'pt', ativos, ...paginaEquipe('pt') }));
   await gravar('/sitemap.xml', sitemap());
   await gravar('/robots.txt', robots());
 

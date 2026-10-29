@@ -27,6 +27,14 @@ export const loja = {
   // 'em-breve' = ainda sem data (decisão de 29/10/2026: primeiro o digital, depois cozinha e treino).
   // Quando a data for definida, troque por 'AAAA-MM-DD'.
   inauguracao: 'em-breve',
+
+  // RF-29: modo equipe. Antes da inauguração, só aparelhos ativados em /equipe/ fazem pedido (de teste).
+  // Aqui fica só o hash da frase, nunca a frase. Trocar a frase: npm run senha-equipe -- "frase nova"
+  // (todos os aparelhos ativados com a frase antiga saem do modo equipe).
+  equipe: {
+    hash: '9b443a2a5d18548ce0f64693ca987bfd3a0528a9be9d5b6a132c006a361a75aa',
+    validadeDias: 30
+  },
   fuso: 'America/Sao_Paulo',
 
   // Dias da semana: 0 = domingo, 1 = segunda ... 6 = sábado. Horário de São Paulo.

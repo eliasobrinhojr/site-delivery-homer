@@ -55,6 +55,33 @@ test('RF-14 Como pedir e /direto mostram a chave Pix (CNPJ) com o aviso contra P
   assert.match(await ler('/es/como-pedir/index.html'), /Clave Pix<\/h2>.*69\.883\.553\/0001-36.*No pagues/s);
 });
 
+test('RF-29 antes da inauguração nenhum botão de pedido faz pedido: todos dizem "Abrimos em breve"', async () => {
+  for (const p of ['/index.html', '/cardapio/index.html', '/como-pedir/index.html', '/direto/index.html', '/es/index.html']) {
+    const html = await ler(p);
+    const botoes = html.match(/<a [^>]*data-pedido="[^"]+"[^>]*>[\s\S]*?<\/a>/g) ?? [];
+    assert.ok(botoes.length > 0, `${p} sem botões de pedido`);
+    for (const b of botoes) {
+      assert.match(b, /data-origem="inauguracao"/, p);
+      assert.match(b, /text=(Oi|%C2%A1Hola)/, p);
+      assert.doesNotMatch(b, /quero%20fazer%20um%20pedido|quiero%20hacer%20un%20pedido/i, p);
+      if (/class="gh-botao/.test(b)) {
+        assert.match(b, /gh-botao--breve/, p);
+        assert.match(b, /(Abrimos em breve · me avise|Abrimos pronto · avisame|Em breve|Pronto)<\/span>/, p);
+      }
+    }
+  }
+});
+
+test('RF-29 a área da equipe existe, fica fora da busca e não guarda a frase', async () => {
+  const html = await ler('/equipe/index.html');
+  assert.match(html, /<meta name="robots" content="noindex">/);
+  assert.match(html, /data-equipe-form/);
+  assert.match(html, /src\/cliente\/equipe\.mjs/);
+  assert.match(await ler('/robots.txt'), /Disallow: \/equipe\//);
+  assert.doesNotMatch(await ler('/sitemap.xml'), /equipe/);
+  assert.doesNotMatch(await ler('/index.html'), /href="\/equipe\//, 'sem link público para a área da equipe');
+});
+
 test('a área de entrega é Ingleses e Santinho', async () => {
   const html = await ler('/como-pedir/index.html');
   assert.match(html, /Ingleses/);

@@ -7,6 +7,8 @@ import { monte as textosMonte } from '../conteudo/textos/monte.mjs';
 import { comum } from '../conteudo/textos/comum.mjs';
 import { COPO_PADRAO, precoCopo, codigoCopo, cafeinaCopo } from './lib/cardapio.mjs';
 import { descreverCopo } from './lib/whatsapp.mjs';
+import { estadoLoja } from './lib/horario.mjs';
+import { equipe as textosEquipe } from '../conteudo/textos/equipe.mjs';
 
 export const icone = (nome, { tamanho = 20, classe = '' } = {}) =>
   `<svg class="icone ${classe}" width="${tamanho}" height="${tamanho}" aria-hidden="true" focusable="false"><use href="/marca/icones.svg#i-${nome}"></use></svg>`;
@@ -32,6 +34,21 @@ export function avisoPix(lang) {
 export function botaoWhatsapp({ origem, lang, texto, classe = '', variante = '' }) {
   const v = variante ? ` gh-botao--${variante}` : '';
   return `<a class="gh-botao${v} ${classe}" href="${esc(wa(origem, lang))}" target="_blank" rel="noopener" data-origem="${esc(origem)}">${icone('conversa')}<span>${esc(texto)}</span></a>`;
+}
+
+/** RF-29: antes da inauguração (no momento do build), os botões de pedido viram "Abrimos em breve · me avise". */
+export const antesDaInauguracao = (agora = new Date()) => estadoLoja(agora, loja).tipo === 'pre-inauguracao';
+
+/**
+ * Botão de pedido (RF-01, RF-29). Leva nos data-* o pedido de verdade, para o navegador liberar quando a loja
+ * abrir ou quando o aparelho estiver no modo equipe.
+ */
+export function botaoPedido({ origem, lang, texto, classe = '', variante = '', curto = false }) {
+  const breve = antesDaInauguracao();
+  const v = variante ? ` gh-botao--${variante}` : '';
+  const textoBreve = textosEquipe[lang][curto ? 'breveCurto' : 'breve'];
+  const href = breve ? wa('inauguracao', lang) : wa(origem, lang);
+  return `<a class="gh-botao${v}${breve ? ' gh-botao--breve' : ''} ${classe}" href="${esc(href)}" target="_blank" rel="noopener" data-origem="${esc(breve ? 'inauguracao' : origem)}" data-pedido="${esc(origem)}" data-texto-pedido="${esc(texto)}" data-texto-breve="${esc(textoBreve)}">${curto ? '' : icone(breve ? 'relogio' : 'conversa')}<span>${esc(breve ? textoBreve : texto)}</span></a>`;
 }
 
 export function botaoIfood(lang, { classe = '', variante = 'contorno' } = {}) {

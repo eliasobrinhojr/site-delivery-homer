@@ -6,10 +6,12 @@ import { normalizarCopo, precoCopo, codigoCopo, cafeinaCopo, turboDisponivel, bu
 import { linkWhatsApp, mensagemPedido, descreverCopo } from '../lib/whatsapp.mjs';
 import { reais, faixaMg } from '../lib/formato.mjs';
 import { estadoLoja, textoEstado } from '../lib/horario.mjs';
+import { equipeAtiva, lerRegistro, paraTeste } from '../lib/equipe.mjs';
 
 const lang = document.documentElement.lang.startsWith('es') ? 'es' : 'pt';
 const t = textos[lang];
 const bairros = loja.bairros.map((b) => b.nome);
+const lerArmazenamento = () => { try { return localStorage; } catch { return null; } };
 
 function lerCopo(form) {
   const dados = new FormData(form);
@@ -61,7 +63,9 @@ function iniciar(secao) {
     saida('total').textContent = reais(precoCopo(copo));
 
     // RF-26: fora do horário o envio fica bloqueado; antes da inauguração vira convite.
-    const estado = estadoLoja(new Date(), loja);
+    // RF-29: no modo equipe o pedido sai a qualquer hora, marcado como [TESTE].
+    const equipe = equipeAtiva(lerRegistro(lerArmazenamento()), loja.equipe);
+    const estado = equipe ? { tipo: 'aberto' } : estadoLoja(new Date(), loja);
     const link = saida('link');
     const aviso = saida('estado');
     if (estado.tipo === 'fechado') {
@@ -73,7 +77,8 @@ function iniciar(secao) {
     } else {
       const pre = estado.tipo === 'pre-inauguracao';
       const recebimento = form.querySelector('input[name="recebimento"]:checked')?.value ?? 'entrega';
-      link.href = linkWhatsApp(loja.whatsapp, mensagemPedido(copo, lang, { preInauguracao: pre, bairros, recebimento }));
+      const texto = mensagemPedido(copo, lang, { preInauguracao: pre, bairros, recebimento });
+      link.href = linkWhatsApp(loja.whatsapp, equipe ? paraTeste(texto) : texto);
       link.removeAttribute('aria-disabled');
       link.classList.remove('gh-botao--bloqueado');
       saida('botao').textContent = pre ? t.preInauguracao : t.pedir;
