@@ -20,10 +20,10 @@ try {
 
 const PECAS = {
   pt: {
-    padrao: ['O guaraná batido mais cremoso da Ilha', 'Feito na hora, com guaraná em pó de Maués. A partir de R$ 17.'],
-    inicio: ['O guaraná batido mais cremoso da Ilha', 'Feito na hora, com guaraná em pó de Maués. A partir de R$ 17.'],
+    padrao: ['O guaraná batido mais cremoso da Ilha', 'Feito na hora, com guaraná em pó do Amazonas. A partir de R$ 17.'],
+    inicio: ['Guaraná do Amazonas, batido na Ilha', 'Em Manaus, tem carrinho na rua só para este copo. A partir de R$ 17.'],
     cardapio: ['Cardápio', 'Tradicional, Abacate e Banana. 300, 500 e 700 ml. Modo Turbo.'],
-    'o-guarana': ['O guaraná', 'Uma bebida do Norte, batida aqui na Ilha.'],
+    'o-guarana': ['O guaraná', 'Um copo do Amazonas, batido aqui na Ilha.'],
     sobre: ['Homer é o meu pai', 'A receita do pai, batida na hora.'],
     'como-pedir': ['Como pedir', 'Pelo WhatsApp, com Pix antes do preparo, em até 40 minutos.'],
     direto: ['Peça direto e pague menos', '500 ml por R$ 24 aqui. No iFood, R$ 31,90.'],
@@ -32,10 +32,10 @@ const PECAS = {
     privacidade: ['Privacidade', 'Como cuidamos dos seus dados.']
   },
   es: {
-    padrao: ['El guaraná batido más cremoso de la Isla', 'Hecho en el momento, con guaraná en polvo de Maués. Desde R$ 17.'],
-    inicio: ['El guaraná batido más cremoso de la Isla', 'Hecho en el momento, con guaraná en polvo de Maués. Desde R$ 17.'],
+    padrao: ['El guaraná batido más cremoso de la Isla', 'Hecho en el momento, con guaraná en polvo del Amazonas. Desde R$ 17.'],
+    inicio: ['Guaraná del Amazonas, batido en la Isla', 'En Manaos hay carritos en la calle solo para este vaso. Desde R$ 17.'],
     cardapio: ['Menú', 'Tradicional, Palta y Banana. 300, 500 y 700 ml. Modo Turbo.'],
-    'o-guarana': ['El guaraná', 'Una bebida del norte de Brasil, batida acá en la Isla.'],
+    'o-guarana': ['El guaraná', 'Un vaso del Amazonas, batido acá en la Isla.'],
     sobre: ['Homer es mi papá', 'La receta del papá, batida en el momento.'],
     'como-pedir': ['Cómo pedir', 'Por WhatsApp, con Pix antes de la preparación, en hasta 40 minutos.'],
     direto: ['Pedí directo y pagá menos', '500 ml por R$ 24 acá. En iFood, R$ 31,90.'],
@@ -72,7 +72,7 @@ p{font:400 28px/1.35 N;color:#2B1B17;margin:0}
 .f{display:flex;justify-content:space-between;margin-top:auto;padding-top:28px;font:800 20px N;color:#B5252B}.f span:last-child{color:#2B1B17}
 </style></head><body><div class="l"><img src="${logo}" alt=""><h1>${titulo}</h1><p>${texto}</p>
 <div class="f"><span>dohomer.com.br</span><span>${comum[lang].areaCurta.split(' · ')[0]}</span></div></div>
-<div class="r"><span class="s">DE MAUÉS (AM)</span><img src="${copo}" alt=""></div></body></html>`;
+<div class="r"><span class="s">${comum[lang].deMaues.toUpperCase()}</span><img src="${copo}" alt=""></div></body></html>`;
 
 await mkdir(join(PUBLICO, 'og'), { recursive: true });
 const navegador = await chromium.launch();
