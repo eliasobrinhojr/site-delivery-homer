@@ -8,7 +8,8 @@ publica sozinho.
 | Número do WhatsApp | `conteudo/loja.mjs` | `whatsapp` (55 + DDD + número, só dígitos) |
 | Horário | `conteudo/loja.mjs` | `horarios` (0 = domingo … 6 = sábado) |
 | Bairros e taxa de entrega | `conteudo/loja.mjs` | `bairros` |
-| Link do iFood, Instagram, CNPJ | `conteudo/loja.mjs` | `ifood`, `instagram`, `cnpj` |
+| Link do iFood, Instagram | `conteudo/loja.mjs` | `ifood`, `instagram` |
+| CNPJ e nome empresarial | `conteudo/loja.mjs` | `cnpj` (formato 00.000.000/0000-00; o teste confere os dígitos), `nomeEmpresarial` |
 | "Fechados hoje", "esgotou o abacate" | `conteudo/loja.mjs` | `aviso.pt` e `aviso.es` (vazio = sem faixa) |
 | Cupom do cartão do iFood | `conteudo/loja.mjs` | `cupomSegundaCompra` (até 15%) |
 | Data de inauguração | `conteudo/loja.mjs` | `inauguracao` |

@@ -30,3 +30,22 @@ export function listaNatural(itens, lang = 'pt') {
   if (itens.length <= 1) return itens.join('');
   return `${itens.slice(0, -1).join(', ')} ${e} ${itens.at(-1)}`;
 }
+
+/** Só os dígitos: "69.883.553/0001-36" → "69883553000136". */
+export function soDigitos(texto) {
+  return String(texto ?? '').replace(/\D/g, '');
+}
+
+/** Confere os dois dígitos verificadores do CNPJ (pega erro de digitação antes de publicar). */
+export function cnpjValido(cnpj) {
+  const d = soDigitos(cnpj);
+  if (d.length !== 14 || /^(\d)\1+$/.test(d)) return false;
+  const digito = (base) => {
+    const pesos = base.length === 12 ? [5, 4, 3, 2, 9, 8, 7, 6, 5, 4, 3, 2] : [6, 5, 4, 3, 2, 9, 8, 7, 6, 5, 4, 3, 2];
+    const resto = [...base].reduce((soma, n, i) => soma + Number(n) * pesos[i], 0) % 11;
+    return resto < 2 ? 0 : 11 - resto;
+  };
+  const d1 = digito(d.slice(0, 12));
+  const d2 = digito(d.slice(0, 12) + d1);
+  return d.endsWith(`${d1}${d2}`);
+}

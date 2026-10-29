@@ -30,6 +30,22 @@ test('RF-04 o preço do iFood aparece na página /direto', async () => {
   assert.match(await ler('/direto/index.html'), /R\$ 31,90/);
 });
 
+test('RF-14 todo HTML identifica a empresa no rodapé (nome, MEI e CNPJ)', async () => {
+  for (const p of paginas) {
+    assert.match(await ler(p), /class="rodape__empresa">Guaraná do Homer · MEI · CNPJ 69\.883\.553\/0001-36 ·&nbsp;©&nbsp;2026</, p);
+  }
+});
+
+test('RF-14 os dados do Google trazem o CNPJ só com dígitos (taxID)', async () => {
+  assert.match(await ler('/index.html'), /"taxID":"69883553000136"/);
+});
+
+test('RF-14 privacidade e eventos mostram quem é a empresa', async () => {
+  assert.match(await ler('/privacidade/index.html'), /Responsável pelos dados \(controlador\):<\/strong> Guaraná do Homer · MEI · CNPJ 69\.883\.553\/0001-36/);
+  assert.match(await ler('/es/privacidade/index.html'), /CNPJ 69\.883\.553\/0001-36/);
+  assert.match(await ler('/eventos/index.html'), /cadastro de fornecedor: Guaraná do Homer · MEI · CNPJ 69\.883\.553\/0001-36/);
+});
+
 test('a área de entrega é Ingleses e Santinho', async () => {
   const html = await ler('/como-pedir/index.html');
   assert.match(html, /Ingleses/);

@@ -1,4 +1,4 @@
-import { esc, icone, rotulo, botaoWhatsapp, botaoIfood, monteSeuCopo, reais, faixaMg, avisoAlergenicos, copoSvg, seloTurbo, seloOrigem } from '../componentes.mjs';
+import { esc, icone, rotulo, botaoWhatsapp, botaoIfood, monteSeuCopo, reais, faixaMg, avisoAlergenicos, copoSvg, seloTurbo, seloOrigem, linhaEmpresa } from '../componentes.mjs';
 import { cardapioPagina, guaranaPagina, sobrePagina, comoPedirPagina, diretoPagina, eventosPagina, privacidadePagina, erroPagina } from '../../conteudo/textos/paginas.mjs';
 import { perguntas } from '../../conteudo/textos/perguntas.mjs';
 import { comum } from '../../conteudo/textos/comum.mjs';
@@ -145,10 +145,11 @@ export function paginaEventos(lang) {
   const t = eventosPagina[lang];
   const cartoes = t.paraQuem.map((p) => `<div class="gh-cartao"><h2 class="gh-titulo-sm">${esc(p.nome)}</h2><p>${esc(p.texto)}</p></div>`).join('');
   const como = t.como.map((p) => `<li>${esc(p)}</li>`).join('');
+  const empresa = linhaEmpresa(lang);
   const corpo = [
     topo(t, { extra: `<div class="acoes">${botaoWhatsapp({ origem: 'eventos', lang, texto: t.cta })}</div>` }),
     secao(`<div class="tres-colunas">${cartoes}</div>`),
-    secao(`<div class="duas-colunas"><div><h2 class="gh-titulo-md">${esc(t.comoTitulo)}</h2><ol class="lista-numerada">${como}</ol></div><div><p class="frase-grande">${esc(t.areaNota)}</p>${botaoWhatsapp({ origem: 'eventos', lang, texto: t.cta })}</div></div>`, 'fundo-polpa')
+    secao(`<div class="duas-colunas"><div><h2 class="gh-titulo-md">${esc(t.comoTitulo)}</h2><ol class="lista-numerada">${como}</ol></div><div><p class="frase-grande">${esc(t.areaNota)}</p>${botaoWhatsapp({ origem: 'eventos', lang, texto: t.cta })}${empresa ? `<p class="gh-texto-suave eventos__empresa">${esc(t.fornecedor)} ${esc(empresa)}</p>` : ''}</div></div>`, 'fundo-polpa')
   ].join('\n');
   return { rotaId: 'eventos', titulo: t.titulo, descricao: t.descricao, corpo };
 }
@@ -167,7 +168,13 @@ export function paginaPerguntas(lang) {
 
 export function paginaPrivacidade(lang) {
   const t = privacidadePagina[lang];
-  const secoes = t.secoes.map((s) => `<h2 class="gh-titulo-sm">${esc(s.titulo)}</h2>${s.texto.map((p) => `<p>${esc(p)}</p>`).join('')}`).join('');
+  const empresa = linhaEmpresa(lang);
+  const secoes = t.secoes.map((s, n) => {
+    const paragrafos = s.texto.map((p) => `<p>${esc(p)}</p>`).join('');
+    // RF-14: a primeira seção ("Quem somos") identifica o controlador dos dados (LGPD, art. 9º).
+    const extra = n === 0 && empresa ? `<p><strong>${esc(t.responsavel)}</strong> ${esc(empresa)}</p>` : '';
+    return `<h2 class="gh-titulo-sm">${esc(s.titulo)}</h2>${paragrafos}${extra}`;
+  }).join('');
   const corpo = [topo(t), secao(`<div class="texto-longo">${secoes}<p class="gh-texto-suave">${esc(t.atualizada)}</p></div>`)].join('\n');
   return { rotaId: 'privacidade', titulo: t.titulo, descricao: t.descricao, corpo };
 }

@@ -65,7 +65,9 @@ npm run og            # refaz as imagens de prévia (precisa do Playwright: npm 
 
 ## Pendências conhecidas
 
-- Link do iFood, Instagram, CNPJ e e-mail: `null` em `conteudo/loja.mjs` até existirem (os blocos aparecem sozinhos).
+- Link do iFood, Instagram e e-mail: `null` em `conteudo/loja.mjs` até existirem (os blocos aparecem sozinhos).
+- CNPJ 69.883.553/0001-36 (MEI) já está no site (RF-14). Nome empresarial e endereço físico: ver "Pontos em aberto"
+  em `docs/especificacao.md` antes de mexer.
 - Taxa de entrega por bairro: `null` (informada no WhatsApp).
 - Cupom do cartão do iFood: `null` (bloco de cupom escondido em /direto).
 - Fotos de 14–15/11 substituem o copo ilustrado (`publico/marca/copo-provisorio.svg`), mesmo enquadramento 4:5.

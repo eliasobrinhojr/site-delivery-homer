@@ -37,6 +37,7 @@ export const comum = {
       peca: 'Peça',
       saibaMais: 'Saiba mais',
       cnpj: 'CNPJ',
+      mei: 'MEI',
       direitos: 'Guaraná do Homer'
     },
     deMaues: 'De Maués (AM)',
@@ -85,6 +86,7 @@ export const comum = {
       peca: 'Pedí',
       saibaMais: 'Más información',
       cnpj: 'CNPJ',
+      mei: 'MEI',
       direitos: 'Guaraná do Homer'
     },
     deMaues: 'De Maués (AM)',

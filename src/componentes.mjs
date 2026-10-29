@@ -14,6 +14,13 @@ export const icone = (nome, { tamanho = 20, classe = '' } = {}) =>
 /** Link do WhatsApp com a mensagem da origem (RF-02). */
 export const wa = (origem, lang) => linkWhatsApp(loja.whatsapp, mensagem(origem, lang));
 
+/** "Guaraná do Homer · MEI · CNPJ 69.883.553/0001-36" (RF-14). Vazio enquanto não houver CNPJ. */
+export function linhaEmpresa(lang) {
+  if (!loja.cnpj) return '';
+  const r = comum[lang].rodape;
+  return [loja.nome, loja.nomeEmpresarial, r.mei, `${r.cnpj} ${loja.cnpj}`].filter(Boolean).join(' · ');
+}
+
 export function botaoWhatsapp({ origem, lang, texto, classe = '', variante = '' }) {
   const v = variante ? ` gh-botao--${variante}` : '';
   return `<a class="gh-botao${v} ${classe}" href="${esc(wa(origem, lang))}" target="_blank" rel="noopener" data-origem="${esc(origem)}">${icone('conversa')}<span>${esc(texto)}</span></a>`;

@@ -3,6 +3,7 @@ import { loja } from '../../conteudo/loja.mjs';
 import { comum } from '../../conteudo/textos/comum.mjs';
 import { caminho } from '../rotas.mjs';
 import { tamanhos } from '../../conteudo/cardapio.mjs';
+import { soDigitos } from '../lib/formato.mjs';
 
 const DIAS = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 
@@ -29,6 +30,8 @@ export function schemaLoja(lang) {
     address: { '@type': 'PostalAddress', addressLocality: 'Florianópolis', addressRegion: 'SC', addressCountry: 'BR' },
     areaServed: loja.bairros.map((b) => ({ '@type': 'Place', name: `${b.nome}, Florianópolis` })),
     openingHoursSpecification: horarios,
+    ...(loja.cnpj ? { taxID: soDigitos(loja.cnpj) } : {}),
+    ...(loja.nomeEmpresarial ? { legalName: loja.nomeEmpresarial } : {}),
     ...(loja.instagram ? { sameAs: [loja.instagram] } : {})
   };
 }

@@ -12,8 +12,13 @@ export const loja = {
   // Preencher quando existirem (o botão ou link correspondente aparece sozinho).
   ifood: null, // ex.: 'https://www.ifood.com.br/delivery/florianopolis-sc/guarana-do-homer-...'
   instagram: null, // ex.: 'https://www.instagram.com/guaranadohomer/'
-  cnpj: null, // ex.: '00.000.000/0001-00'
   emailContato: null, // ex.: 'contato@guaranadohomer.com.br'
+
+  // Empresa (RF-14). Aparece no rodapé de todas as páginas, na privacidade, em eventos e nos dados do Google.
+  cnpj: '69.883.553/0001-36', // MEI; os testes conferem os dígitos verificadores
+  // Nome empresarial igual ao do cartão CNPJ. Para MEI, a Receita usa "69.883.553 NOME DO TITULAR".
+  // null = o site mostra só "Guaraná do Homer · MEI · CNPJ".
+  nomeEmpresarial: null,
 
   // Antes desta data o site convida para a inauguração em vez de aceitar pedidos.
   inauguracao: '2026-11-28',

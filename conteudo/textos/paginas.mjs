@@ -282,6 +282,7 @@ export const eventosPagina = {
       'A reserva é confirmada com sinal de 50%.',
       'Para empresas, emitimos nota fiscal.'
     ],
+    fornecedor: 'Dados para o cadastro de fornecedor:',
     areaNota: 'Atendemos os Ingleses e o Santinho. Para outro endereço, consulte: depende da data e do tamanho do pedido.',
     cta: 'Pedir orçamento pelo WhatsApp'
   },
@@ -303,6 +304,7 @@ export const eventosPagina = {
       'La reserva se confirma con una seña del 50%.',
       'Para empresas, emitimos factura.'
     ],
+    fornecedor: 'Datos para el alta de proveedor:',
     areaNota: 'Atendemos Ingleses y Santinho. Para otra dirección, consultanos: depende de la fecha y del tamaño del pedido.',
     cta: 'Pedir presupuesto por WhatsApp'
   }
@@ -315,6 +317,7 @@ export const privacidadePagina = {
     rotulo: 'Privacidade',
     h1: 'Política de privacidade',
     atualizada: 'Atualizada em 29 de outubro de 2026.',
+    responsavel: 'Responsável pelos dados (controlador):',
     secoes: [
       { titulo: 'Quem somos', texto: ['A Guaraná do Homer vende guaraná batido por delivery nos Ingleses e no Santinho, em Florianópolis (SC). Somos os responsáveis pelos dados tratados neste site e nas conversas de pedido.'] },
       { titulo: 'O que o site guarda', texto: ['O site não tem cadastro nem formulário. Ele não guarda o seu nome, telefone ou endereço.', 'No seu próprio navegador, o site guarda só o idioma que você escolheu, para abrir no mesmo idioma da próxima vez.'] },
@@ -330,6 +333,7 @@ export const privacidadePagina = {
     rotulo: 'Privacidad',
     h1: 'Política de privacidad',
     atualizada: 'Actualizada el 29 de octubre de 2026.',
+    responsavel: 'Responsable de los datos:',
     secoes: [
       { titulo: 'Quiénes somos', texto: ['Guaraná do Homer vende guaraná batido con delivery en Ingleses y Santinho, en Florianópolis (SC). Somos responsables de los datos tratados en este sitio y en las conversaciones de pedido.'] },
       { titulo: 'Qué guarda el sitio', texto: ['El sitio no tiene registro ni formularios. No guarda tu nombre, teléfono ni dirección.', 'En tu propio navegador, el sitio guarda solo el idioma que elegiste, para abrir en el mismo idioma la próxima vez.'] },

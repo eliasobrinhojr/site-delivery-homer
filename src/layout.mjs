@@ -1,5 +1,5 @@
 // Estrutura comum de todas as páginas: <head> com SEO e compartilhamento, cabeçalho, faixas, rodapé.
-import { esc, icone, wa, botaoWhatsapp } from './componentes.mjs';
+import { esc, icone, wa, botaoWhatsapp, linhaEmpresa } from './componentes.mjs';
 import { comum } from '../conteudo/textos/comum.mjs';
 import { loja } from '../conteudo/loja.mjs';
 import { caminho, outroIdioma, rota } from './rotas.mjs';
@@ -104,7 +104,7 @@ function rodapeHtml({ lang }) {
 </div>
 <div class="gh-container rodape__legal">
 <p>${esc(c.avisoTodos)}</p>
-<p>${loja.cnpj ? `${esc(r.cnpj)} ${esc(loja.cnpj)} · ` : ''}© 2026 ${esc(r.direitos)}</p>
+<p class="rodape__empresa">${loja.cnpj ? `${esc(linhaEmpresa(lang))} ·&nbsp;©&nbsp;2026` : `© 2026 ${esc(r.direitos)}`}</p>
 </div>
 </footer>`;
 }
