@@ -14,7 +14,8 @@ atualize este arquivo junto.
 - **Retirada (decisão de 29/10/2026):** o cliente pode buscar o pedido, pelo site, pelo WhatsApp ou pela opção
   Retirada do iFood. Não é um ponto de atendimento: sem salão nem consumo no local. O endereço continua fora do
   site; vai só na confirmação do pedido (WhatsApp) ou no próprio app do iFood.
-- Horário do MVP: quinta a domingo, 13h às 20h. Inauguração: 28/11/2026.
+- Horário do MVP: quinta a domingo, 13h às 20h. **Inauguração: sem data** (decisão de 29/10/2026: primeiro o digital,
+  depois compras, cozinha e treino da produção). O site mostra "Inauguração em breve" e só convida (`loja.inauguracao = 'em-breve'`).
 - WhatsApp dos pedidos: (92) 99259-4820 (número pessoal do pai até a inauguração).
 - Empresa: MEI, CNPJ 69.883.553/0001-36 (desde 29/10/2026). A chave Pix dos pedidos diretos é o CNPJ.
   Nome empresarial (padrão da Receita para MEI: "69.883.553 NOME DO TITULAR"): aprovado para o site em 29/10,
@@ -25,7 +26,7 @@ atualize este arquivo junto.
 
 | Fase | Entrega | Meta |
 | --- | --- | --- |
-| 1 | Site institucional: 9 páginas, PT e ES | 28/11/2026 |
+| 1 | Site institucional: 9 páginas, PT e ES | no ar desde 29/10/2026 |
 | 2 | Monte o seu copo, carrinho, cupom, mensagem pronta no WhatsApp | 12/12/2026 |
 | 3 | Sistema de pedidos em Flutter (Pix automático, cozinha, entrega, push, nota) | após o levantamento do backend |
 | 4 | Fidelidade, cupons, painel, fechamento de caixa, teto do MEI | após a fase 3 |

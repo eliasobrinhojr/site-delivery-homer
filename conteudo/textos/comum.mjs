@@ -46,7 +46,7 @@ export const comum = {
       nome: 'Antes de pagar, confira se o banco mostra o nome',
       golpe: 'Chave ou nome diferentes? Não pague e chame a gente no WhatsApp.'
     },
-    deMaues: 'De Maués (AM)',
+    deMaues: 'Do Amazonas',
     modoTurbo: 'Modo Turbo',
     aPartirDe: 'a partir de',
     cookies: {
@@ -101,7 +101,7 @@ export const comum = {
       nome: 'Antes de pagar, revisá que el banco muestre el nombre',
       golpe: '¿Clave o nombre distintos? No pagues y escribinos por WhatsApp.'
     },
-    deMaues: 'De Maués (AM)',
+    deMaues: 'Del Amazonas',
     modoTurbo: 'Modo Turbo',
     aPartirDe: 'desde',
     cookies: {

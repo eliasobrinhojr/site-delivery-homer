@@ -3,18 +3,18 @@
 export const inicio = {
   pt: {
     titulo: 'Guaraná do Homer · Guaraná batido nos Ingleses e no Santinho',
-    descricao: 'Guaraná batido cremoso, feito na hora com guaraná em pó de Maués, amendoim e castanha. Delivery nos Ingleses e no Santinho, em Florianópolis. A partir de R$ 17.',
+    descricao: 'Guaraná batido cremoso, feito na hora com guaraná em pó do Amazonas, amendoim e castanha. Delivery nos Ingleses e no Santinho, em Florianópolis. A partir de R$ 17.',
     hero: {
-      rotulo: 'Tradição do Norte do Brasil, agora nos Ingleses',
-      titulo: 'Em Belém, tem fila na praça por',
-      destaque: 'um copo deste.',
-      lead: 'Guaraná em pó de Maués, amendoim e castanha de caju, batidos com gelo até virar creme. Aqui na Ilha ainda é novidade: a gente bate na hora que o seu pedido chega e entrega em até 40 minutos.',
+      rotulo: 'Guaraná do Amazonas, batido nos Ingleses',
+      titulo: 'Em Manaus, tem carrinho na rua',
+      destaque: 'só para este copo.',
+      lead: 'Guaraná em pó do Amazonas, amendoim e castanha de caju, batidos com gelo até virar creme. Um gosto do Norte do Brasil, a quase 3.000 km de lá: a gente bate na hora que o seu pedido chega e entrega em até 40 minutos.',
       provar: 'Quero provar o primeiro',
       verCardapio: 'Ver o cardápio',
       precoAntes: 'Copo de 300 ml a partir de',
       precoDepois: 'pedindo direto, sem taxa de aplicativo',
       anotacoes: [
-        { nome: 'Guaraná em pó de Maués', sub: 'o coração do copo' },
+        { nome: 'Guaraná em pó do Amazonas', sub: 'o coração do copo' },
         { nome: 'Amendoim torrado e castanha de caju', sub: 'dão o corpo' },
         { nome: 'Leite e gelo', sub: 'batidos até virar creme' }
       ],
@@ -38,22 +38,22 @@ export const inicio = {
       cafeina: 'Tem cafeína do guaraná: cerca de 90 a 110 mg no copo de 500 ml. Contém leite, amendoim e castanha de caju. Não recomendado para crianças, gestantes, lactantes e pessoas sensíveis à cafeína.'
     },
     norte: {
-      rotulo: 'Como se toma lá em cima',
-      titulo: 'No Norte é costume de fim de tarde. Aqui, quase ninguém provou.',
-      p1: 'Em Belém, quando o calor aperta, tem fila na Praça Brasil pelo copo gelado. Em Fortaleza, tem barraca que bate guaraná há quase trinta anos. É coisa de família: tem gente que toma desde criança, com o pai.',
-      p2: 'A gente trouxe esse costume para os Ingleses e o Santinho, com o guaraná em pó de Maués e o liquidificador ligado só quando o seu pedido chega.',
+      rotulo: 'De onde vem',
+      titulo: 'Você está no Sul. O copo vem do Norte.',
+      p1: 'O guaraná nasce no interior do Amazonas, em Maués, onde o povo Sateré-Mawé cultiva a planta há gerações. Em Manaus, a capital, o guaraná batido está nas lanchonetes e nos carrinhos de rua que vendem só ele.',
+      p2: 'Meu pai é de Manaus. Agora ele bate esse copo nos Ingleses, para quem vem de outros cantos do Brasil, da Argentina e do Uruguai provar um pedaço do Norte sem sair da Ilha.',
       rota: {
-        origem: 'Maués (AM)',
-        origemSub: 'onde nasce o guaraná em pó',
+        origem: 'Amazonas',
+        origemSub: 'de Maués a Manaus',
         destino: 'Ingleses, Florianópolis (SC)',
         destinoSub: 'onde o copo é batido',
         distancia: 'quase 3.000 km',
-        alt: 'Rota de Maués, no Amazonas, até os Ingleses, em Florianópolis: quase 3.000 quilômetros'
+        alt: 'Rota do Amazonas até os Ingleses, em Florianópolis: quase 3.000 quilômetros'
       }
     },
     assinatura: {
       titulo: 'A receita do pai',
-      texto: 'Homer é o apelido que os amigos da rua deram pro meu pai. Agora é ele quem bate o seu guaraná, na hora.',
+      texto: 'Homer é o apelido que os amigos da rua deram pro meu pai, lá em Manaus. Agora é ele quem bate o seu guaraná, na hora.',
       cta: 'Conheça a nossa história',
       altLogo: 'Guaraná do Homer · receita do pai, batido na hora'
     },
@@ -82,18 +82,18 @@ export const inicio = {
   },
   es: {
     titulo: 'Guaraná do Homer · Guaraná batido en Ingleses y Santinho',
-    descricao: 'Guaraná batido cremoso, hecho en el momento con guaraná en polvo de Maués, maní y castaña. Delivery en Ingleses y Santinho, Florianópolis. Desde R$ 17.',
+    descricao: 'Guaraná batido cremoso, hecho en el momento con guaraná en polvo del Amazonas, maní y castaña. Delivery en Ingleses y Santinho, Florianópolis. Desde R$ 17.',
     hero: {
-      rotulo: 'Tradición del norte de Brasil, ahora en Ingleses',
-      titulo: 'En Belém hacen fila en la plaza por',
-      destaque: 'un vaso como este.',
-      lead: 'Guaraná en polvo de Maués, maní y castaña de cajú, batidos con hielo hasta volverse crema. Acá en la Isla todavía es novedad: lo batimos cuando llega tu pedido y lo entregamos en hasta 40 minutos.',
+      rotulo: 'Guaraná del Amazonas, batido en Ingleses',
+      titulo: 'En Manaos hay carritos en la calle',
+      destaque: 'solo para este vaso.',
+      lead: 'Guaraná en polvo del Amazonas, maní y castaña de cajú, batidos con hielo hasta volverse crema. Un sabor del norte de Brasil, a casi 3.000 km de allá: lo batimos cuando llega tu pedido y lo entregamos en hasta 40 minutos.',
       provar: 'Quiero probar el primero',
       verCardapio: 'Ver el menú',
       precoAntes: 'Vaso de 300 ml desde',
       precoDepois: 'pidiendo directo, sin tarifa de aplicación',
       anotacoes: [
-        { nome: 'Guaraná en polvo de Maués', sub: 'el corazón del vaso' },
+        { nome: 'Guaraná en polvo del Amazonas', sub: 'el corazón del vaso' },
         { nome: 'Maní tostado y castaña de cajú', sub: 'le dan cuerpo' },
         { nome: 'Leche y hielo', sub: 'batidos hasta volverse crema' }
       ],
@@ -117,22 +117,22 @@ export const inicio = {
       cafeina: 'Tiene cafeína del guaraná: cerca de 90 a 110 mg en el vaso de 500 ml. Contiene leche, maní y castaña de cajú. No recomendado para niños, embarazadas, mujeres en lactancia ni personas sensibles a la cafeína.'
     },
     norte: {
-      rotulo: 'Cómo se toma allá arriba',
-      titulo: 'En el norte es costumbre de fin de tarde. Acá, casi nadie lo probó.',
-      p1: 'En Belém, cuando aprieta el calor, se hace fila en la Plaza Brasil por el vaso helado. En Fortaleza hay un puesto que bate guaraná hace casi treinta años. Es cosa de familia: hay quien lo toma desde chico, con el papá.',
-      p2: 'Trajimos esa costumbre a Ingleses y Santinho, con el guaraná en polvo de Maués y la licuadora encendida solo cuando llega tu pedido.',
+      rotulo: 'De dónde viene',
+      titulo: 'Estás en el sur de Brasil. El vaso viene del norte.',
+      p1: 'El guaraná nace en el interior del Amazonas, en Maués, donde el pueblo sateré-mawé cultiva la planta hace generaciones. En Manaos, la capital, el guaraná batido está en las cafeterías y en carritos callejeros que venden solo eso.',
+      p2: 'Mi papá es de Manaos. Ahora bate ese vaso en Ingleses, para que quien viene de otras partes de Brasil, de Argentina y de Uruguay pruebe un pedazo del norte sin salir de la Isla.',
       rota: {
-        origem: 'Maués (AM)',
-        origemSub: 'donde nace el guaraná en polvo',
+        origem: 'Amazonas',
+        origemSub: 'de Maués a Manaos',
         destino: 'Ingleses, Florianópolis (SC)',
         destinoSub: 'donde se bate el vaso',
         distancia: 'casi 3.000 km',
-        alt: 'Ruta de Maués, en el Amazonas, hasta Ingleses, en Florianópolis: casi 3.000 kilómetros'
+        alt: 'Ruta del Amazonas hasta Ingleses, en Florianópolis: casi 3.000 kilómetros'
       }
     },
     assinatura: {
       titulo: 'La receta del papá',
-      texto: 'Homer es el apodo que le pusieron a mi papá los amigos del barrio. Ahora es él quien bate tu guaraná, en el momento.',
+      texto: 'Homer es el apodo que le pusieron a mi papá los amigos del barrio, allá en Manaos. Ahora es él quien bate tu guaraná, en el momento.',
       cta: 'Conocé nuestra historia',
       altLogo: 'Guaraná do Homer · receta del papá, batido en el momento'
     },
