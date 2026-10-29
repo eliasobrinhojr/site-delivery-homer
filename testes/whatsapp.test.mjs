@@ -38,6 +38,15 @@ test('mensagem do pedido em espanhol', () => {
   assert.match(mensagemPedido(copo, 'es', { bairros: ['Ingleses', 'Santinho'] }), /Mi barrio \(Ingleses o Santinho\)/);
 });
 
+test('RN-11 / RF-28 na retirada a mensagem não pede bairro e avisa que é sem taxa', () => {
+  const texto = mensagemPedido(copo, 'pt', { bairros: ['Ingleses', 'Santinho'], recebimento: 'retirada' });
+  assert.match(texto, /\(B5X\+ MEL PAC\) · R\$ 34/);
+  assert.match(texto, /Vou retirar \(sem taxa de entrega\)/);
+  assert.doesNotMatch(texto, /bairro/);
+  assert.match(texto, /Pix antes do preparo/);
+  assert.match(mensagemPedido(copo, 'es', { recebimento: 'retirada' }), /Voy a retirar \(sin tarifa de envío\)/);
+});
+
 test('antes da inauguração a mensagem vira convite', () => {
   assert.match(mensagemPedido(copo, 'pt', { preInauguracao: true }), /Quero provar quando vocês abrirem/);
 });

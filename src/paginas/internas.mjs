@@ -107,6 +107,7 @@ export function paginaComoPedir(lang) {
 <div class="gh-cartao"><h2 class="gh-titulo-sm">${esc(t.whatsappTitulo)}</h2><ul class="lista-icones">${itens}</ul>${botaoWhatsapp({ origem: 'cardapio', lang, texto: c.pedirWhatsapp })}</div>
 ${loja.ifood ? `<div class="gh-cartao"><h2 class="gh-titulo-sm">${esc(t.ifoodTitulo)}</h2><p>${esc(t.ifoodTexto)}</p>${botaoIfood(lang)}</div>` : ''}
 <div class="gh-cartao"><h2 class="gh-titulo-sm">${esc(t.areaTitulo)}</h2><ul class="lista-icones">${bairros}</ul><p>${esc(t.areaTexto)}</p></div>
+${loja.retirada ? `<div class="gh-cartao" id="retirada"><h2 class="gh-titulo-sm">${esc(t.retiradaTitulo)}</h2><ul class="lista-icones">${t.retiradaItens.map((i) => `<li>${icone('sacola', { tamanho: 20 })}<span>${esc(i)}</span></li>`).join('')}</ul>${botaoWhatsapp({ origem: 'retirada', lang, texto: t.retiradaCta })}</div>` : ''}
 <div class="gh-cartao"><h2 class="gh-titulo-sm">${esc(t.horarioTitulo)}</h2><p>${esc(maiuscula(resumoHorarios(loja.horarios, lang)))}.</p><h2 class="gh-titulo-sm">${esc(t.tempoTitulo)}</h2><p>${esc(t.tempoTexto)}</p></div>
 <div class="gh-cartao"><h2 class="gh-titulo-sm">${esc(t.politicaTitulo)}</h2><p>${esc(t.politicaTexto)}</p></div>
 ${avisoPix(lang)}

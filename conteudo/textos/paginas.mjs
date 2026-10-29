@@ -182,47 +182,65 @@ export const sobrePagina = {
 export const comoPedirPagina = {
   pt: {
     titulo: 'Como pedir · Guaraná do Homer',
-    descricao: 'Peça pelo site ou pelo WhatsApp, pague no Pix e receba em até 40 minutos nos Ingleses e no Santinho.',
+    descricao: 'Peça pelo site ou pelo WhatsApp, pague no Pix e receba em até 40 minutos nos Ingleses e no Santinho, ou retire sem taxa.',
     rotulo: 'Como pedir',
     h1: 'Do pedido ao copo gelado em até 40 minutos',
-    lead: 'Pedindo direto, pelo site ou pelo WhatsApp, você paga o preço da casa. A entrega é nos Ingleses e no Santinho.',
+    lead: 'Pedindo direto, pelo site ou pelo WhatsApp, você paga o preço da casa. A entrega é nos Ingleses e no Santinho, e a retirada é sem taxa, de qualquer bairro.',
     whatsappTitulo: 'Pelo site ou pelo WhatsApp',
     whatsappItens: [
       'Monte o copo no site ou mande a mensagem direto no WhatsApp.',
-      'A gente confirma o bairro e a taxa de entrega.',
+      'A gente confirma a entrega (bairro e taxa) ou o horário da retirada.',
       'O pagamento é por Pix, antes do preparo.',
       'O copo é batido na hora e sai lacrado, em bolsa térmica.'
     ],
     ifoodTitulo: 'Pelo iFood',
-    ifoodTexto: 'Também estamos no iFood, com os preços do aplicativo e a entrega feita pelo iFood.',
+    ifoodTexto: 'Também estamos no iFood, com os preços do aplicativo. Lá dá para escolher entrega ou retirada.',
     horarioTitulo: 'Horário',
     areaTitulo: 'Onde entregamos',
-    areaTexto: 'Só nos Ingleses e no Santinho, no Norte da Ilha. É o que garante o copo gelado em até 40 minutos. Mora em outro bairro? Manda uma mensagem: avisamos quando a área crescer.',
+    areaTexto: 'Só nos Ingleses e no Santinho, no Norte da Ilha. É o que garante o copo gelado em até 40 minutos. Mora em outro bairro? Você pode retirar o pedido, sem taxa.',
+    retiradaTitulo: 'Prefere buscar?',
+    retiradaItens: [
+      'Peça pelo site, pelo WhatsApp ou pelo iFood (opção Retirada).',
+      'Sem taxa de entrega, para quem mora em qualquer bairro.',
+      'O endereço vai junto com a confirmação do pedido.',
+      'O copo é batido na hora e fica pronto em até 10 minutos depois do Pix.',
+      'Não temos salão nem atendimento no local: é só pegar e levar.'
+    ],
+    retiradaCta: 'Pedir para retirar',
     tempoTitulo: 'Tempo',
-    tempoTexto: 'Até 5 minutos de preparo e até 35 minutos de entrega.',
+    tempoTexto: 'Até 5 minutos de preparo e até 35 minutos de entrega. Na retirada, o copo fica pronto em até 10 minutos depois do Pix.',
     politicaTitulo: 'Se algo der errado',
     politicaTexto: 'Copo errado ou entrega depois de 60 minutos? Fale com a gente no WhatsApp: a gente refaz o pedido ou dá um cupom para o próximo. Pedido cancelado antes do preparo tem o Pix devolvido.'
   },
   es: {
     titulo: 'Cómo pedir · Guaraná do Homer',
-    descricao: 'Pedí por el sitio o por WhatsApp, pagá con Pix y recibilo en hasta 40 minutos en Ingleses y Santinho.',
+    descricao: 'Pedí por el sitio o por WhatsApp, pagá con Pix y recibilo en hasta 40 minutos en Ingleses y Santinho, o retiralo sin tarifa.',
     rotulo: 'Cómo pedir',
     h1: 'Del pedido al vaso helado en hasta 40 minutos',
-    lead: 'Pidiendo directo, por el sitio o por WhatsApp, pagás el precio de la casa. Entregamos en Ingleses y Santinho.',
+    lead: 'Pidiendo directo, por el sitio o por WhatsApp, pagás el precio de la casa. Entregamos en Ingleses y Santinho, y el retiro es sin tarifa, desde cualquier barrio.',
     whatsappTitulo: 'Por el sitio o por WhatsApp',
     whatsappItens: [
       'Armá el vaso en el sitio o mandá el mensaje directo por WhatsApp.',
-      'Confirmamos el barrio y la tarifa de envío.',
+      'Confirmamos el envío (barrio y tarifa) o el horario del retiro.',
       'El pago es con Pix, antes de la preparación.',
       'El vaso se bate en el momento y sale sellado, en bolsa térmica.'
     ],
     ifoodTitulo: 'Por iFood',
-    ifoodTexto: 'También estamos en iFood, con los precios de la aplicación y la entrega hecha por iFood.',
+    ifoodTexto: 'También estamos en iFood, con los precios de la aplicación. Ahí podés elegir envío o retiro.',
     horarioTitulo: 'Horario',
     areaTitulo: 'Dónde entregamos',
-    areaTexto: 'Solo en Ingleses y Santinho, en el norte de la Isla. Así garantizamos el vaso helado en hasta 40 minutos. ¿Vivís en otro barrio? Mandanos un mensaje: te avisamos cuando la zona crezca.',
+    areaTexto: 'Solo en Ingleses y Santinho, en el norte de la Isla. Así garantizamos el vaso helado en hasta 40 minutos. ¿Vivís en otro barrio? Podés retirar el pedido, sin tarifa.',
+    retiradaTitulo: '¿Preferís retirarlo?',
+    retiradaItens: [
+      'Pedí por el sitio, por WhatsApp o por iFood (opción Retiro).',
+      'Sin tarifa de envío, vivas en el barrio que vivas.',
+      'La dirección va junto con la confirmación del pedido.',
+      'El vaso se bate en el momento y está listo en hasta 10 minutos después del Pix.',
+      'No tenemos salón ni atención en el lugar: pasás, lo retirás y listo.'
+    ],
+    retiradaCta: 'Pedir para retirar',
     tempoTitulo: 'Tiempo',
-    tempoTexto: 'Hasta 5 minutos de preparación y hasta 35 minutos de entrega.',
+    tempoTexto: 'Hasta 5 minutos de preparación y hasta 35 minutos de entrega. Si lo retirás, está listo en hasta 10 minutos después del Pix.',
     politicaTitulo: 'Si algo sale mal',
     politicaTexto: '¿Vaso equivocado o entrega después de 60 minutos? Escribinos por WhatsApp: rehacemos el pedido o te damos un cupón para el próximo. Si cancelás antes de la preparación, te devolvemos el Pix.'
   }
@@ -285,7 +303,7 @@ export const eventosPagina = {
       'Para empresas, emitimos nota fiscal.'
     ],
     fornecedor: 'Dados para o cadastro de fornecedor:',
-    areaNota: 'Atendemos os Ingleses e o Santinho. Para outro endereço, consulte: depende da data e do tamanho do pedido.',
+    areaNota: 'Entregamos nos Ingleses e no Santinho, ou você retira com a gente. Para outro endereço, consulte: depende da data e do tamanho do pedido.',
     cta: 'Pedir orçamento pelo WhatsApp'
   },
   es: {
@@ -307,7 +325,7 @@ export const eventosPagina = {
       'Para empresas, emitimos factura.'
     ],
     fornecedor: 'Datos para el alta de proveedor:',
-    areaNota: 'Atendemos Ingleses y Santinho. Para otra dirección, consultanos: depende de la fecha y del tamaño del pedido.',
+    areaNota: 'Entregamos en Ingleses y Santinho, o lo retirás con nosotros. Para otra dirección, consultanos: depende de la fecha y del tamaño del pedido.',
     cta: 'Pedir presupuesto por WhatsApp'
   }
 };

@@ -45,6 +45,11 @@ export const loja = {
   ],
   tempoMaximoMin: 40,
 
+  // RN-11 / RF-28: retirada (decisão de 29/10/2026). O cliente busca o pedido, sem taxa de entrega e de qualquer bairro.
+  // Não é ponto de atendimento: sem salão nem consumo no local. O endereço NÃO vai para o site: segue na confirmação
+  // do pedido pelo WhatsApp (no iFood, o próprio app mostra). false = esconde a opção em todo o site.
+  retirada: true,
+
   // RF-13: aviso do dia no topo ("Fechados hoje", "Esgotou o abacate"). Vazio = sem faixa.
   aviso: { pt: '', es: '' },
 

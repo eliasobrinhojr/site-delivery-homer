@@ -21,7 +21,9 @@ guaraná batido e leva o pedido para o WhatsApp, fugindo da taxa dos aplicativos
    ocasião e os números de cafeína.
 3. **Avisos sempre visíveis (RF-06):** todo copo contém leite, amendoim, castanha de caju e cafeína. O Modo Turbo
    tem aviso próprio.
-4. **Endereço da cozinha nunca aparece.** A área é "Ingleses e Santinho". Nunca "Grande Florianópolis".
+4. **Endereço da cozinha nunca aparece no site.** A área de entrega é "Ingleses e Santinho". Nunca "Grande
+   Florianópolis". A **retirada** é uma opção (RN-11): sem taxa, qualquer bairro, sem salão; o endereço vai só na
+   confirmação do pedido pelo WhatsApp ou no app do iFood.
 5. **Preço do iFood só na página /direto (RF-04).**
 6. **Texto fora das telas:** todo texto fica em `conteudo/textos/` (PT e ES lado a lado); preços, horários, bairros
    e links em `conteudo/cardapio.mjs` e `conteudo/loja.mjs`. Nenhuma cor solta: só variáveis de

@@ -11,7 +11,7 @@ export function linkWhatsApp(numero, texto) {
 
 /**
  * RF-02: cada botão manda uma mensagem diferente, para saber de onde veio o pedido.
- * Chaves: provar, cardapio, direto, eventos, duvida, inauguracao.
+ * Chaves: provar, cardapio, direto, eventos, duvida, retirada, inauguracao.
  */
 export const MENSAGENS = {
   pt: {
@@ -20,6 +20,7 @@ export const MENSAGENS = {
     direto: 'Oi! Vim pelo cartão da sacola do iFood e quero pedir direto.',
     eventos: 'Oi! Quero um orçamento de guaraná batido para um evento.',
     duvida: 'Oi! Tenho uma dúvida sobre o guaraná batido.',
+    retirada: 'Oi! Quero fazer um pedido para retirar.',
     inauguracao: 'Oi! Quero provar o guaraná batido quando vocês abrirem. Me avisa?'
   },
   es: {
@@ -28,6 +29,7 @@ export const MENSAGENS = {
     direto: '¡Hola! Vengo por la tarjeta de la bolsa de iFood y quiero pedir directo.',
     eventos: '¡Hola! Quiero un presupuesto de guaraná batido para un evento.',
     duvida: '¡Hola! Tengo una duda sobre el guaraná batido.',
+    retirada: '¡Hola! Quiero hacer un pedido para retirar.',
     inauguracao: '¡Hola! Quiero probar el guaraná batido cuando abran. ¿Me avisan?'
   }
 };
@@ -53,15 +55,20 @@ export function descreverCopo(copo, lang = 'pt') {
 
 /**
  * RF-25: mensagem do pedido com o código de produção e o preço.
- * A entrega e o Pix são combinados na conversa (fase 2 sem backend).
+ * A entrega (ou a retirada, RN-11) e o Pix são combinados na conversa (fase 2 sem backend).
  */
-export function mensagemPedido(copo, lang = 'pt', { preInauguracao = false, bairros = [] } = {}) {
+export function mensagemPedido(copo, lang = 'pt', { preInauguracao = false, bairros = [], recebimento = 'entrega' } = {}) {
   const es = lang === 'es';
   const linha = `1 × ${descreverCopo(copo, lang)} (${codigoCopo(copo)}) · ${reais(precoCopo(copo))}`;
   if (preInauguracao) {
     return es
       ? `¡Hola! Armé mi vaso en el sitio:\n${linha}\nQuiero probarlo cuando abran. ¿Me avisan?`
       : `Oi! Montei o meu copo no site:\n${linha}\nQuero provar quando vocês abrirem. Me avisa?`;
+  }
+  if (recebimento === 'retirada') {
+    return es
+      ? `¡Hola! Quiero pedir:\n${linha}\nVoy a retirar (sin tarifa de envío). ¿A qué hora puedo pasar?\nPago con Pix antes de la preparación.`
+      : `Oi! Quero pedir:\n${linha}\nVou retirar (sem taxa de entrega). Que horas posso passar?\nPago no Pix antes do preparo.`;
   }
   const opcoes = bairros.length ? ` (${listaNatural(bairros, lang).replace(/ (e|y) /, es ? ' o ' : ' ou ')})` : '';
   return es

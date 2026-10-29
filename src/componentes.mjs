@@ -84,6 +84,12 @@ export function monteSeuCopo(lang, { id = 'monte', comTitulo = true, nivel = 'h2
     const off = esgotados.includes(a.id);
     return opcao('adicional', a.id, `${esc(a.nome[lang])}<small>${esc(off ? t.esgotado : `+ ${reais(a.preco)}`)}</small>`, { tipo: 'checkbox', desativado: off });
   }).join('');
+  // RF-28: entrega ou retirada (só aparece com loja.retirada ligada).
+  const recebimentoHtml = loja.retirada
+    ? `<fieldset class="monte__campo"><legend>${esc(t.recebimento)}</legend><div class="gh-chips">${
+      opcao('recebimento', 'entrega', `${esc(t.entrega)}<small>${esc(t.entregaSub)}</small>`, { marcado: true })
+    }${opcao('recebimento', 'retirada', `${esc(t.retirada)}<small>${esc(t.retiradaSub)}</small>`)}</div></fieldset>`
+    : '';
   const turboHtml = opcao('turbo', 'sim', `${esc(t.turboOpcao)}<small>${esc(t.turboSub)}</small>`, { tipo: 'checkbox', extra: ' data-turbo' });
 
   const Hn = nivel;
@@ -103,6 +109,7 @@ ${comTitulo ? `${rotulo(t.rotulo)}<${Hn} class="gh-titulo-md" id="${esc(id)}-tit
 <fieldset class="monte__campo"><legend>${esc(t.turbo)} <span>· ${esc(t.turboLegenda)}</span></legend><div class="gh-chips gh-chips--turbo">${turboHtml}</div><p class="monte__nota" data-nota-turbo hidden>${esc(t.turbo700)}</p></fieldset>
 <fieldset class="monte__campo"><legend>${esc(t.docura)} <span>· ${esc(t.docuraLegenda)}</span></legend><div class="gh-chips">${docurasHtml}</div></fieldset>
 <fieldset class="monte__campo"><legend>${esc(t.adicionais)} <span>· ${esc(t.adicionaisLegenda)}</span></legend><div class="gh-chips">${adicionaisHtml}</div></fieldset>
+${recebimentoHtml}
 </form>
 <div class="monte__resumo" aria-live="polite">
 <div class="monte__resumo-linha">

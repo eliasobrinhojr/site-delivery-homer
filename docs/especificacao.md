@@ -11,6 +11,9 @@ atualize este arquivo junto.
 - **Área de entrega: só Ingleses e Santinho** (Norte da Ilha, Florianópolis). Decisão de 29/10/2026: áreas maiores
   não cabem no tempo de 40 minutos. Nunca escrever "Grande Florianópolis".
 - Canais: iFood (cliente novo), site e WhatsApp (recompra, preço direto). Pagamento direto por Pix antes do preparo.
+- **Retirada (decisão de 29/10/2026):** o cliente pode buscar o pedido, pelo site, pelo WhatsApp ou pela opção
+  Retirada do iFood. Não é um ponto de atendimento: sem salão nem consumo no local. O endereço continua fora do
+  site; vai só na confirmação do pedido (WhatsApp) ou no próprio app do iFood.
 - Horário do MVP: quinta a domingo, 13h às 20h. **Inauguração: sem data** (decisão de 29/10/2026: primeiro o digital,
   depois compras, cozinha e treino da produção). O site mostra "Inauguração em breve" e só convida (`loja.inauguracao = 'em-breve'`).
 - WhatsApp dos pedidos: (92) 99259-4820 (número pessoal do pai até a inauguração).
@@ -53,9 +56,10 @@ atualize este arquivo junto.
 | RF-14 | Identificação da empresa: "Guaraná do Homer · MEI · CNPJ" no rodapé de todas as páginas, controlador na privacidade, dados para cadastro de fornecedor em eventos, `taxID` nos dados do Google; chave Pix = CNPJ, mostrada em Como pedir e /direto com aviso contra Pix falso (Decreto 7.962/2013, art. 2º; LGPD, art. 9º) | `loja.cnpj`, `linhaEmpresa()` em `componentes.mjs`; dígitos conferidos em `testes/loja.test.mjs` |
 | RF-20 | Monte o seu (sabor, tamanho, Turbo, doçura, até 3 adicionais) | `componentes.mjs`, `monte.mjs` |
 | RF-21 | Carrinho com vários copos e combo | **pendente (fase 2)** — regra do combo pronta em `totalPedido` |
-| RF-22/23 | Dados de entrega e taxa por bairro | **pendente (fase 2)** — bairros em `loja.bairros` |
+| RF-22/23 | Dados de entrega e taxa por bairro (só quando o cliente escolhe entrega; na retirada, só nome e telefone) | **pendente (fase 2)** — bairros em `loja.bairros` |
 | RF-24 | Cupom | **pendente (fase 2)** |
-| RF-25 | Mensagem do pedido com código de produção e preço | `mensagemPedido` |
+| RF-25 | Mensagem do pedido com código de produção, preço e forma de receber (entrega com o bairro, ou retirada) | `mensagemPedido` |
+| RF-28 | Retirada como opção: escolha "Entrega ou Retirada" no monte o seu, cartão "Prefere buscar?" em Como pedir, pergunta frequente, botão com mensagem própria | `loja.retirada`, `monte.mjs`, `paginaComoPedir` |
 | RF-26 | Loja fechada bloqueia o envio; antes da inauguração vira convite | `monte.mjs` |
 | RF-27 | Lembrar dados no aparelho | **pendente (fase 2)** |
 
@@ -73,6 +77,7 @@ atualize este arquivo junto.
 | RN-08 | Combo de casal: 2 copos de 500 ml por R$ 44 |
 | RN-09 | Nenhuma promoção acima de 15% na primeira temporada |
 | RN-10 | Preço do iFood ~33% maior; nunca como preço do site |
+| RN-11 | Retirada: mesmo preço direto, sem taxa de entrega, para qualquer bairro; Pix antes do preparo; copo pronto em até 10 minutos depois do Pix; endereço só na confirmação do pedido; sem consumo no local |
 
 Código de produção: sabor (T/A/B) + tamanho (3/5/7) + X (Turbo) + doçura (− ou +) + adicionais.
 Ex.: `B5X+ MEL PAC`.
