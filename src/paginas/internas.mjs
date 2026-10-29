@@ -81,6 +81,9 @@ export function paginaSobre(lang) {
   const valores = t.valores.map((v, i) => `<li><span class="valores__num" aria-hidden="true">${String(i + 1).padStart(2, '0')}</span><h3>${esc(v.nome)}</h3><p>${esc(v.texto)}</p></li>`).join('');
   const corpo = [
     topo(t),
+    secao(`<h2 class="gh-titulo-md">${esc(t.historiaTitulo)}</h2>
+<ol class="historia">${t.historia.map((h) => `<li class="historia__passo"><span class="historia__marca">${esc(h.marca)}</span><h3 class="gh-titulo-sm">${esc(h.titulo)}</h3><p>${esc(h.texto)}</p></li>`).join('')}</ol>
+<p class="historia__fechamento">${esc(t.fechamento)}</p>`),
     `<section class="gh-secao gh-secao--vermelha"><div class="gh-container sobre__assinatura">
 <img src="/marca/logo-principal-polpa.svg" alt="Guaraná do Homer" width="667" height="410" loading="lazy">
 <div><h2 class="gh-titulo-md">${esc(t.assinaturaTitulo)}</h2><p>${esc(t.assinaturaTexto)}</p><p class="nota-foto">${esc(t.fotoPendente)}</p></div>

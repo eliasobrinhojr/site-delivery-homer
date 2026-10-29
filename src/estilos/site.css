@@ -358,3 +358,19 @@ h1, h2, h3 { text-wrap: balance; }
 .equipe__estado { font-weight: 700; min-height: 1.5em; }
 .equipe__estado[data-ativo="sim"] { color: var(--gh-verde); }
 .equipe__estado[data-ativo="erro"] { color: var(--gh-vermelho); }
+
+/* Nossa história: a vinda da família em passos, com uma linha vertical ligando os capítulos. */
+.historia { list-style: none; margin: var(--esp-6) 0 0; padding: 0; display: grid; gap: var(--esp-6); position: relative; }
+.historia::before { content: ""; position: absolute; left: 7px; top: 8px; bottom: 8px; border-left: 2px dashed var(--gh-vermelho); }
+.historia__passo { position: relative; padding-left: var(--esp-8); max-width: 680px; }
+.historia__passo::before { content: ""; position: absolute; left: 0; top: 6px; width: 16px; height: 16px; border-radius: 50%; background: var(--gh-vermelho); box-shadow: 0 0 0 4px var(--gh-creme); }
+.historia__marca { display: block; font-weight: 800; font-size: var(--texto-xs); letter-spacing: 0.14em; text-transform: uppercase; color: var(--gh-vermelho); }
+.historia__passo h3 { margin: var(--esp-1) 0 var(--esp-2); }
+.historia__passo p { margin: 0; }
+.historia__fechamento { margin: var(--esp-10) 0 0; font-family: var(--fonte-titulo); font-weight: 800; font-size: var(--texto-xl); line-height: 1.2; color: var(--gh-semente); max-width: 680px; }
+@media (min-width: 1024px) {
+  .historia { grid-template-columns: repeat(5, minmax(0, 1fr)); gap: var(--esp-6); }
+  .historia::before { left: 8px; right: 8px; top: 7px; bottom: auto; border-left: 0; border-top: 2px dashed var(--gh-vermelho); }
+  .historia__passo { padding-left: 0; padding-top: var(--esp-8); }
+  .historia__passo::before { top: 0; }
+}
