@@ -115,3 +115,14 @@ test('o idioma alterna para a mesma página no outro idioma', async () => {
   assert.match(await ler('/cardapio/index.html'), /class="nav__idioma" href="\/es\/cardapio\/"/);
   assert.match(await ler('/es/cardapio/index.html'), /class="nav__idioma" href="\/cardapio\/"/);
 });
+
+test('RF-31 Nossa história conta a família e o pai no preparo, com missão, visão e valores, sem meta interna', async () => {
+  for (const [caminho, termos] of [
+    ['/sobre/index.html', ['Manaus', 'liquidificador', 'Missão', 'Visão', 'Família']],
+    ['/es/sobre/index.html', ['Manaos', 'licuadora', 'Misión', 'Visión', 'Familia']]
+  ]) {
+    const html = await ler(caminho);
+    for (const t of termos) assert.ok(html.includes(t), `${caminho}: falta "${t}"`);
+    assert.doesNotMatch(html, /nota-foto|metade dos pedidos|mitad de los pedidos/, caminho);
+  }
+});

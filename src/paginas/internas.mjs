@@ -86,7 +86,7 @@ export function paginaSobre(lang) {
 <p class="historia__fechamento">${esc(t.fechamento)}</p>`),
     `<section class="gh-secao gh-secao--vermelha"><div class="gh-container sobre__assinatura">
 <img src="/marca/logo-principal-polpa.svg" alt="Guaraná do Homer" width="667" height="410" loading="lazy">
-<div><h2 class="gh-titulo-md">${esc(t.assinaturaTitulo)}</h2><p>${esc(t.assinaturaTexto)}</p><p class="nota-foto">${esc(t.fotoPendente)}</p></div>
+<div><h2 class="gh-titulo-md">${esc(t.assinaturaTitulo)}</h2><p>${esc(t.assinaturaTexto)}</p></div>
 </div></section>`,
     secao(`<div class="duas-colunas">
 <div><h2 class="gh-titulo-sm">${esc(t.missaoTitulo)}</h2><p class="frase-grande">${esc(t.missao)}</p></div>

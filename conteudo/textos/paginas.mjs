@@ -145,25 +145,24 @@ export const sobrePagina = {
       { marca: 'Primeiro', titulo: 'Eu vim na frente', texto: 'Vim para Florianópolis em busca de qualidade de vida e fui o primeiro da família a fazer da Ilha a minha casa.' },
       { marca: 'Depois', titulo: 'A família começou a vir', texto: 'Pouco depois vieram a minha irmã e o meu cunhado. A Ilha que tinha me recebido recebeu os dois também.' },
       { marca: 'Juntos', titulo: 'Os pais vieram para perto', texto: 'Quando a saúde pediu atenção, trouxemos nossos pais para ficarmos todos perto e cuidarmos uns dos outros. E acabamos ficando: hoje a família inteira mora aqui.' },
-      { marca: 'Agora', titulo: 'O nosso negócio', texto: 'O Guaraná do Homer é a forma de criarmos raízes na Ilha: um negócio de família, com a receita do pai, o guaraná do Amazonas e cada copo batido na hora.' }
+      { marca: 'Agora', titulo: 'O nosso negócio', texto: 'O Guaraná do Homer é a forma de criarmos raízes na Ilha: um negócio de família, com o meu pai no liquidificador, a receita dele e o guaraná do Amazonas, cada copo batido na hora.' }
     ],
     fechamento: 'Trouxemos o Norte na bagagem. Agora ele chega na sua porta, num copo.',
     assinaturaTitulo: 'O nome e a letra são dele',
-    assinaturaTexto: 'Homer é o apelido que os amigos da rua deram ao meu pai, lá em Manaus. O "HOMER" do nosso logo não é uma fonte de computador: é a letra de forma dele, escrita à mão e passada para o desenho da marca. Cada copo sai com a assinatura de quem bateu.',
+    assinaturaTexto: 'Homer é o apelido que os amigos da rua deram ao meu pai, lá em Manaus. O "HOMER" do nosso logo não é uma fonte de computador: é a letra de forma dele, escrita à mão e passada para o desenho da marca. É ele quem bate o seu guaraná, e cada copo sai com a assinatura de quem bateu.',
     missaoTitulo: 'Missão',
-    missao: 'Levar o guaraná batido do Amazonas para a Ilha, feito na hora, com ingrediente de verdade e tudo o que tem no copo à vista.',
+    missao: 'Levar para a Ilha o guaraná batido do Amazonas: feito na hora, com ingrediente de verdade e tudo o que vai no copo dito com clareza.',
     visaoTitulo: 'Visão',
-    visao: 'Ser o guaraná batido que todo mundo do Norte da Ilha conhece pelo nome até o verão de 2028, com metade dos pedidos vindo direto do cliente.',
+    visao: 'Ser o guaraná batido que o Norte da Ilha conhece pelo nome e crescer como marca de família, com novas receitas feitas do mesmo jeito: na hora e com cuidado.',
     valoresTitulo: 'O que a gente não abre mão',
     valores: [
-      { nome: 'Feito na hora', texto: 'Nenhum copo fica esperando. O liquidificador liga quando o seu pedido chega.' },
-      { nome: 'Origem', texto: 'Guaraná em pó do interior do Amazonas, de Maués, e a receita do pai, de Manaus.' },
-      { nome: 'Transparência', texto: 'Cafeína, alergênicos e preço ditos com números, sem letra miúda.' },
-      { nome: 'Bom humor da Ilha', texto: 'Papo de vizinho que mora perto da praia, nunca de vendedor.' },
-      { nome: 'Palavra cumprida', texto: 'Copo lacrado, no tamanho certo, no prazo prometido.' },
-      { nome: 'Família', texto: 'Começou em família e continua em família: a receita é do pai, e o negócio é de todos nós.' }
-    ],
-    fotoPendente: 'A foto do meu pai no balcão entra aqui depois da sessão de fotos.'
+      { nome: 'Feito na hora', texto: 'Nenhum copo fica esperando: o liquidificador só liga quando o seu pedido chega.' },
+      { nome: 'Origem', texto: 'Guaraná em pó de Maués, no interior do Amazonas, e a receita do pai, de Manaus.' },
+      { nome: 'Família', texto: 'Começou em família e continua em família: a receita é do pai, e o negócio é de todos nós.' },
+      { nome: 'Transparência', texto: 'Ingredientes, alergênicos, cafeína e preço ditos com números, sem letra miúda.' },
+      { nome: 'Palavra cumprida', texto: 'Copo lacrado, no tamanho certo e no prazo combinado, na entrega ou na retirada.' },
+      { nome: 'Bom humor da Ilha', texto: 'Papo de vizinho que mora perto da praia, nunca de vendedor.' }
+    ]
   },
   es: {
     titulo: 'Nuestra historia · Guaraná do Homer',
@@ -177,25 +176,24 @@ export const sobrePagina = {
       { marca: 'Primero', titulo: 'Vine adelante', texto: 'Vine a Florianópolis buscando calidad de vida y fui el primero de la familia en hacer de la Isla mi casa.' },
       { marca: 'Después', titulo: 'La familia empezó a venir', texto: 'Poco después llegaron mi hermana y mi cuñado. La Isla que me había recibido a mí los recibió también a ellos.' },
       { marca: 'Juntos', titulo: 'Los papás vinieron cerca', texto: 'Cuando la salud pidió atención, trajimos a nuestros papás para estar todos cerca y cuidarnos entre nosotros. Y nos quedamos: hoy la familia entera vive acá.' },
-      { marca: 'Ahora', titulo: 'Nuestro negocio', texto: 'Guaraná do Homer es nuestra forma de echar raíces en la Isla: un negocio de familia, con la receta del papá, el guaraná del Amazonas y cada vaso batido en el momento.' }
+      { marca: 'Ahora', titulo: 'Nuestro negocio', texto: 'Guaraná do Homer es nuestra forma de echar raíces en la Isla: un negocio de familia, con mi papá en la licuadora, su receta y el guaraná del Amazonas, cada vaso batido en el momento.' }
     ],
     fechamento: 'Trajimos el norte en la valija. Ahora llega a tu puerta, en un vaso.',
     assinaturaTitulo: 'El nombre y la letra son de él',
-    assinaturaTexto: 'Homer es el apodo que le pusieron a mi papá los amigos del barrio, allá en Manaos. El "HOMER" de nuestro logo no es una tipografía de computadora: es su letra de imprenta, escrita a mano y pasada al diseño de la marca. Cada vaso sale con la firma de quien lo batió.',
+    assinaturaTexto: 'Homer es el apodo que le pusieron a mi papá los amigos del barrio, allá en Manaos. El "HOMER" de nuestro logo no es una tipografía de computadora: es su letra de imprenta, escrita a mano y pasada al diseño de la marca. Es él quien bate tu guaraná, y cada vaso sale con la firma de quien lo batió.',
     missaoTitulo: 'Misión',
-    missao: 'Llevar el guaraná batido del Amazonas a la Isla, hecho en el momento, con ingredientes de verdad y todo lo que lleva el vaso a la vista.',
+    missao: 'Llevar a la Isla el guaraná batido del Amazonas: hecho en el momento, con ingredientes de verdad y todo lo que lleva el vaso dicho con claridad.',
     visaoTitulo: 'Visión',
-    visao: 'Ser el guaraná batido que todo el norte de la Isla conoce por su nombre para el verano de 2028, con la mitad de los pedidos llegando directo del cliente.',
+    visao: 'Ser el guaraná batido que el norte de la Isla conoce por su nombre y crecer como marca de familia, con nuevas recetas hechas de la misma forma: en el momento y con cuidado.',
     valoresTitulo: 'Lo que no negociamos',
     valores: [
-      { nome: 'Hecho en el momento', texto: 'Ningún vaso queda esperando. La licuadora se enciende cuando llega tu pedido.' },
-      { nome: 'Origen', texto: 'Guaraná en polvo del interior del Amazonas, de Maués, y la receta del papá, de Manaos.' },
-      { nome: 'Transparencia', texto: 'Cafeína, alérgenos y precio dichos con números, sin letra chica.' },
-      { nome: 'Buen humor de la Isla', texto: 'Charla de vecino que vive cerca de la playa, nunca de vendedor.' },
-      { nome: 'Palabra cumplida', texto: 'Vaso sellado, del tamaño correcto, en el tiempo prometido.' },
-      { nome: 'Familia', texto: 'Empezó en familia y sigue en familia: la receta es del papá y el negocio es de todos nosotros.' }
-    ],
-    fotoPendente: 'La foto de mi papá en el mostrador va acá después de la sesión de fotos.'
+      { nome: 'Hecho en el momento', texto: 'Ningún vaso queda esperando: la licuadora solo se enciende cuando llega tu pedido.' },
+      { nome: 'Origen', texto: 'Guaraná en polvo de Maués, en el interior del Amazonas, y la receta del papá, de Manaos.' },
+      { nome: 'Familia', texto: 'Empezó en familia y sigue en familia: la receta es del papá y el negocio es de todos nosotros.' },
+      { nome: 'Transparencia', texto: 'Ingredientes, alérgenos, cafeína y precio dichos con números, sin letra chica.' },
+      { nome: 'Palabra cumplida', texto: 'Vaso sellado, del tamaño correcto y en el tiempo acordado, con envío o retiro.' },
+      { nome: 'Buen humor de la Isla', texto: 'Charla de vecino que vive cerca de la playa, nunca de vendedor.' }
+    ]
   }
 };
 
