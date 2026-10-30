@@ -284,7 +284,6 @@ h1, h2, h3 { text-wrap: balance; }
 .sobre__assinatura { display: grid; gap: var(--esp-8); align-items: center; }
 .sobre__assinatura img { width: min(420px, 100%); }
 .sobre__assinatura p { font-size: var(--texto-lg); }
-.nota-foto { font-size: var(--texto-sm) !important; color: var(--gh-creme); font-style: italic; }
 @media (min-width: 1024px) { .sobre__assinatura { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: var(--esp-16); } }
 .valores { list-style: none; padding: 0; margin: var(--esp-6) 0 0; display: grid; gap: var(--esp-6); }
 @media (min-width: 600px) { .valores { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
