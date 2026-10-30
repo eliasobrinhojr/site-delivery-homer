@@ -117,6 +117,12 @@ export function monteSeuCopo(lang, { id = 'monte', comTitulo = true, nivel = 'h2
       opcao('recebimento', 'entrega', `${esc(t.entrega)}<small>${esc(t.entregaSub)}</small>`, { marcado: true })
     }${opcao('recebimento', 'retirada', `${esc(t.retirada)}<small>${esc(t.retiradaSub)}</small>`)}</div></fieldset>`
     : '';
+  // RF-32 / RN-12: Pix ou cartão (crédito ou débito) na maquininha (só aparece com loja.cartao ligada).
+  const pagamentoHtml = loja.cartao
+    ? `<fieldset class="monte__campo"><legend>${esc(t.pagamento)}</legend><div class="gh-chips">${
+      opcao('pagamento', 'pix', `${esc(t.pix)}<small>${esc(t.pixSub)}</small>`, { marcado: true })
+    }${opcao('pagamento', 'cartao', `${esc(t.cartao)}<small>${esc(t.cartaoSub)}</small>`)}</div></fieldset>`
+    : '';
   const turboHtml = opcao('turbo', 'sim', `${esc(t.turboOpcao)}<small>${esc(t.turboSub)}</small>`, { tipo: 'checkbox', extra: ' data-turbo' });
 
   const Hn = nivel;
@@ -137,6 +143,7 @@ ${comTitulo ? `${rotulo(t.rotulo)}<${Hn} class="gh-titulo-md" id="${esc(id)}-tit
 <fieldset class="monte__campo"><legend>${esc(t.docura)} <span>· ${esc(t.docuraLegenda)}</span></legend><div class="gh-chips">${docurasHtml}</div></fieldset>
 <fieldset class="monte__campo"><legend>${esc(t.adicionais)} <span>· ${esc(t.adicionaisLegenda)}</span></legend><div class="gh-chips">${adicionaisHtml}</div></fieldset>
 ${recebimentoHtml}
+${pagamentoHtml}
 </form>
 <div class="monte__resumo" aria-live="polite">
 <div class="monte__resumo-linha">

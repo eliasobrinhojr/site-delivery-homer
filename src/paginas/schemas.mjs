@@ -32,6 +32,8 @@ export function schemaLoja(lang) {
     areaServed: loja.bairros.map((b) => ({ '@type': 'Place', name: `${b.nome}, Florianópolis` })),
     openingHoursSpecification: horarios,
     ...(loja.cnpj ? { taxID: soDigitos(loja.cnpj) } : {}),
+    // RN-12: formas de pagamento do canal direto.
+    paymentAccepted: loja.cartao ? 'Pix, cartão de crédito, cartão de débito' : 'Pix',
     ...(loja.nomeEmpresarial ? { legalName: loja.nomeEmpresarial } : {}),
     ...(loja.instagram ? { sameAs: [loja.instagram] } : {})
   };

@@ -130,3 +130,18 @@ test('RF-31 Nossa história conta a família e o pai no preparo, com missão, vi
 test('RF-31 a história é do Homer: nenhuma página fala "meu pai" na voz do filho', async () => {
   for (const p of paginas) assert.doesNotMatch(await ler(p), /\bmeu pai\b|\bmi papá\b|\bvim na frente\b|\bvine adelante\b/i, p);
 });
+
+test('RN-12 / RF-32 o site aceita Pix e cartão de crédito ou débito, em PT e ES', async () => {
+  for (const [caminho, re] of [
+    ['/como-pedir/index.html', /cartão de crédito ou débito/],
+    ['/perguntas/index.html', /cartão de crédito ou débito/],
+    ['/index.html', /cartão/],
+    ['/direto/index.html', /cartão/],
+    ['/es/como-pedir/index.html', /tarjeta de crédito o débito/],
+    ['/es/perguntas/index.html', /tarjeta de crédito o débito/]
+  ]) assert.match(await ler(caminho), re, caminho);
+  const monte = await ler('/cardapio/index.html');
+  assert.match(monte, /name="pagamento" value="pix"/);
+  assert.match(monte, /name="pagamento" value="cartao"/);
+  assert.match(await ler('/index.html'), /"paymentAccepted":"Pix, cartão de crédito, cartão de débito"/);
+});

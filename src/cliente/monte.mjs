@@ -77,7 +77,8 @@ function iniciar(secao) {
     } else {
       const pre = estado.tipo === 'pre-inauguracao';
       const recebimento = form.querySelector('input[name="recebimento"]:checked')?.value ?? 'entrega';
-      const texto = mensagemPedido(copo, lang, { preInauguracao: pre, bairros, recebimento });
+      const pagamento = form.querySelector('input[name="pagamento"]:checked')?.value ?? 'pix';
+      const texto = mensagemPedido(copo, lang, { preInauguracao: pre, bairros, recebimento, pagamento });
       link.href = linkWhatsApp(loja.whatsapp, equipe ? paraTeste(texto) : texto);
       link.removeAttribute('aria-disabled');
       link.classList.remove('gh-botao--bloqueado');

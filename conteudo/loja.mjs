@@ -62,6 +62,10 @@ export const loja = {
   // do pedido pelo WhatsApp (no iFood, o próprio app mostra). false = esconde a opção em todo o site.
   retirada: true,
 
+  // RN-12 / RF-32: cartão de crédito (à vista) ou débito, na maquininha, na entrega ou na retirada (decisão de 29/10/2026).
+  // Mesmo preço do Pix. false = esconde a escolha "Como vai pagar" do monte o seu e tira o cartão dos dados do Google.
+  cartao: true,
+
   // RF-13: aviso do dia no topo ("Fechados hoje", "Esgotou o abacate"). Vazio = sem faixa.
   aviso: { pt: '', es: '' },
 
