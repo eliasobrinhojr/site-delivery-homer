@@ -88,7 +88,8 @@ chocolate), `CAN`.
 
 Notas de produção (29/10/2026, base para a degustação de 9–22/11): paçoca batida + uma pitada esfarelada no topo,
 só para a foto; calda **na parede** não muda a doçura da base; canudo grosso (10–12 mm). Caramelo e morango ficam
-em teste na degustação e só entram no site se aprovados.
+em teste na degustação e só entram no site se aprovados. **Os adicionais acima valem até a degustação**: o
+site avisa que estão em teste e podem mudar até a inauguração.
 
 ## Requisitos não funcionais (resumo)
 

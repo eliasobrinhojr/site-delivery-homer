@@ -126,4 +126,6 @@ test('RN-12 o cardápio e o monte o seu mostram como cada adicional vai no copo,
   const es = await ler('/es/cardapio/index.html');
   assert.match(es, /Dulce de leche/);
   assert.match(es, /En la pared del vaso/);
+  assert.match(pt, /Os adicionais estão em teste e podem mudar até a inauguração/);
+  assert.match(es, /Los extras están en prueba/);
 });
