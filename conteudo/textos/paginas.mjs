@@ -137,7 +137,7 @@ export const sobrePagina = {
     titulo: 'Nossa história · Guaraná do Homer',
     descricao: 'O Homer e a esposa vieram de Manaus para perto dos filhos, em Florianópolis, e hoje batem na Ilha o guaraná do Amazonas, com a receita e a letra dele.',
     rotulo: 'Nossa história',
-    h1: 'Uma família do Norte que escolheu a Ilha',
+    h1: 'Homer trouxe o Norte do Brasil para o Norte da Ilha',
     lead: 'Eu sou o Homer. Saí de Manaus com a minha esposa para ficar perto dos nossos filhos, e o guaraná que a gente tomava na rua virou o nosso negócio.',
     historiaTitulo: 'De Manaus para a Ilha',
     historia: [
@@ -167,7 +167,7 @@ export const sobrePagina = {
     titulo: 'Nuestra historia · Guaraná do Homer',
     descricao: 'Homer y su esposa llegaron de Manaos para estar cerca de sus hijos en Florianópolis, y hoy baten en la Isla el guaraná del Amazonas, con su receta y su letra.',
     rotulo: 'Nuestra historia',
-    h1: 'Una familia del norte que eligió la Isla',
+    h1: 'Homer trajo el norte de Brasil al norte de la Isla',
     lead: 'Soy Homer. Salí de Manaos con mi esposa para estar cerca de nuestros hijos, y el guaraná que tomábamos en la calle se convirtió en nuestro negocio.',
     historiaTitulo: 'De Manaos a la Isla',
     historia: [
