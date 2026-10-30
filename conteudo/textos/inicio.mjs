@@ -41,7 +41,7 @@ export const inicio = {
       rotulo: 'De onde vem',
       titulo: 'Você está no Sul. O copo vem do Norte.',
       p1: 'O guaraná nasce no interior do Amazonas, em Maués, onde o povo Sateré-Mawé cultiva a planta há gerações. Em Manaus, a capital, o guaraná batido está nas lanchonetes e nos carrinhos de rua que vendem só ele.',
-      p2: 'Meu pai é de Manaus. Agora ele bate esse copo nos Ingleses, para quem vem de outros cantos do Brasil, da Argentina e do Uruguai provar um pedaço do Norte sem sair da Ilha.',
+      p2: 'O Homer é de Manaus. Agora ele bate esse copo nos Ingleses, para quem vem de outros cantos do Brasil, da Argentina e do Uruguai provar um pedaço do Norte sem sair da Ilha.',
       rota: {
         origem: 'Amazonas',
         origemSub: 'de Maués a Manaus',
@@ -52,8 +52,8 @@ export const inicio = {
       }
     },
     assinatura: {
-      titulo: 'A receita do pai',
-      texto: 'Homer é o apelido que os amigos da rua deram pro meu pai, lá em Manaus. Hoje a família toda mora na Ilha, e é ele quem bate o seu guaraná, na hora.',
+      titulo: 'A receita do Homer',
+      texto: 'Homer é o apelido que ele ganhou dos amigos da rua, lá em Manaus. Hoje a família toda mora na Ilha, e é ele quem bate o seu guaraná, na hora.',
       cta: 'Conheça a nossa história',
       altLogo: 'Guaraná do Homer · receita do pai, batido na hora'
     },
@@ -120,7 +120,7 @@ export const inicio = {
       rotulo: 'De dónde viene',
       titulo: 'Estás en el sur de Brasil. El vaso viene del norte.',
       p1: 'El guaraná nace en el interior del Amazonas, en Maués, donde el pueblo sateré-mawé cultiva la planta hace generaciones. En Manaos, la capital, el guaraná batido está en las cafeterías y en carritos callejeros que venden solo eso.',
-      p2: 'Mi papá es de Manaos. Ahora bate ese vaso en Ingleses, para que quien viene de otras partes de Brasil, de Argentina y de Uruguay pruebe un pedazo del norte sin salir de la Isla.',
+      p2: 'Homer es de Manaos. Ahora bate ese vaso en Ingleses, para que quien viene de otras partes de Brasil, de Argentina y de Uruguay pruebe un pedazo del norte sin salir de la Isla.',
       rota: {
         origem: 'Amazonas',
         origemSub: 'de Maués a Manaos',
@@ -131,8 +131,8 @@ export const inicio = {
       }
     },
     assinatura: {
-      titulo: 'La receta del papá',
-      texto: 'Homer es el apodo que le pusieron a mi papá los amigos del barrio, allá en Manaos. Hoy toda la familia vive en la Isla, y es él quien bate tu guaraná, en el momento.',
+      titulo: 'La receta de Homer',
+      texto: 'Homer es el apodo que le pusieron los amigos del barrio, allá en Manaos. Hoy toda la familia vive en la Isla, y es él quien bate tu guaraná, en el momento.',
       cta: 'Conocé nuestra historia',
       altLogo: 'Guaraná do Homer · receta del papá, batido en el momento'
     },

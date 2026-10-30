@@ -135,21 +135,20 @@ export const guaranaPagina = {
 export const sobrePagina = {
   pt: {
     titulo: 'Nossa história · Guaraná do Homer',
-    descricao: 'Uma família de Manaus que veio aos poucos para Florianópolis e hoje bate na Ilha o guaraná do Amazonas, com a receita e a letra do pai.',
+    descricao: 'Homer é de Manaus e trouxe o guaraná batido para Florianópolis. A história da família que veio do Norte e da empresa que ele criou na Ilha.',
     rotulo: 'Nossa história',
-    h1: 'Uma família do Norte que escolheu a Ilha',
-    lead: 'Saímos de Manaus um de cada vez, atrás de qualidade de vida. Hoje estamos todos aqui, e o guaraná que a gente tomava na rua virou o nosso negócio.',
-    historiaTitulo: 'De Manaus para a Ilha, um de cada vez',
+    h1: 'Homer trouxe o Norte para a Ilha',
+    lead: 'Homer é o apelido que ele ganhou dos amigos da rua, em Manaus. Hoje é o nome da empresa que ele criou em Florianópolis, onde a família inteira escolheu viver.',
+    historiaTitulo: 'De Manaus para a Ilha',
     historia: [
-      { marca: 'Manaus', titulo: 'Onde tudo começa', texto: 'Em Manaus, guaraná batido se compra no carrinho da esquina. Foi lá, numa rua de bairro, que os amigos deram ao meu pai o apelido de Homer.' },
-      { marca: 'Primeiro', titulo: 'Eu vim na frente', texto: 'Vim para Florianópolis em busca de qualidade de vida e fui o primeiro da família a fazer da Ilha a minha casa.' },
-      { marca: 'Depois', titulo: 'A família começou a vir', texto: 'Pouco depois vieram a minha irmã e o meu cunhado. A Ilha que tinha me recebido recebeu os dois também.' },
-      { marca: 'Juntos', titulo: 'Os pais vieram para perto', texto: 'Quando a saúde pediu atenção, trouxemos nossos pais para ficarmos todos perto e cuidarmos uns dos outros. E acabamos ficando: hoje a família inteira mora aqui.' },
-      { marca: 'Agora', titulo: 'O nosso negócio', texto: 'O Guaraná do Homer é a forma de criarmos raízes na Ilha: um negócio de família, com a receita do pai, o guaraná do Amazonas e cada copo batido na hora.' }
+      { marca: 'Manaus', titulo: 'Onde tudo começa', texto: 'Homer é de Manaus, onde guaraná batido se compra no carrinho da esquina. Foi numa rua de bairro que os amigos lhe deram o apelido que hoje vai em cada copo.' },
+      { marca: 'Os filhos', titulo: 'A família começa a vir', texto: 'O filho veio primeiro para Florianópolis, em busca de qualidade de vida. Depois vieram a filha e o genro, e a Ilha recebeu todos eles.' },
+      { marca: 'Juntos', titulo: 'Perto de quem importa', texto: 'Quando a saúde pediu atenção, Homer e a esposa vieram também, para a família ficar perto e cuidar uns dos outros. E todos acabaram ficando: hoje a família inteira mora aqui.' },
+      { marca: 'Agora', titulo: 'O Guaraná do Homer', texto: 'Na Ilha, Homer decidiu trazer o guaraná batido de Manaus. Assim nasceu a empresa: com a receita dele, o guaraná do Amazonas e a família inteira junto.' }
     ],
-    fechamento: 'Trouxemos o Norte na bagagem. Agora ele chega na sua porta, num copo.',
+    fechamento: 'Homer trouxe o Norte na bagagem. Agora ele chega na sua porta, num copo.',
     assinaturaTitulo: 'O nome e a letra são dele',
-    assinaturaTexto: 'Homer é o apelido que os amigos da rua deram ao meu pai, lá em Manaus. O "HOMER" do nosso logo não é uma fonte de computador: é a letra de forma dele, escrita à mão e passada para o desenho da marca. Cada copo sai com a assinatura de quem bateu.',
+    assinaturaTexto: 'O "HOMER" do nosso logo não é uma fonte de computador: é a letra de forma do próprio Homer, escrita à mão e passada para o desenho da marca. Cada copo sai com a assinatura de quem bateu.',
     missaoTitulo: 'Missão',
     missao: 'Levar o guaraná batido do Amazonas para a Ilha, feito na hora, com ingrediente de verdade e tudo o que tem no copo à vista.',
     visaoTitulo: 'Visão',
@@ -157,31 +156,30 @@ export const sobrePagina = {
     valoresTitulo: 'O que a gente não abre mão',
     valores: [
       { nome: 'Feito na hora', texto: 'Nenhum copo fica esperando. O liquidificador liga quando o seu pedido chega.' },
-      { nome: 'Origem', texto: 'Guaraná em pó do interior do Amazonas, de Maués, e a receita do pai, de Manaus.' },
+      { nome: 'Origem', texto: 'Guaraná em pó do interior do Amazonas, de Maués, e a receita do Homer, de Manaus.' },
       { nome: 'Transparência', texto: 'Cafeína, alergênicos e preço ditos com números, sem letra miúda.' },
       { nome: 'Bom humor da Ilha', texto: 'Papo de vizinho que mora perto da praia, nunca de vendedor.' },
       { nome: 'Palavra cumprida', texto: 'Copo lacrado, no tamanho certo, no prazo prometido.' },
-      { nome: 'Família', texto: 'Começou em família e continua em família: a receita é do pai, e o negócio é de todos nós.' }
+      { nome: 'Família', texto: 'Começou em família e continua em família: a receita é do Homer, e o negócio é de todos nós.' }
     ],
-    fotoPendente: 'A foto do meu pai no balcão entra aqui depois da sessão de fotos.'
+    fotoPendente: 'A foto do Homer no balcão entra aqui depois da sessão de fotos.'
   },
   es: {
     titulo: 'Nuestra historia · Guaraná do Homer',
-    descricao: 'Una familia de Manaos que llegó de a poco a Florianópolis y hoy bate en la Isla el guaraná del Amazonas, con la receta y la letra del papá.',
+    descricao: 'Homer es de Manaos y trajo el guaraná batido a Florianópolis. La historia de la familia que vino del norte y de la empresa que él creó en la Isla.',
     rotulo: 'Nuestra historia',
-    h1: 'Una familia del norte que eligió la Isla',
-    lead: 'Salimos de Manaos de a uno, buscando calidad de vida. Hoy estamos todos acá, y el guaraná que tomábamos en la calle se convirtió en nuestro negocio.',
-    historiaTitulo: 'De Manaos a la Isla, de a uno',
+    h1: 'Homer trajo el norte a la Isla',
+    lead: 'Homer es el apodo que le pusieron los amigos del barrio, en Manaos. Hoy es el nombre de la empresa que él creó en Florianópolis, donde la familia entera eligió vivir.',
+    historiaTitulo: 'De Manaos a la Isla',
     historia: [
-      { marca: 'Manaos', titulo: 'Donde todo empieza', texto: 'En Manaos, el guaraná batido se compra en el carrito de la esquina. Fue ahí, en una calle de barrio, donde los amigos le pusieron a mi papá el apodo de Homer.' },
-      { marca: 'Primero', titulo: 'Vine adelante', texto: 'Vine a Florianópolis buscando calidad de vida y fui el primero de la familia en hacer de la Isla mi casa.' },
-      { marca: 'Después', titulo: 'La familia empezó a venir', texto: 'Poco después llegaron mi hermana y mi cuñado. La Isla que me había recibido a mí los recibió también a ellos.' },
-      { marca: 'Juntos', titulo: 'Los papás vinieron cerca', texto: 'Cuando la salud pidió atención, trajimos a nuestros papás para estar todos cerca y cuidarnos entre nosotros. Y nos quedamos: hoy la familia entera vive acá.' },
-      { marca: 'Ahora', titulo: 'Nuestro negocio', texto: 'Guaraná do Homer es nuestra forma de echar raíces en la Isla: un negocio de familia, con la receta del papá, el guaraná del Amazonas y cada vaso batido en el momento.' }
+      { marca: 'Manaos', titulo: 'Donde todo empieza', texto: 'Homer es de Manaos, donde el guaraná batido se compra en el carrito de la esquina. Fue en una calle de barrio donde los amigos le pusieron el apodo que hoy va en cada vaso.' },
+      { marca: 'Los hijos', titulo: 'La familia empieza a venir', texto: 'El hijo llegó primero a Florianópolis, buscando calidad de vida. Después vinieron la hija y el yerno, y la Isla los recibió a todos.' },
+      { marca: 'Juntos', titulo: 'Cerca de los suyos', texto: 'Cuando la salud pidió atención, Homer y su esposa vinieron también, para que la familia estuviera cerca y se cuidaran entre todos. Y se quedaron: hoy la familia entera vive acá.' },
+      { marca: 'Ahora', titulo: 'Guaraná do Homer', texto: 'En la Isla, Homer decidió traer el guaraná batido de Manaos. Así nació la empresa: con su receta, el guaraná del Amazonas y la familia entera junta.' }
     ],
-    fechamento: 'Trajimos el norte en la valija. Ahora llega a tu puerta, en un vaso.',
+    fechamento: 'Homer trajo el norte en la valija. Ahora llega a tu puerta, en un vaso.',
     assinaturaTitulo: 'El nombre y la letra son de él',
-    assinaturaTexto: 'Homer es el apodo que le pusieron a mi papá los amigos del barrio, allá en Manaos. El "HOMER" de nuestro logo no es una tipografía de computadora: es su letra de imprenta, escrita a mano y pasada al diseño de la marca. Cada vaso sale con la firma de quien lo batió.',
+    assinaturaTexto: 'El "HOMER" de nuestro logo no es una tipografía de computadora: es la letra de imprenta del propio Homer, escrita a mano y pasada al diseño de la marca. Cada vaso sale con la firma de quien lo batió.',
     missaoTitulo: 'Misión',
     missao: 'Llevar el guaraná batido del Amazonas a la Isla, hecho en el momento, con ingredientes de verdad y todo lo que lleva el vaso a la vista.',
     visaoTitulo: 'Visión',
@@ -189,13 +187,13 @@ export const sobrePagina = {
     valoresTitulo: 'Lo que no negociamos',
     valores: [
       { nome: 'Hecho en el momento', texto: 'Ningún vaso queda esperando. La licuadora se enciende cuando llega tu pedido.' },
-      { nome: 'Origen', texto: 'Guaraná en polvo del interior del Amazonas, de Maués, y la receta del papá, de Manaos.' },
+      { nome: 'Origen', texto: 'Guaraná en polvo del interior del Amazonas, de Maués, y la receta de Homer, de Manaos.' },
       { nome: 'Transparencia', texto: 'Cafeína, alérgenos y precio dichos con números, sin letra chica.' },
       { nome: 'Buen humor de la Isla', texto: 'Charla de vecino que vive cerca de la playa, nunca de vendedor.' },
       { nome: 'Palabra cumplida', texto: 'Vaso sellado, del tamaño correcto, en el tiempo prometido.' },
-      { nome: 'Familia', texto: 'Empezó en familia y sigue en familia: la receta es del papá y el negocio es de todos nosotros.' }
+      { nome: 'Familia', texto: 'Empezó en familia y sigue en familia: la receta es de Homer y el negocio es de todos nosotros.' }
     ],
-    fotoPendente: 'La foto de mi papá en el mostrador va acá después de la sesión de fotos.'
+    fotoPendente: 'La foto de Homer en el mostrador va acá después de la sesión de fotos.'
   }
 };
 
