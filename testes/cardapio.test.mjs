@@ -4,6 +4,7 @@ import {
   validarCopo, normalizarCopo, precoCopo, cafeinaCopo, codigoCopo, totalPedido,
   descontoPermitido, turboDisponivel, precoMinimo
 } from '../src/lib/cardapio.mjs';
+import { adicionais, modosAdicional } from '../conteudo/cardapio.mjs';
 
 const copo = (extra = {}) => ({ sabor: 'T', ml: 500, turbo: false, docura: 'normal', adicionais: [], ...extra });
 
@@ -81,4 +82,16 @@ test('cafeína estimada por copo, Turbo nunca passa de 200 mg', () => {
 
 test('"a partir de" usa o menor preço', () => {
   assert.equal(precoMinimo(), 17);
+});
+
+test('RN-04 caldas de doce de leite e de chocolate custam R$ 3 e contam no limite de 3', () => {
+  assert.equal(precoCopo(copo({ adicionais: ['DDL', 'CHO'] })), 24 + 3 + 3);
+  assert.deepEqual(validarCopo(copo({ adicionais: ['DDL', 'CHO', 'PAC', 'CAN'] })), ['RN-04']);
+  assert.equal(codigoCopo(copo({ sabor: 'B', adicionais: ['PAC', 'DDL'] })), 'B5 PAC DDL');
+});
+
+test('RN-12 todo adicional tem um jeito de ir no copo, e as caldas vão na parede', () => {
+  for (const a of adicionais) assert.ok(modosAdicional.includes(a.modo), `${a.id} sem modo válido`);
+  assert.deepEqual(adicionais.filter((a) => a.modo === 'parede').map((a) => a.id), ['DDL', 'CHO']);
+  assert.deepEqual(adicionais.filter((a) => a.modo === 'topo').map((a) => a.id), ['CAN']);
 });

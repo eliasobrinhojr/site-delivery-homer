@@ -180,6 +180,8 @@ h1, h2, h3 { text-wrap: balance; }
 .monte__campo legend { font-weight: var(--peso-forte); padding: 0; margin-bottom: var(--esp-3); }
 .monte__campo legend span { font-weight: 400; color: var(--cor-texto-suave); }
 .monte__nota { margin: var(--esp-2) 0 0; font-size: var(--texto-sm); color: var(--cor-texto-suave); }
+.monte__grupo { margin: var(--esp-4) 0 var(--esp-2); font-size: var(--texto-xs); color: var(--cor-texto-suave); }
+.monte__campo legend + .monte__grupo { margin-top: 0; }
 .gh-chips { display: flex; flex-wrap: wrap; gap: var(--esp-2); }
 .gh-chip { position: relative; display: inline-flex; }
 .gh-chip input { position: absolute; opacity: 0; inset: 0; margin: 0; cursor: pointer; }

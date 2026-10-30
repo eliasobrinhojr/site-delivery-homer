@@ -115,3 +115,15 @@ test('o idioma alterna para a mesma página no outro idioma', async () => {
   assert.match(await ler('/cardapio/index.html'), /class="nav__idioma" href="\/es\/cardapio\/"/);
   assert.match(await ler('/es/cardapio/index.html'), /class="nav__idioma" href="\/cardapio\/"/);
 });
+
+test('RN-12 o cardápio e o monte o seu mostram como cada adicional vai no copo, em PT e ES', async () => {
+  const pt = await ler('/cardapio/index.html');
+  assert.match(pt, /Calda de doce de leite/);
+  assert.match(pt, /Calda de chocolate/);
+  assert.match(pt, /<p class="monte__grupo">Na parede do copo<\/p>/);
+  assert.match(pt, /<td>No liquidificador<\/td>/);
+  assert.doesNotMatch(pt, /Vão por cima, para você ver/);
+  const es = await ler('/es/cardapio/index.html');
+  assert.match(es, /Dulce de leche/);
+  assert.match(es, /En la pared del vaso/);
+});

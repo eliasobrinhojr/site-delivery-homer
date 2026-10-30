@@ -2,7 +2,7 @@
 import { esc, reais, faixaMg } from './lib/formato.mjs';
 import { linkWhatsApp, mensagem } from './lib/whatsapp.mjs';
 import { loja } from '../conteudo/loja.mjs';
-import { sabores, tamanhos, docuras, adicionais, esgotados } from '../conteudo/cardapio.mjs';
+import { sabores, tamanhos, docuras, adicionais, modosAdicional, esgotados } from '../conteudo/cardapio.mjs';
 import { monte as textosMonte } from '../conteudo/textos/monte.mjs';
 import { comum } from '../conteudo/textos/comum.mjs';
 import { COPO_PADRAO, precoCopo, codigoCopo, cafeinaCopo } from './lib/cardapio.mjs';
@@ -107,9 +107,13 @@ export function monteSeuCopo(lang, { id = 'monte', comTitulo = true, nivel = 'h2
     opcao('ml', tm.ml, `${tm.ml} ml<small data-preco-ml="${tm.ml}">${esc(reais(tm.preco))}</small>`, { marcado: tm.ml === c.ml })
   ).join('');
   const docurasHtml = docuras.map((d) => opcao('docura', d.id, esc(d.nome[lang]), { marcado: d.id === c.docura })).join('');
-  const adicionaisHtml = adicionais.map((a) => {
-    const off = esgotados.includes(a.id);
-    return opcao('adicional', a.id, `${esc(a.nome[lang])}<small>${esc(off ? t.esgotado : `+ ${reais(a.preco)}`)}</small>`, { tipo: 'checkbox', desativado: off });
+  // RN-12: os adicionais aparecem agrupados pelo jeito que vão no copo (no liquidificador, na parede, por cima).
+  const adicionaisHtml = modosAdicional.map((modo) => {
+    const chips = adicionais.filter((a) => a.modo === modo).map((a) => {
+      const off = esgotados.includes(a.id);
+      return opcao('adicional', a.id, `${esc(a.nome[lang])}<small>${esc(off ? t.esgotado : `+ ${reais(a.preco)}`)}</small>`, { tipo: 'checkbox', desativado: off });
+    }).join('');
+    return chips ? `<p class="monte__grupo">${esc(comum[lang].modoAdicional[modo])}</p><div class="gh-chips">${chips}</div>` : '';
   }).join('');
   // RF-28: entrega ou retirada (só aparece com loja.retirada ligada).
   const recebimentoHtml = loja.retirada
@@ -135,7 +139,7 @@ ${comTitulo ? `${rotulo(t.rotulo)}<${Hn} class="gh-titulo-md" id="${esc(id)}-tit
 <fieldset class="monte__campo"><legend>${esc(t.tamanho)}</legend><div class="gh-chips">${tamanhosHtml}</div></fieldset>
 <fieldset class="monte__campo"><legend>${esc(t.turbo)} <span>· ${esc(t.turboLegenda)}</span></legend><div class="gh-chips gh-chips--turbo">${turboHtml}</div><p class="monte__nota" data-nota-turbo hidden>${esc(t.turbo700)}</p></fieldset>
 <fieldset class="monte__campo"><legend>${esc(t.docura)} <span>· ${esc(t.docuraLegenda)}</span></legend><div class="gh-chips">${docurasHtml}</div></fieldset>
-<fieldset class="monte__campo"><legend>${esc(t.adicionais)} <span>· ${esc(t.adicionaisLegenda)}</span></legend><div class="gh-chips">${adicionaisHtml}</div></fieldset>
+<fieldset class="monte__campo"><legend>${esc(t.adicionais)} <span>· ${esc(t.adicionaisLegenda)}</span></legend>${adicionaisHtml}</fieldset>
 ${recebimentoHtml}
 </form>
 <div class="monte__resumo" aria-live="polite">

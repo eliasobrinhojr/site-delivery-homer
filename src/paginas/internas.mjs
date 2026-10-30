@@ -30,7 +30,7 @@ export function paginaCardapio(lang) {
 <div class="sabor__corpo"><h3 class="sabor__nome">${esc(s.titulo[lang])}</h3><p>${esc(s.desc[lang])}</p><p class="sabor__preco">${esc(c.aPartirDe)} <strong>${esc(reais(tamanhos[0].preco))}</strong></p></div>
 </article>`).join('');
   const linhasPreco = tamanhos.map((tm) => `<tr><th scope="row">${tm.ml} ml</th><td>${esc(reais(tm.preco))}</td><td>${tm.precoTurbo ? esc(reais(tm.precoTurbo)) : `<span class="gh-texto-suave">${esc(t.naoExiste)}</span>`}</td></tr>`).join('');
-  const linhasAdd = adicionais.map((a) => `<tr><th scope="row">${esc(a.nome[lang])}</th><td>+ ${esc(reais(a.preco))}</td></tr>`).join('');
+  const linhasAdd = adicionais.map((a) => `<tr><th scope="row">${esc(a.nome[lang])}</th><td>${esc(c.modoAdicional[a.modo])}</td><td>+ ${esc(reais(a.preco))}</td></tr>`).join('');
   const linhasCafeina = tamanhos.flatMap((tm) => [
     `<tr><th scope="row">${tm.ml} ml</th><td>${esc(faixaMg(tm.cafeina, lang))}</td></tr>`,
     ...(tm.cafeinaTurbo ? [`<tr><th scope="row">${esc(c.modoTurbo)} ${tm.ml} ml</th><td>${esc(faixaMg(tm.cafeinaTurbo, lang))}</td></tr>`] : [])
@@ -43,7 +43,7 @@ export function paginaCardapio(lang) {
 <p class="cardapio__combo"><strong>${esc(t.comboTitulo)}:</strong> ${esc(t.comboTexto)}</p></div>
 <div class="gh-cartao gh-cartao--turbo">${seloTurbo(lang)}<h2 class="gh-titulo-sm">${esc(t.turboTitulo)}</h2><p>${esc(t.turboTexto)}</p></div>
 <div class="gh-cartao"><h2 class="gh-titulo-sm">${esc(t.docuraTitulo)}</h2><p>${esc(t.docuraTexto)}</p></div>
-<div class="gh-cartao"><h2 class="gh-titulo-sm">${esc(t.adicionaisTitulo)}</h2><p>${esc(t.adicionaisTexto)}</p><div class="gh-tabela-rolagem"><table class="gh-tabela"><thead><tr><th scope="col">${esc(t.colAdicional)}</th><th scope="col">${esc(t.colPreco)}</th></tr></thead><tbody>${linhasAdd}</tbody></table></div></div>
+<div class="gh-cartao"><h2 class="gh-titulo-sm">${esc(t.adicionaisTitulo)}</h2><p>${esc(t.adicionaisTexto)}</p><div class="gh-tabela-rolagem"><table class="gh-tabela"><thead><tr><th scope="col">${esc(t.colAdicional)}</th><th scope="col">${esc(t.colModo)}</th><th scope="col">${esc(t.colPreco)}</th></tr></thead><tbody>${linhasAdd}</tbody></table></div></div>
 <div class="gh-cartao cardapio__cafeina"><h2 class="gh-titulo-sm">${esc(t.cafeinaTitulo)}</h2><div class="gh-tabela-rolagem"><table class="gh-tabela"><thead><tr><th scope="col">${esc(t.colCopo)}</th><th scope="col">${esc(t.colCafeina)}</th></tr></thead><tbody>${linhasCafeina}</tbody></table></div><p class="gh-texto-suave nota-pequena">${esc(t.cafeinaTexto)}</p></div>
 </div>
 <div class="avisos">${avisoAlergenicos(lang, { turbo: true })}</div>`, 'cardapio'),

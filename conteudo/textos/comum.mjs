@@ -52,6 +52,8 @@ export const comum = {
       golpe: 'Chave ou nome diferentes? Não pague e chame a gente no WhatsApp.'
     },
     deMaues: 'Do Amazonas',
+    // RN-12: como cada adicional vai no copo.
+    modoAdicional: { batido: 'No liquidificador', parede: 'Na parede do copo', topo: 'Por cima' },
     modoTurbo: 'Modo Turbo',
     aPartirDe: 'a partir de',
     cookies: {
@@ -112,6 +114,7 @@ export const comum = {
       golpe: '¿Clave o nombre distintos? No pagues y escribinos por WhatsApp.'
     },
     deMaues: 'Del Amazonas',
+    modoAdicional: { batido: 'En la licuadora', parede: 'En la pared del vaso', topo: 'Por encima' },
     modoTurbo: 'Modo Turbo',
     aPartirDe: 'desde',
     cookies: {
