@@ -116,6 +116,20 @@ test('o idioma alterna para a mesma página no outro idioma', async () => {
   assert.match(await ler('/es/cardapio/index.html'), /class="nav__idioma" href="\/cardapio\/"/);
 });
 
+test('RN-13 o cardápio e o monte o seu mostram como cada adicional vai no copo, em PT e ES', async () => {
+  const pt = await ler('/cardapio/index.html');
+  assert.match(pt, /Calda de doce de leite/);
+  assert.match(pt, /Calda de chocolate/);
+  assert.match(pt, /<p class="monte__grupo">Na parede do copo<\/p>/);
+  assert.match(pt, /<td>No liquidificador<\/td>/);
+  assert.doesNotMatch(pt, /Vão por cima, para você ver/);
+  const es = await ler('/es/cardapio/index.html');
+  assert.match(es, /Dulce de leche/);
+  assert.match(es, /En la pared del vaso/);
+  assert.match(pt, /Os adicionais estão em teste e podem mudar até a inauguração/);
+  assert.match(es, /Los extras están en prueba/);
+});
+
 test('RF-31 Nossa história conta a família e o pai no preparo, com missão, visão e valores, sem meta interna', async () => {
   for (const [caminho, termos] of [
     ['/sobre/index.html', ['Eu sou o Homer', 'minha esposa', 'Manaus', 'liquidificador', 'Missão', 'Visão', 'Família']],

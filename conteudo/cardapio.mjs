@@ -52,14 +52,20 @@ export const docuras = [
   { id: 'mais', cod: '+', nome: { pt: 'Mais doce', es: 'Más dulce' } }
 ];
 
-// Vão por cima do copo. Até 3 por copo, cada um uma vez (RN-04).
+// Até 3 por copo, cada um uma vez (RN-04). Cada um tem um jeito fixo de ir no copo (RN-13):
+// 'batido' = no liquidificador; 'parede' = calda passada por dentro do copo antes de servir; 'topo' = por cima.
 export const adicionais = [
-  { id: 'MEL', nome: { pt: 'Mel', es: 'Miel' }, preco: 3 },
-  { id: 'LC', nome: { pt: 'Leite condensado', es: 'Leche condensada' }, preco: 3 },
-  { id: 'PAC', nome: { pt: 'Paçoca', es: 'Paçoca (dulce de maní)' }, preco: 3 },
-  { id: 'AMD', nome: { pt: 'Amendoim extra', es: 'Maní extra' }, preco: 2 },
-  { id: 'CAN', nome: { pt: 'Canela', es: 'Canela' }, preco: 1 }
+  { id: 'AMD', modo: 'batido', nome: { pt: 'Amendoim extra', es: 'Maní extra' }, preco: 2 },
+  { id: 'PAC', modo: 'batido', nome: { pt: 'Paçoca', es: 'Paçoca (dulce de maní)' }, preco: 3 },
+  { id: 'MEL', modo: 'batido', nome: { pt: 'Mel', es: 'Miel' }, preco: 3 },
+  { id: 'LC', modo: 'batido', nome: { pt: 'Leite condensado', es: 'Leche condensada' }, preco: 3 },
+  { id: 'DDL', modo: 'parede', nome: { pt: 'Calda de doce de leite', es: 'Dulce de leche' }, preco: 3 },
+  { id: 'CHO', modo: 'parede', nome: { pt: 'Calda de chocolate', es: 'Salsa de chocolate' }, preco: 3 },
+  { id: 'CAN', modo: 'topo', nome: { pt: 'Canela', es: 'Canela' }, preco: 1 }
 ];
+
+// Ordem em que os jeitos aparecem no site (RN-13).
+export const modosAdicional = ['batido', 'parede', 'topo'];
 
 export const regras = {
   maxAdicionais: 3,

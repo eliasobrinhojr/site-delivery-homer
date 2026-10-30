@@ -76,7 +76,7 @@ atualize este arquivo junto.
 | RN-01 | Preço igual para os três sabores em cada tamanho (R$ 17 / 24 / 33) |
 | RN-02 | Turbo só em 300 e 500 ml (R$ 21 / 28); não existe Turbo 700 nem "dose dupla" |
 | RN-03 | Doçura obrigatória e grátis: menos doce, normal (padrão), mais doce |
-| RN-04 | Até 3 adicionais por copo, cada um uma vez (mel, leite condensado, paçoca R$ 3; amendoim extra R$ 2; canela R$ 1) |
+| RN-04 | Até 3 adicionais por copo, cada um uma vez (mel, leite condensado, paçoca, calda de doce de leite, calda de chocolate R$ 3; amendoim extra R$ 2; canela R$ 1) |
 | RN-05 | Não existe versão sem leite, sem amendoim ou sem castanha |
 | RN-06 | Nada ácido no copo (limão, maracujá, abacaxi) |
 | RN-07 | Sabor ou adicional pode ficar esgotado no dia |
@@ -85,9 +85,16 @@ atualize este arquivo junto.
 | RN-10 | Preço do iFood ~33% maior; nunca como preço do site |
 | RN-11 | Retirada: mesmo preço direto, sem taxa de entrega, para qualquer bairro; Pix antes do preparo ou cartão na hora de retirar (RN-12); copo pronto em até 10 minutos depois do Pix (no cartão, depois do aviso de que o cliente está a caminho); endereço só na confirmação do pedido; sem consumo no local |
 | RN-12 | Pagamento direto (site e WhatsApp): Pix antes do preparo (chave = CNPJ) **ou cartão de crédito ou débito**, na maquininha, na entrega ou na retirada. Mesmo preço nas duas formas (sem acréscimo no cartão); crédito só à vista. No iFood, o pagamento é pelo app |
+| RN-13 | Cada adicional tem um jeito fixo de ir no copo, porque o cliente toma de canudo e com tampa: **no liquidificador** (amendoim extra, paçoca, mel, leite condensado), **na parede do copo** (caldas de doce de leite e de chocolate, passadas por dentro antes de servir) e **por cima** (canela polvilhada). O site e a comanda mostram o jeito de cada um |
 
 Código de produção: sabor (T/A/B) + tamanho (3/5/7) + X (Turbo) + doçura (− ou +) + adicionais.
-Ex.: `B5X+ MEL PAC`.
+Ex.: `B5X+ MEL PAC`. Códigos dos adicionais: `AMD`, `PAC`, `MEL`, `LC`, `DDL` (calda de doce de leite), `CHO` (calda de
+chocolate), `CAN`.
+
+Notas de produção (29/10/2026, base para a degustação de 9–22/11): paçoca batida + uma pitada esfarelada no topo,
+só para a foto; calda **na parede** não muda a doçura da base; canudo grosso (10–12 mm). Caramelo e morango ficam
+em teste na degustação e só entram no site se aprovados. **Os adicionais acima valem até a degustação**: o
+site avisa que estão em teste e podem mudar até a inauguração.
 
 ## Requisitos não funcionais (resumo)
 
@@ -104,3 +111,6 @@ RNF-13 UTM em anúncios, bio e QR code, RNF-14 site estático com CDN, RNF-15 co
 - **Endereço físico:** decisão de 29/10: **o site continua sem endereço** (só Florianópolis, SC, WhatsApp e CNPJ),
   mantendo a regra de nunca mostrar a cozinha, mesmo sem atender à letra do art. 2º, II. Rever se houver endereço
   comercial ou fiscal separado da casa.
+- **Alérgenos das caldas (RN-13):** antes de vender, conferir o rótulo das caldas de doce de leite e de chocolate
+  escolhidas (soja, glúten, traços). O que aparecer além de leite, amendoim e castanha precisa entrar no aviso do
+  adicional (RF-06).
