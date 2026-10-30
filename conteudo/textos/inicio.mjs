@@ -5,9 +5,9 @@ export const inicio = {
     titulo: 'Guaraná do Homer · Guaraná batido nos Ingleses e no Santinho',
     descricao: 'Guaraná batido cremoso, feito na hora com guaraná em pó do Amazonas, amendoim e castanha. Delivery nos Ingleses e no Santinho, em Florianópolis. A partir de R$ 17 (preço estimado).',
     hero: {
-      rotulo: 'Guaraná do Amazonas, batido nos Ingleses',
-      titulo: 'Em Manaus, tem carrinho na rua',
-      destaque: 'só para este copo.',
+      rotulo: 'Do interior do Amazonas para os Ingleses',
+      titulo: 'Você está no Sul.',
+      destaque: 'O\u00a0copo vem do Norte.',
       lead: 'Guaraná em pó do Amazonas, amendoim e castanha de caju, batidos com gelo até virar creme. Um gosto do Norte do Brasil, a quase 3.000 km de lá: a gente bate na hora que o seu pedido chega e entrega em até 40 minutos.',
       provar: 'Quero provar o primeiro',
       verCardapio: 'Ver o cardápio',
@@ -39,7 +39,7 @@ export const inicio = {
     },
     norte: {
       rotulo: 'De onde vem',
-      titulo: 'Você está no Sul. O copo vem do Norte.',
+      titulo: 'Nasce em Maués. Vira copo em Manaus.',
       p1: 'O guaraná nasce no interior do Amazonas, em Maués, onde o povo Sateré-Mawé cultiva a planta há gerações. Em Manaus, a capital, o guaraná batido está nas lanchonetes e nos carrinhos de rua que vendem só ele.',
       p2: 'O Homer é de Manaus. Agora ele bate esse copo nos Ingleses, para quem vem de outros cantos do Brasil, da Argentina e do Uruguai provar um pedaço do Norte sem sair da Ilha.',
       rota: {
@@ -84,9 +84,9 @@ export const inicio = {
     titulo: 'Guaraná do Homer · Guaraná batido en Ingleses y Santinho',
     descricao: 'Guaraná batido cremoso, hecho en el momento con guaraná en polvo del Amazonas, maní y castaña. Delivery en Ingleses y Santinho, Florianópolis. Desde R$ 17 (precio estimado).',
     hero: {
-      rotulo: 'Guaraná del Amazonas, batido en Ingleses',
-      titulo: 'En Manaos hay carritos en la calle',
-      destaque: 'solo para este vaso.',
+      rotulo: 'Del interior del Amazonas a Ingleses',
+      titulo: 'Estás en el sur de Brasil.',
+      destaque: 'El\u00a0vaso viene del norte.',
       lead: 'Guaraná en polvo del Amazonas, maní y castaña de cajú, batidos con hielo hasta volverse crema. Un sabor del norte de Brasil, a casi 3.000 km de allá: lo batimos cuando llega tu pedido y lo entregamos en hasta 40 minutos.',
       provar: 'Quiero probar el primero',
       verCardapio: 'Ver el menú',
@@ -118,7 +118,7 @@ export const inicio = {
     },
     norte: {
       rotulo: 'De dónde viene',
-      titulo: 'Estás en el sur de Brasil. El vaso viene del norte.',
+      titulo: 'Nace en Maués. Se vuelve vaso en Manaos.',
       p1: 'El guaraná nace en el interior del Amazonas, en Maués, donde el pueblo sateré-mawé cultiva la planta hace generaciones. En Manaos, la capital, el guaraná batido está en las cafeterías y en carritos callejeros que venden solo eso.',
       p2: 'Homer es de Manaos. Ahora bate ese vaso en Ingleses, para que quien viene de otras partes de Brasil, de Argentina y de Uruguay pruebe un pedazo del norte sin salir de la Isla.',
       rota: {

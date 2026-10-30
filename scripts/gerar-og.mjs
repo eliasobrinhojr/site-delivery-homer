@@ -21,7 +21,7 @@ try {
 const PECAS = {
   pt: {
     padrao: ['O guaraná batido mais cremoso da Ilha', 'Feito na hora, com guaraná em pó do Amazonas. Preço estimado: a partir de R$ 17.'],
-    inicio: ['Guaraná do Amazonas, batido na Ilha', 'Em Manaus, tem carrinho na rua só para este copo. Preço estimado: a partir de R$ 17.'],
+    inicio: ['Você está no Sul. O copo vem do Norte.', 'Guaraná do interior do Amazonas, batido nos Ingleses. Preço estimado: a partir de R$ 17.'],
     cardapio: ['Cardápio', 'Tradicional, Abacate e Banana. 300, 500 e 700 ml. Modo Turbo.'],
     'o-guarana': ['O guaraná', 'Um copo do Amazonas, batido aqui na Ilha.'],
     sobre: ['Do Norte do Brasil para o Norte da Ilha', 'De Manaus para Florianópolis, com a receita do Homer.'],
@@ -33,7 +33,7 @@ const PECAS = {
   },
   es: {
     padrao: ['El guaraná batido más cremoso de la Isla', 'Hecho en el momento, con guaraná en polvo del Amazonas. Precio estimado: desde R$ 17.'],
-    inicio: ['Guaraná del Amazonas, batido en la Isla', 'En Manaos hay carritos en la calle solo para este vaso. Precio estimado: desde R$ 17.'],
+    inicio: ['Estás en el sur de Brasil. El vaso viene del norte.', 'Guaraná del interior del Amazonas, batido en Ingleses. Precio estimado: desde R$ 17.'],
     cardapio: ['Menú', 'Tradicional, Palta y Banana. 300, 500 y 700 ml. Modo Turbo.'],
     'o-guarana': ['El guaraná', 'Un vaso del Amazonas, batido acá en la Isla.'],
     sobre: ['Del norte de Brasil al norte de la Isla', 'De Manaos a Florianópolis, con la receta de Homer.'],
