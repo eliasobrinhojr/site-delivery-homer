@@ -1,7 +1,8 @@
-import { esc, icone, rotulo, botaoWhatsapp, botaoPedido, botaoIfood, monteSeuCopo, reais, faixaMg, avisoAlergenicos, copoSvg, seloTurbo, seloOrigem, linhaEmpresa, avisoPix, avisoPrecos, perguntasVisiveis } from '../componentes.mjs';
+import { esc, icone, rotulo, wa, antesDaInauguracao, botaoWhatsapp, botaoPedido, botaoIfood, monteSeuCopo, reais, faixaMg, avisoAlergenicos, copoSvg, seloTurbo, seloOrigem, linhaEmpresa, avisoPix, avisoPrecos, perguntasVisiveis } from '../componentes.mjs';
 import { cardapioPagina, guaranaPagina, sobrePagina, comoPedirPagina, diretoPagina, eventosPagina, privacidadePagina, erroPagina } from '../../conteudo/textos/paginas.mjs';
 import { perguntas } from '../../conteudo/textos/perguntas.mjs';
 import { equipe as textosEquipe } from '../../conteudo/textos/equipe.mjs';
+import { avise as textosAvise } from '../../conteudo/textos/avise.mjs';
 import { comum } from '../../conteudo/textos/comum.mjs';
 import { sabores, tamanhos, adicionais, regras } from '../../conteudo/cardapio.mjs';
 import { loja } from '../../conteudo/loja.mjs';
@@ -215,4 +216,16 @@ ${rotulo(t.h1)}
 <div class="acoes"><a class="gh-botao gh-botao--contorno" href="${caminho(lang, 'inicio')}">${esc(t.voltar)}</a><button class="gh-botao gh-botao--contorno" type="button" data-equipe-sair hidden>${esc(t.sairLongo)}</button></div>
 </div></section>`;
   return { rotaId: 'equipe', titulo: t.titulo, descricao: t.descricao, corpo, noindex: true, scripts: ['equipe.mjs'] };
+}
+
+/** RF-33: link curto da bio (dohomer.com.br/avise/) que abre o WhatsApp com a mensagem pronta. */
+export function paginaAvise(lang) {
+  const t = textosAvise[lang];
+  const alvo = wa(antesDaInauguracao() ? 'inauguracao' : 'provar', lang);
+  const corpo = `<section class="gh-secao"><div class="gh-container equipe">
+<h1 class="gh-titulo-lg">${esc(t.h1)}</h1>
+<p>${esc(t.lead)}</p>
+<div class="acoes"><a class="gh-botao" href="${esc(alvo)}" rel="noopener" data-origem="avise">${icone('conversa')}<span>${esc(t.botao)}</span></a><a class="gh-botao gh-botao--contorno" href="${caminho(lang, 'inicio')}">${esc(t.voltar)}</a></div>
+</div></section>`;
+  return { rotaId: 'avise', titulo: t.titulo, descricao: t.descricao, corpo, noindex: true, redirecionar: alvo };
 }

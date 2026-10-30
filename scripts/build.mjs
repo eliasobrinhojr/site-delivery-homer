@@ -10,7 +10,7 @@ import { IDIOMAS, rotas, caminho } from '../src/rotas.mjs';
 import { paginaInicio } from '../src/paginas/inicio.mjs';
 import {
   paginaCardapio, paginaGuarana, paginaSobre, paginaComoPedir, paginaDireto,
-  paginaEventos, paginaPerguntas, paginaPrivacidade, paginaErro, paginaEquipe
+  paginaEventos, paginaPerguntas, paginaPrivacidade, paginaErro, paginaEquipe, paginaAvise
 } from '../src/paginas/internas.mjs';
 import { loja } from '../conteudo/loja.mjs';
 
@@ -79,7 +79,7 @@ function sitemap() {
   return `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">\n${urls.join('\n')}\n</urlset>\n`;
 }
 
-const robots = () => `User-agent: *\nAllow: /\nDisallow: /js/\nDisallow: /equipe/\n\nSitemap: ${loja.dominio}/sitemap.xml\n`;
+const robots = () => `User-agent: *\nAllow: /\nDisallow: /js/\nDisallow: /equipe/\nDisallow: /avise/\n\nSitemap: ${loja.dominio}/sitemap.xml\n`;
 
 export async function construir() {
   await rm(DIST, { recursive: true, force: true });
@@ -103,6 +103,8 @@ export async function construir() {
   await gravar('/es/404.html', pagina({ lang: 'es', ativos, ...paginaErro('es') }));
   // RF-29: área da equipe, fora do menu, do sitemap e da busca (noindex + robots).
   await gravar('/equipe/index.html', pagina({ lang: 'pt', ativos, ...paginaEquipe('pt') }));
+  // RF-33: link curto da bio do Instagram, fora do sitemap e da busca.
+  await gravar('/avise/index.html', pagina({ lang: 'pt', ativos, ...paginaAvise('pt') }));
   await gravar('/sitemap.xml', sitemap());
   await gravar('/robots.txt', robots());
 

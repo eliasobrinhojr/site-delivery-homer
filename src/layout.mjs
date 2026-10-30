@@ -7,7 +7,7 @@ import { resumoHorarios } from './lib/horario.mjs';
 
 const NAV = ['cardapio', 'guarana', 'sobre', 'comoPedir'];
 
-function cabecaHtml({ lang, rotaId, titulo, descricao, ativos, schemas, noindex, ogNome }) {
+function cabecaHtml({ lang, rotaId, titulo, descricao, ativos, schemas, noindex, ogNome, redirecionar }) {
   const c = comum[lang];
   const url = loja.dominio + caminho(lang, rotaId);
   const urlPt = loja.dominio + caminho('pt', rotaId);
@@ -17,7 +17,7 @@ function cabecaHtml({ lang, rotaId, titulo, descricao, ativos, schemas, noindex,
     .map((s) => `<script type="application/ld+json">${JSON.stringify(s).replaceAll('<', '\\u003c')}</script>`)
     .join('\n');
   return `<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">${redirecionar ? `\n<meta http-equiv="refresh" content="0; url=${esc(redirecionar)}">` : ''}
 <title>${esc(titulo)}</title>
 <meta name="description" content="${esc(descricao)}">
 ${noindex ? '<meta name="robots" content="noindex">' : `<link rel="canonical" href="${esc(url)}">

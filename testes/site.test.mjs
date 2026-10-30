@@ -145,3 +145,17 @@ test('RN-12 / RF-32 o site aceita Pix e cartão de crédito ou débito, em PT e 
   assert.match(monte, /name="pagamento" value="cartao"/);
   assert.match(await ler('/index.html'), /"paymentAccepted":"Pix, cartão de crédito, cartão de débito"/);
 });
+
+test('RF-33 /avise/ leva direto ao WhatsApp com a mensagem pronta, fora da busca', async () => {
+  const { linkWhatsApp, mensagem } = await import('../src/lib/whatsapp.mjs');
+  const { loja } = await import('../conteudo/loja.mjs');
+  const { antesDaInauguracao } = await import('../src/componentes.mjs');
+  const html = await ler('/avise/index.html');
+  const alvo = linkWhatsApp(loja.whatsapp, mensagem(antesDaInauguracao() ? 'inauguracao' : 'provar', 'pt'));
+  assert.ok(html.includes(`<meta http-equiv="refresh" content="0; url=${alvo}">`), 'redirecionamento imediato');
+  assert.ok(html.includes(`href="${alvo}"`), 'botão de reserva');
+  assert.doesNotMatch(alvo, /%25/, 'mensagem codificada uma vez só');
+  assert.match(html, /<meta name="robots" content="noindex">/);
+  assert.match(await ler('/robots.txt'), /Disallow: \/avise\//);
+  assert.doesNotMatch(await ler('/sitemap.xml'), /\/avise\//);
+});
