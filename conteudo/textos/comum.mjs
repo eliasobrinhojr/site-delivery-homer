@@ -52,7 +52,7 @@ export const comum = {
       golpe: 'Chave ou nome diferentes? Não pague e chame a gente no WhatsApp.'
     },
     deMaues: 'Do Amazonas',
-    // RN-12: como cada adicional vai no copo.
+    // RN-13: como cada adicional vai no copo.
     modoAdicional: { batido: 'No liquidificador', parede: 'Na parede do copo', topo: 'Por cima' },
     modoTurbo: 'Modo Turbo',
     aPartirDe: 'a partir de',

@@ -90,7 +90,7 @@ test('RN-04 caldas de doce de leite e de chocolate custam R$ 3 e contam no limit
   assert.equal(codigoCopo(copo({ sabor: 'B', adicionais: ['PAC', 'DDL'] })), 'B5 PAC DDL');
 });
 
-test('RN-12 todo adicional tem um jeito de ir no copo, e as caldas vão na parede', () => {
+test('RN-13 todo adicional tem um jeito de ir no copo, e as caldas vão na parede', () => {
   for (const a of adicionais) assert.ok(modosAdicional.includes(a.modo), `${a.id} sem modo válido`);
   assert.deepEqual(adicionais.filter((a) => a.modo === 'parede').map((a) => a.id), ['DDL', 'CHO']);
   assert.deepEqual(adicionais.filter((a) => a.modo === 'topo').map((a) => a.id), ['CAN']);

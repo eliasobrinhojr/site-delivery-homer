@@ -137,72 +137,70 @@ export const guaranaPagina = {
 export const sobrePagina = {
   pt: {
     titulo: 'Nossa história · Guaraná do Homer',
-    descricao: 'Homer é de Manaus e trouxe o guaraná batido para Florianópolis. A história da família que veio do Norte e da empresa que ele criou na Ilha.',
+    descricao: 'O Homer e a esposa vieram de Manaus para perto dos filhos, em Florianópolis, e hoje batem na Ilha o guaraná do Amazonas, com a receita e a letra dele.',
     rotulo: 'Nossa história',
-    h1: 'Homer trouxe o Norte para a Ilha',
-    lead: 'Homer é o apelido que ele ganhou dos amigos da rua, em Manaus. Hoje é o nome da empresa que ele criou em Florianópolis, onde a família inteira escolheu viver.',
+    h1: 'Homer trouxe o Norte do Brasil para o Norte da Ilha',
+    lead: 'Eu sou o Homer. Saí de Manaus com a minha esposa para ficar perto dos nossos filhos, e o guaraná que a gente tomava na rua virou o nosso negócio.',
     historiaTitulo: 'De Manaus para a Ilha',
     historia: [
-      { marca: 'Manaus', titulo: 'Onde tudo começa', texto: 'Homer é de Manaus, onde guaraná batido se compra no carrinho da esquina. Foi numa rua de bairro que os amigos lhe deram o apelido que hoje vai em cada copo.' },
-      { marca: 'Os filhos', titulo: 'A família começa a vir', texto: 'O filho veio primeiro para Florianópolis, em busca de qualidade de vida. Depois vieram a filha e o genro, e a Ilha recebeu todos eles.' },
-      { marca: 'Juntos', titulo: 'Perto de quem importa', texto: 'Quando a saúde pediu atenção, Homer e a esposa vieram também, para a família ficar perto e cuidar uns dos outros. E todos acabaram ficando: hoje a família inteira mora aqui.' },
-      { marca: 'Agora', titulo: 'O Guaraná do Homer', texto: 'Na Ilha, Homer decidiu trazer o guaraná batido de Manaus. Assim nasceu a empresa: com a receita dele, o guaraná do Amazonas e a família inteira junto.' }
+      { marca: 'Manaus', titulo: 'Onde tudo começa', texto: 'Em Manaus, guaraná batido se compra no carrinho da esquina. Foi lá, numa rua de bairro, que os amigos me deram o apelido de Homer.' },
+      { marca: 'Primeiro', titulo: 'Os filhos vieram na frente', texto: 'Nossos filhos vieram primeiro para Florianópolis, atrás de qualidade de vida, e fizeram da Ilha a casa deles.' },
+      { marca: 'Depois', titulo: 'Viemos para perto', texto: 'Depois viemos eu e a minha esposa, para ficarmos todos perto. E acabamos ficando: hoje a família inteira mora aqui.' },
+      { marca: 'Agora', titulo: 'O nosso negócio', texto: 'O Guaraná do Homer é como a gente cria raízes na Ilha: eu no liquidificador, a minha esposa do meu lado, a minha receita e o guaraná do Amazonas, cada copo batido na hora.' }
     ],
-    fechamento: 'Homer trouxe o Norte na bagagem. Agora ele chega na sua porta, num copo.',
-    assinaturaTitulo: 'O nome e a letra são dele',
-    assinaturaTexto: 'O "HOMER" do nosso logo não é uma fonte de computador: é a letra de forma do próprio Homer, escrita à mão e passada para o desenho da marca. Cada copo sai com a assinatura de quem bateu.',
+    fechamento: 'Trouxemos o Norte na bagagem. Agora ele chega na sua porta, num copo.',
+    assinaturaTitulo: 'O nome e a letra são meus',
+    assinaturaTexto: 'Homer é o apelido que os amigos da rua me deram, lá em Manaus. O "HOMER" do nosso logo não é uma fonte de computador: é a minha letra de forma, escrita à mão e passada para o desenho da marca. Sou eu quem bate o seu guaraná, e cada copo sai com a assinatura de quem bateu.',
     missaoTitulo: 'Missão',
-    missao: 'Levar o guaraná batido do Amazonas para a Ilha, feito na hora, com ingrediente de verdade e tudo o que tem no copo à vista.',
+    missao: 'Levar para a Ilha o guaraná batido do Amazonas: feito na hora, com ingrediente de verdade e tudo o que vai no copo dito com clareza.',
     visaoTitulo: 'Visão',
-    visao: 'Ser o guaraná batido que todo mundo do Norte da Ilha conhece pelo nome até o verão de 2028, com metade dos pedidos vindo direto do cliente.',
+    visao: 'Ser o guaraná batido que o Norte da Ilha conhece pelo nome e crescer como marca de família, com novas receitas feitas do mesmo jeito: na hora e com cuidado.',
     valoresTitulo: 'O que a gente não abre mão',
     valores: [
-      { nome: 'Feito na hora', texto: 'Nenhum copo fica esperando. O liquidificador liga quando o seu pedido chega.' },
-      { nome: 'Origem', texto: 'Guaraná em pó do interior do Amazonas, de Maués, e a receita do Homer, de Manaus.' },
-      { nome: 'Transparência', texto: 'Cafeína, alergênicos e preço ditos com números, sem letra miúda.' },
-      { nome: 'Bom humor da Ilha', texto: 'Papo de vizinho que mora perto da praia, nunca de vendedor.' },
-      { nome: 'Palavra cumprida', texto: 'Copo lacrado, no tamanho certo, no prazo prometido.' },
-      { nome: 'Família', texto: 'Começou em família e continua em família: a receita é do Homer, e o negócio é de todos nós.' }
-    ],
-    fotoPendente: 'A foto do Homer no balcão entra aqui depois da sessão de fotos.'
+      { nome: 'Feito na hora', texto: 'Nenhum copo fica esperando: o liquidificador só liga quando o seu pedido chega.' },
+      { nome: 'Origem', texto: 'Guaraná em pó de Maués, no interior do Amazonas, e a receita da casa, de Manaus.' },
+      { nome: 'Família', texto: 'É um negócio de casal: eu e a minha esposa cuidamos de cada pedido, com a família por perto.' },
+      { nome: 'Transparência', texto: 'Ingredientes, alergênicos, cafeína e preço ditos com números, sem letra miúda.' },
+      { nome: 'Palavra cumprida', texto: 'Copo lacrado, no tamanho certo e no prazo combinado, na entrega ou na retirada.' },
+      { nome: 'Bom humor da Ilha', texto: 'Papo de vizinho que mora perto da praia, nunca de vendedor.' }
+    ]
   },
   es: {
     titulo: 'Nuestra historia · Guaraná do Homer',
-    descricao: 'Homer es de Manaos y trajo el guaraná batido a Florianópolis. La historia de la familia que vino del norte y de la empresa que él creó en la Isla.',
+    descricao: 'Homer y su esposa llegaron de Manaos para estar cerca de sus hijos en Florianópolis, y hoy baten en la Isla el guaraná del Amazonas, con su receta y su letra.',
     rotulo: 'Nuestra historia',
-    h1: 'Homer trajo el norte a la Isla',
-    lead: 'Homer es el apodo que le pusieron los amigos del barrio, en Manaos. Hoy es el nombre de la empresa que él creó en Florianópolis, donde la familia entera eligió vivir.',
+    h1: 'Homer trajo el norte de Brasil al norte de la Isla',
+    lead: 'Soy Homer. Salí de Manaos con mi esposa para estar cerca de nuestros hijos, y el guaraná que tomábamos en la calle se convirtió en nuestro negocio.',
     historiaTitulo: 'De Manaos a la Isla',
     historia: [
-      { marca: 'Manaos', titulo: 'Donde todo empieza', texto: 'Homer es de Manaos, donde el guaraná batido se compra en el carrito de la esquina. Fue en una calle de barrio donde los amigos le pusieron el apodo que hoy va en cada vaso.' },
-      { marca: 'Los hijos', titulo: 'La familia empieza a venir', texto: 'El hijo llegó primero a Florianópolis, buscando calidad de vida. Después vinieron la hija y el yerno, y la Isla los recibió a todos.' },
-      { marca: 'Juntos', titulo: 'Cerca de los suyos', texto: 'Cuando la salud pidió atención, Homer y su esposa vinieron también, para que la familia estuviera cerca y se cuidaran entre todos. Y se quedaron: hoy la familia entera vive acá.' },
-      { marca: 'Ahora', titulo: 'Guaraná do Homer', texto: 'En la Isla, Homer decidió traer el guaraná batido de Manaos. Así nació la empresa: con su receta, el guaraná del Amazonas y la familia entera junta.' }
+      { marca: 'Manaos', titulo: 'Donde todo empieza', texto: 'En Manaos, el guaraná batido se compra en el carrito de la esquina. Fue ahí, en una calle de barrio, donde los amigos me pusieron el apodo de Homer.' },
+      { marca: 'Primero', titulo: 'Los hijos vinieron adelante', texto: 'Nuestros hijos llegaron primero a Florianópolis, buscando calidad de vida, e hicieron de la Isla su casa.' },
+      { marca: 'Después', titulo: 'Vinimos cerca', texto: 'Después vinimos mi esposa y yo, para estar todos cerca. Y nos quedamos: hoy la familia entera vive acá.' },
+      { marca: 'Ahora', titulo: 'Nuestro negocio', texto: 'Guaraná do Homer es nuestra forma de echar raíces en la Isla: yo en la licuadora, mi esposa a mi lado, mi receta y el guaraná del Amazonas, cada vaso batido en el momento.' }
     ],
-    fechamento: 'Homer trajo el norte en la valija. Ahora llega a tu puerta, en un vaso.',
-    assinaturaTitulo: 'El nombre y la letra son de él',
-    assinaturaTexto: 'El "HOMER" de nuestro logo no es una tipografía de computadora: es la letra de imprenta del propio Homer, escrita a mano y pasada al diseño de la marca. Cada vaso sale con la firma de quien lo batió.',
+    fechamento: 'Trajimos el norte en la valija. Ahora llega a tu puerta, en un vaso.',
+    assinaturaTitulo: 'El nombre y la letra son míos',
+    assinaturaTexto: 'Homer es el apodo que me pusieron los amigos del barrio, allá en Manaos. El "HOMER" de nuestro logo no es una tipografía de computadora: es mi letra de imprenta, escrita a mano y pasada al diseño de la marca. Soy yo quien bate tu guaraná, y cada vaso sale con la firma de quien lo batió.',
     missaoTitulo: 'Misión',
-    missao: 'Llevar el guaraná batido del Amazonas a la Isla, hecho en el momento, con ingredientes de verdad y todo lo que lleva el vaso a la vista.',
+    missao: 'Llevar a la Isla el guaraná batido del Amazonas: hecho en el momento, con ingredientes de verdad y todo lo que lleva el vaso dicho con claridad.',
     visaoTitulo: 'Visión',
-    visao: 'Ser el guaraná batido que todo el norte de la Isla conoce por su nombre para el verano de 2028, con la mitad de los pedidos llegando directo del cliente.',
+    visao: 'Ser el guaraná batido que el norte de la Isla conoce por su nombre y crecer como marca de familia, con nuevas recetas hechas de la misma forma: en el momento y con cuidado.',
     valoresTitulo: 'Lo que no negociamos',
     valores: [
-      { nome: 'Hecho en el momento', texto: 'Ningún vaso queda esperando. La licuadora se enciende cuando llega tu pedido.' },
-      { nome: 'Origen', texto: 'Guaraná en polvo del interior del Amazonas, de Maués, y la receta de Homer, de Manaos.' },
-      { nome: 'Transparencia', texto: 'Cafeína, alérgenos y precio dichos con números, sin letra chica.' },
-      { nome: 'Buen humor de la Isla', texto: 'Charla de vecino que vive cerca de la playa, nunca de vendedor.' },
-      { nome: 'Palabra cumplida', texto: 'Vaso sellado, del tamaño correcto, en el tiempo prometido.' },
-      { nome: 'Familia', texto: 'Empezó en familia y sigue en familia: la receta es de Homer y el negocio es de todos nosotros.' }
-    ],
-    fotoPendente: 'La foto de Homer en el mostrador va acá después de la sesión de fotos.'
+      { nome: 'Hecho en el momento', texto: 'Ningún vaso queda esperando: la licuadora solo se enciende cuando llega tu pedido.' },
+      { nome: 'Origen', texto: 'Guaraná en polvo de Maués, en el interior del Amazonas, y la receta de la casa, de Manaos.' },
+      { nome: 'Familia', texto: 'Es un negocio de pareja: mi esposa y yo cuidamos cada pedido, con la familia cerca.' },
+      { nome: 'Transparencia', texto: 'Ingredientes, alérgenos, cafeína y precio dichos con números, sin letra chica.' },
+      { nome: 'Palabra cumplida', texto: 'Vaso sellado, del tamaño correcto y en el tiempo acordado, con envío o retiro.' },
+      { nome: 'Buen humor de la Isla', texto: 'Charla de vecino que vive cerca de la playa, nunca de vendedor.' }
+    ]
   }
 };
 
 export const comoPedirPagina = {
   pt: {
     titulo: 'Como pedir · Guaraná do Homer',
-    descricao: 'Peça pelo site ou pelo WhatsApp, pague no Pix e receba em até 40 minutos nos Ingleses e no Santinho, ou retire sem taxa.',
+    descricao: 'Peça pelo site ou pelo WhatsApp, pague no Pix ou no cartão e receba em até 40 minutos nos Ingleses e no Santinho, ou retire sem taxa.',
     rotulo: 'Como pedir',
     h1: 'Do pedido ao copo gelado em até 40 minutos',
     lead: 'Pedindo direto, pelo site ou pelo WhatsApp, você paga o preço da casa. A entrega é nos Ingleses e no Santinho, e a retirada é sem taxa, de qualquer bairro.',
@@ -210,7 +208,7 @@ export const comoPedirPagina = {
     whatsappItens: [
       'Monte o copo no site ou mande a mensagem direto no WhatsApp.',
       'A gente confirma a entrega (bairro e taxa) ou o horário da retirada.',
-      'O pagamento é por Pix, antes do preparo.',
+      'Pague no Pix, antes do preparo, ou no cartão de crédito ou débito, na maquininha, na entrega ou na retirada. O preço é o mesmo.',
       'O copo é batido na hora e sai lacrado, em bolsa térmica.'
     ],
     ifoodTitulo: 'Pelo iFood',
@@ -223,18 +221,18 @@ export const comoPedirPagina = {
       'Peça pelo site, pelo WhatsApp ou pelo iFood (opção Retirada).',
       'Sem taxa de entrega, para quem mora em qualquer bairro.',
       'O endereço vai junto com a confirmação do pedido.',
-      'O copo é batido na hora e fica pronto em até 10 minutos depois do Pix.',
+      'O copo é batido na hora e fica pronto em até 10 minutos depois do Pix. No cartão, você paga na retirada: avise quando sair e ele fica pronto quando você chegar.',
       'Não temos salão nem atendimento no local: é só pegar e levar.'
     ],
     retiradaCta: 'Pedir para retirar',
     tempoTitulo: 'Tempo',
-    tempoTexto: 'Até 5 minutos de preparo e até 35 minutos de entrega. Na retirada, o copo fica pronto em até 10 minutos depois do Pix.',
+    tempoTexto: 'Até 5 minutos de preparo e até 35 minutos de entrega. Na retirada, o copo fica pronto em até 10 minutos depois do Pix (no cartão, depois do seu aviso de que está a caminho).',
     politicaTitulo: 'Se algo der errado',
     politicaTexto: 'Copo errado ou entrega depois de 60 minutos? Fale com a gente no WhatsApp: a gente refaz o pedido ou dá um cupom para o próximo. Pedido cancelado antes do preparo tem o Pix devolvido.'
   },
   es: {
     titulo: 'Cómo pedir · Guaraná do Homer',
-    descricao: 'Pedí por el sitio o por WhatsApp, pagá con Pix y recibilo en hasta 40 minutos en Ingleses y Santinho, o retiralo sin tarifa.',
+    descricao: 'Pedí por el sitio o por WhatsApp, pagá con Pix o con tarjeta y recibilo en hasta 40 minutos en Ingleses y Santinho, o retiralo sin tarifa.',
     rotulo: 'Cómo pedir',
     h1: 'Del pedido al vaso helado en hasta 40 minutos',
     lead: 'Pidiendo directo, por el sitio o por WhatsApp, pagás el precio de la casa. Entregamos en Ingleses y Santinho, y el retiro es sin tarifa, desde cualquier barrio.',
@@ -242,7 +240,7 @@ export const comoPedirPagina = {
     whatsappItens: [
       'Armá el vaso en el sitio o mandá el mensaje directo por WhatsApp.',
       'Confirmamos el envío (barrio y tarifa) o el horario del retiro.',
-      'El pago es con Pix, antes de la preparación.',
+      'Pagás con Pix, antes de la preparación, o con tarjeta de crédito o débito, al recibirlo o retirarlo. El precio es el mismo.',
       'El vaso se bate en el momento y sale sellado, en bolsa térmica.'
     ],
     ifoodTitulo: 'Por iFood',
@@ -255,12 +253,12 @@ export const comoPedirPagina = {
       'Pedí por el sitio, por WhatsApp o por iFood (opción Retiro).',
       'Sin tarifa de envío, vivas en el barrio que vivas.',
       'La dirección va junto con la confirmación del pedido.',
-      'El vaso se bate en el momento y está listo en hasta 10 minutos después del Pix.',
+      'El vaso se bate en el momento y está listo en hasta 10 minutos después del Pix. Con tarjeta, pagás al retirarlo: avisá cuando salgas y va a estar listo cuando llegues.',
       'No tenemos salón ni atención en el lugar: pasás, lo retirás y listo.'
     ],
     retiradaCta: 'Pedir para retirar',
     tempoTitulo: 'Tiempo',
-    tempoTexto: 'Hasta 5 minutos de preparación y hasta 35 minutos de entrega. Si lo retirás, está listo en hasta 10 minutos después del Pix.',
+    tempoTexto: 'Hasta 5 minutos de preparación y hasta 35 minutos de entrega. Si lo retirás, está listo en hasta 10 minutos después del Pix (con tarjeta, después de tu aviso de que estás en camino).',
     politicaTitulo: 'Si algo sale mal',
     politicaTexto: '¿Vaso equivocado o entrega después de 60 minutos? Escribinos por WhatsApp: rehacemos el pedido o te damos un cupón para el próximo. Si cancelás antes de la preparación, te devolvemos el Pix.'
   }
@@ -281,7 +279,7 @@ export const diretoPagina = {
     cupomTitulo: 'Cupom do cartão',
     cupomTexto: 'Use o código abaixo na mensagem:',
     comoTitulo: 'Como funciona',
-    comoTexto: 'Toque no botão, a mensagem vai pronta para o WhatsApp. A gente confirma o bairro, manda a chave Pix e bate o seu copo na hora.',
+    comoTexto: 'Toque no botão, a mensagem vai pronta para o WhatsApp. A gente confirma o bairro e a forma de pagamento (Pix ou cartão) e bate o seu copo na hora.',
     cta: 'Pedir direto pelo WhatsApp'
   },
   es: {
@@ -298,7 +296,7 @@ export const diretoPagina = {
     cupomTitulo: 'Cupón de la tarjeta',
     cupomTexto: 'Usá el código en el mensaje:',
     comoTitulo: 'Cómo funciona',
-    comoTexto: 'Tocá el botón y el mensaje va listo a WhatsApp. Confirmamos el barrio, te mandamos la clave Pix y batimos tu vaso en el momento.',
+    comoTexto: 'Tocá el botón y el mensaje va listo a WhatsApp. Confirmamos el barrio y cómo pagás (Pix o tarjeta) y batimos tu vaso en el momento.',
     cta: 'Pedir directo por WhatsApp'
   }
 };

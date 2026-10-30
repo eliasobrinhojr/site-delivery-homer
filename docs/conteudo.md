@@ -15,7 +15,7 @@ publica sozinho.
 | Data de inauguração | `conteudo/loja.mjs` | `inauguracao` (`'em-breve'` = sem data; botões de pedido viram "Abrimos em breve") |
 | Frase da equipe (pedidos de teste) | `npm run senha-equipe -- "frase"` | grava só o hash em `equipe.hash` |
 | Preços | `conteudo/cardapio.mjs` | `tamanhos`, `adicionais` |
-| Como cada adicional vai no copo (RN-12) | `conteudo/cardapio.mjs` | `adicionais[].modo`: `batido`, `parede` ou `topo` |
+| Como cada adicional vai no copo (RN-13) | `conteudo/cardapio.mjs` | `adicionais[].modo`: `batido`, `parede` ou `topo` |
 | Sabor ou adicional esgotado hoje | `conteudo/cardapio.mjs` | `esgotados` (ex.: `['A']`) |
 | Qualquer texto | `conteudo/textos/*.mjs` | o português e o espanhol ficam lado a lado |
 | Mensagens prontas do WhatsApp | `src/lib/whatsapp.mjs` | `MENSAGENS` |

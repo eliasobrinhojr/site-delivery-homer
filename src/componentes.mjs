@@ -107,7 +107,7 @@ export function monteSeuCopo(lang, { id = 'monte', comTitulo = true, nivel = 'h2
     opcao('ml', tm.ml, `${tm.ml} ml<small data-preco-ml="${tm.ml}">${esc(reais(tm.preco))}</small>`, { marcado: tm.ml === c.ml })
   ).join('');
   const docurasHtml = docuras.map((d) => opcao('docura', d.id, esc(d.nome[lang]), { marcado: d.id === c.docura })).join('');
-  // RN-12: os adicionais aparecem agrupados pelo jeito que vão no copo (no liquidificador, na parede, por cima).
+  // RN-13: os adicionais aparecem agrupados pelo jeito que vão no copo (no liquidificador, na parede, por cima).
   const adicionaisHtml = modosAdicional.map((modo) => {
     const chips = adicionais.filter((a) => a.modo === modo).map((a) => {
       const off = esgotados.includes(a.id);
@@ -120,6 +120,12 @@ export function monteSeuCopo(lang, { id = 'monte', comTitulo = true, nivel = 'h2
     ? `<fieldset class="monte__campo"><legend>${esc(t.recebimento)}</legend><div class="gh-chips">${
       opcao('recebimento', 'entrega', `${esc(t.entrega)}<small>${esc(t.entregaSub)}</small>`, { marcado: true })
     }${opcao('recebimento', 'retirada', `${esc(t.retirada)}<small>${esc(t.retiradaSub)}</small>`)}</div></fieldset>`
+    : '';
+  // RF-32 / RN-12: Pix ou cartão (crédito ou débito) na maquininha (só aparece com loja.cartao ligada).
+  const pagamentoHtml = loja.cartao
+    ? `<fieldset class="monte__campo"><legend>${esc(t.pagamento)}</legend><div class="gh-chips">${
+      opcao('pagamento', 'pix', `${esc(t.pix)}<small>${esc(t.pixSub)}</small>`, { marcado: true })
+    }${opcao('pagamento', 'cartao', `${esc(t.cartao)}<small>${esc(t.cartaoSub)}</small>`)}</div></fieldset>`
     : '';
   const turboHtml = opcao('turbo', 'sim', `${esc(t.turboOpcao)}<small>${esc(t.turboSub)}</small>`, { tipo: 'checkbox', extra: ' data-turbo' });
 
@@ -141,6 +147,7 @@ ${comTitulo ? `${rotulo(t.rotulo)}<${Hn} class="gh-titulo-md" id="${esc(id)}-tit
 <fieldset class="monte__campo"><legend>${esc(t.docura)} <span>· ${esc(t.docuraLegenda)}</span></legend><div class="gh-chips">${docurasHtml}</div></fieldset>
 <fieldset class="monte__campo"><legend>${esc(t.adicionais)} <span>· ${esc(t.adicionaisLegenda)}</span></legend>${adicionaisHtml}</fieldset>
 ${recebimentoHtml}
+${pagamentoHtml}
 </form>
 <div class="monte__resumo" aria-live="polite">
 <div class="monte__resumo-linha">

@@ -10,7 +10,8 @@ atualize este arquivo junto.
   Turbo (300 e 500 ml).
 - **Área de entrega: só Ingleses e Santinho** (Norte da Ilha, Florianópolis). Decisão de 29/10/2026: áreas maiores
   não cabem no tempo de 40 minutos. Nunca escrever "Grande Florianópolis".
-- Canais: iFood (cliente novo), site e WhatsApp (recompra, preço direto). Pagamento direto por Pix antes do preparo.
+- Canais: iFood (cliente novo), site e WhatsApp (recompra, preço direto). Pagamento direto por **Pix** (antes do preparo)
+  ou **cartão de crédito ou débito** na maquininha, na entrega ou na retirada (decisão de 29/10/2026, RN-12).
 - **Retirada (decisão de 29/10/2026):** o cliente pode buscar o pedido, pelo site, pelo WhatsApp ou pela opção
   Retirada do iFood. Não é um ponto de atendimento: sem salão nem consumo no local. O endereço continua fora do
   site; vai só na confirmação do pedido (WhatsApp) ou no próprio app do iFood.
@@ -62,6 +63,9 @@ atualize este arquivo junto.
 | RF-28 | Retirada como opção: escolha "Entrega ou Retirada" no monte o seu, cartão "Prefere buscar?" em Como pedir, pergunta frequente, botão com mensagem própria | `loja.retirada`, `monte.mjs`, `paginaComoPedir` |
 | RF-29 | Antes da inauguração, o público não faz pedido: todo botão de pedido mostra "Abrimos em breve · me avise" e abre o WhatsApp com a mensagem `inauguracao`. A equipe ativa o **modo equipe** em `/equipe/` com uma frase (só o hash SHA-256 fica no código); no aparelho ativado, por 30 dias, os pedidos funcionam a qualquer hora, com "[TESTE]" no início da mensagem e uma faixa "Modo equipe" no topo. Proteção leve: o site é estático e o código é público, então isso evita pedido por engano, não é controle de acesso (fase 3) | `src/lib/equipe.mjs`, `src/cliente/site.mjs`, `src/cliente/monte.mjs`, `src/cliente/equipe.mjs` |
 | RF-30 | Preços estimados até a inauguração (decisão de 29/10/2026: operação e produção ainda em ajuste). Enquanto `loja.precosEstimados` for `true`: aviso "Preços estimados" no cardápio, no monte o seu e em /direto; "preço estimado" ao lado do "a partir de" da capa; pergunta frequente "Os preços já são definitivos?"; sem `priceRange` nos dados do Google. Descrições e prévias dizem "preço estimado" | `componentes.mjs` (`avisoPrecos`), `conteudo/loja.mjs` |
+| RF-31 | Nossa história (`/sobre/`) e assinatura da capa: contadas pelo **Homer, o fundador**, na primeira pessoa (a capa fala dele na terceira). Ele e a esposa tocam o negócio; os filhos aparecem só como parte da família que veio antes, nunca como narradores nem donos ("meu pai"/"mi papá" não entram). A vinda de Manaus para a Ilha, o nome e a letra dele, ele no preparo, missão, visão e valores. Fala com o cliente: nada de meta interna (número de pedidos, percentual de venda direta), nada de nota de produção ("foto entra aqui") e nada que sugira ponto de atendimento (balcão, salão, mostrador), porque não temos estabelecimento (RN-11) | `sobrePagina` em `conteudo/textos/paginas.mjs`, `assinatura` em `inicio.mjs`, `paginaSobre`; `verificar.mjs` barra os textos |
+| RF-32 | Forma de pagamento: "Como vai pagar: Pix ou Cartão (crédito ou débito)" no monte o seu, com mensagem própria no WhatsApp; Como pedir, passos da capa, /direto, perguntas frequentes e aviso do monte o seu citam Pix e cartão; `paymentAccepted` nos dados do Google. Liga/desliga em `loja.cartao` | `loja.cartao`, `monteSeuCopo`, `mensagemPedido` |
+| RF-33 | Link curto do WhatsApp para a bio do Instagram: `dohomer.com.br/avise/` abre o WhatsApp da loja com a mensagem pronta (antes da inauguração, `inauguracao`; depois, `provar`), por redirecionamento imediato com botão de reserva. O Instagram codifica de novo um link `wa.me` com `%20` e estraga a mensagem; o link curto evita isso. Fora do sitemap e da busca (noindex + robots) | `paginaAvise`, `scripts/build.mjs` |
 | RF-26 | Loja fechada bloqueia o envio; antes da inauguração vira convite | `monte.mjs` |
 | RF-27 | Lembrar dados no aparelho | **pendente (fase 2)** |
 
@@ -79,8 +83,9 @@ atualize este arquivo junto.
 | RN-08 | Combo de casal: 2 copos de 500 ml por R$ 44 |
 | RN-09 | Nenhuma promoção acima de 15% na primeira temporada |
 | RN-10 | Preço do iFood ~33% maior; nunca como preço do site |
-| RN-11 | Retirada: mesmo preço direto, sem taxa de entrega, para qualquer bairro; Pix antes do preparo; copo pronto em até 10 minutos depois do Pix; endereço só na confirmação do pedido; sem consumo no local |
-| RN-12 | Cada adicional tem um jeito fixo de ir no copo, porque o cliente toma de canudo e com tampa: **no liquidificador** (amendoim extra, paçoca, mel, leite condensado), **na parede do copo** (caldas de doce de leite e de chocolate, passadas por dentro antes de servir) e **por cima** (canela polvilhada). O site e a comanda mostram o jeito de cada um |
+| RN-11 | Retirada: mesmo preço direto, sem taxa de entrega, para qualquer bairro; Pix antes do preparo ou cartão na hora de retirar (RN-12); copo pronto em até 10 minutos depois do Pix (no cartão, depois do aviso de que o cliente está a caminho); endereço só na confirmação do pedido; sem consumo no local |
+| RN-12 | Pagamento direto (site e WhatsApp): Pix antes do preparo (chave = CNPJ) **ou cartão de crédito ou débito**, na maquininha, na entrega ou na retirada. Mesmo preço nas duas formas (sem acréscimo no cartão); crédito só à vista. No iFood, o pagamento é pelo app |
+| RN-13 | Cada adicional tem um jeito fixo de ir no copo, porque o cliente toma de canudo e com tampa: **no liquidificador** (amendoim extra, paçoca, mel, leite condensado), **na parede do copo** (caldas de doce de leite e de chocolate, passadas por dentro antes de servir) e **por cima** (canela polvilhada). O site e a comanda mostram o jeito de cada um |
 
 Código de produção: sabor (T/A/B) + tamanho (3/5/7) + X (Turbo) + doçura (− ou +) + adicionais.
 Ex.: `B5X+ MEL PAC`. Códigos dos adicionais: `AMD`, `PAC`, `MEL`, `LC`, `DDL` (calda de doce de leite), `CHO` (calda de
@@ -106,6 +111,6 @@ RNF-13 UTM em anúncios, bio e QR code, RNF-14 site estático com CDN, RNF-15 co
 - **Endereço físico:** decisão de 29/10: **o site continua sem endereço** (só Florianópolis, SC, WhatsApp e CNPJ),
   mantendo a regra de nunca mostrar a cozinha, mesmo sem atender à letra do art. 2º, II. Rever se houver endereço
   comercial ou fiscal separado da casa.
-- **Alérgenos das caldas (RN-12):** antes de vender, conferir o rótulo das caldas de doce de leite e de chocolate
+- **Alérgenos das caldas (RN-13):** antes de vender, conferir o rótulo das caldas de doce de leite e de chocolate
   escolhidas (soja, glúten, traços). O que aparecer além de leite, amendoim e castanha precisa entrar no aviso do
   adicional (RF-06).

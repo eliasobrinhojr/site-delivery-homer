@@ -52,7 +52,7 @@ export const docuras = [
   { id: 'mais', cod: '+', nome: { pt: 'Mais doce', es: 'Más dulce' } }
 ];
 
-// Até 3 por copo, cada um uma vez (RN-04). Cada um tem um jeito fixo de ir no copo (RN-12):
+// Até 3 por copo, cada um uma vez (RN-04). Cada um tem um jeito fixo de ir no copo (RN-13):
 // 'batido' = no liquidificador; 'parede' = calda passada por dentro do copo antes de servir; 'topo' = por cima.
 export const adicionais = [
   { id: 'AMD', modo: 'batido', nome: { pt: 'Amendoim extra', es: 'Maní extra' }, preco: 2 },
@@ -64,7 +64,7 @@ export const adicionais = [
   { id: 'CAN', modo: 'topo', nome: { pt: 'Canela', es: 'Canela' }, preco: 1 }
 ];
 
-// Ordem em que os jeitos aparecem no site (RN-12).
+// Ordem em que os jeitos aparecem no site (RN-13).
 export const modosAdicional = ['batido', 'parede', 'topo'];
 
 export const regras = {
