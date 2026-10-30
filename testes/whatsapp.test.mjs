@@ -50,3 +50,14 @@ test('RN-11 / RF-28 na retirada a mensagem não pede bairro e avisa que é sem t
 test('antes da inauguração a mensagem vira convite', () => {
   assert.match(mensagemPedido(copo, 'pt', { preInauguracao: true }), /Quero provar quando vocês abrirem/);
 });
+
+test('RN-12 / RF-32 pagamento no cartão: a mensagem diz que paga no cartão, na entrega ou na retirada', () => {
+  const entrega = mensagemPedido(copo, 'pt', { bairros: ['Ingleses', 'Santinho'], pagamento: 'cartao' });
+  assert.match(entrega, /Vou pagar no cartão \(crédito ou débito\) na entrega\./);
+  assert.doesNotMatch(entrega, /Pix/);
+  const retirada = mensagemPedido(copo, 'pt', { recebimento: 'retirada', pagamento: 'cartao' });
+  assert.match(retirada, /Vou pagar no cartão \(crédito ou débito\) na retirada\./);
+  assert.match(retirada, /Aviso quando estiver a caminho/);
+  assert.match(mensagemPedido(copo, 'es', { pagamento: 'cartao' }), /Pago con tarjeta \(crédito o débito\) al recibirlo\./);
+  assert.match(mensagemPedido(copo, 'pt', {}), /Pago no Pix antes do preparo\./);
+});
