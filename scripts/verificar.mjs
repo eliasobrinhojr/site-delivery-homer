@@ -11,7 +11,9 @@ export const PROIBIDOS = [
   /simpsons?/i, /rosquinha/i, /d'oh/i, /\bduff\b/i,
   /d[áa] energia/i, /emagrece/i, /natural e saud[áa]vel/i, /\bcura\b/i, /imunidade/i,
   /energ[ée]tico natural/i, /venvanse/i, /tadala/i,
-  /grande florian[óo]polis/i // a entrega é só nos Ingleses e no Santinho
+  /grande florian[óo]polis/i, // a entrega é só nos Ingleses e no Santinho
+  /\bbalc[ãa]o\b/i, /\bmostrador\b/i, // não temos ponto de atendimento (RN-11, RF-31)
+  /sess[ãi][oó]n? de fotos/i, /entra aqui depois/i // nota interna de produção não vai para o ar (RF-31)
 ];
 
 async function arquivos(pasta, filtro) {
