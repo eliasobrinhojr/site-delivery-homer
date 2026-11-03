@@ -43,4 +43,4 @@ backend: não há formulário, banco, PHP nem dado pessoal guardado no servidor.
 - [ ] Proteção da `main`: exigir PR e o check `ci-ok`; ambiente `producao` com aprovação manual.
 - [ ] Domínio registrado no CNPJ, com renovação automática e bloqueio de transferência.
 - [ ] Depois de publicar: conferir os cabeçalhos em https://securityheaders.com e o HTTPS em https://www.ssllabs.com/ssltest/.
-- [ ] Criar `/.well-known/security.txt` quando houver um e-mail de contato da loja.
+- [x] `/.well-known/security.txt` com `contato@dohomer.com.br` (3/11/2026). Renovar o `Expires` antes de 31/10/2027.

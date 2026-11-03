@@ -67,7 +67,8 @@ npm run og            # refaz as imagens de prévia (precisa do Playwright: npm 
 
 ## Pendências conhecidas
 
-- Link do iFood, Instagram e e-mail: `null` em `conteudo/loja.mjs` até existirem (os blocos aparecem sozinhos).
+- Link do iFood e Instagram: `null` em `conteudo/loja.mjs` até existirem (os blocos aparecem sozinhos). E-mail `contato@dohomer.com.br`
+  criado em 3/11/2026 (RF-37); `publico/.well-known/security.txt` vence em 31/10/2027 e precisa ser renovado.
 - CNPJ 69.883.553/0001-36 (MEI) já está no site (RF-14). Nome empresarial e endereço físico: ver "Pontos em aberto"
   em `docs/especificacao.md` antes de mexer.
 - Taxa de entrega por bairro: `null` (informada no WhatsApp).

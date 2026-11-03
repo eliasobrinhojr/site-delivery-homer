@@ -69,6 +69,7 @@ atualize este arquivo junto.
 | RF-34 | Termos e condições de venda (`/termos/`, `/es/termos/`): quem vende, produto e avisos, área e horário, preços e taxa, pagamento, como o pedido é fechado (resumo no WhatsApp antes de pagar), previsão de prazo, cancelamento, atendimento (até 5 dias) e uso do site (Decreto 7.962/2013, arts. 2º e 4º) | `termosPagina` em `conteudo/textos/legais.mjs`, `paginaTermos` |
 | RF-35 | Cancelamento e reembolso (`/cancelamento/`), com as regras RN-14 e RN-15, link em Como pedir, nos termos e no rodapé | `cancelamentoPagina`, `paginaCancelamento` |
 | RF-36 | Política de privacidade completa (LGPD, arts. 9º e 18): bases legais, o que o site guarda, registro de acesso (Marco Civil, art. 15), compartilhamento (WhatsApp/Meta, banco, maquininha, contador, hospedagem, iFood), prazos de guarda, segurança, crianças, direitos e canal; MEI dispensado de encarregado (Resolução CD/ANPD nº 2/2022) | `privacidadePagina` em `conteudo/textos/legais.mjs` |
+| RF-37 | E-mail de contato `contato@dohomer.com.br` (Decreto 7.962/2013, art. 2º, II; canal da LGPD): link no rodapé de todas as páginas, em eventos (cadastro de fornecedor), nas páginas legais, `email` nos dados do Google e `/.well-known/security.txt` | `loja.emailContato`, `layout.mjs`, `schemas.mjs`, `publico/.well-known/` |
 | RF-26 | Loja fechada bloqueia o envio; antes da inauguração vira convite | `monte.mjs` |
 | RF-27 | Lembrar dados no aparelho | **pendente (fase 2)** |
 

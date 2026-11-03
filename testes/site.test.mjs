@@ -34,7 +34,7 @@ test('RF-04 o preço do iFood aparece na página /direto', async () => {
 
 test('RF-14 todo HTML identifica a empresa no rodapé (nome, MEI e CNPJ)', async () => {
   for (const p of paginas) {
-    assert.match(await ler(p), /class="rodape__empresa">Guaraná do Homer · MEI · CNPJ 69\.883\.553\/0001-36 ·&nbsp;©&nbsp;2026</, p);
+    assert.match(await ler(p), /class="rodape__empresa">Guaraná do Homer · MEI · CNPJ 69\.883\.553\/0001-36 ·&nbsp;©&nbsp;2026( · <a href="mailto:[^"]+">[^<]+<\/a>)?</, p);
   }
 });
 
@@ -223,4 +223,17 @@ test('RN-15 prazos são previsão e a frase da marca não compara com concorrent
     assert.doesNotMatch(html, /(em até|en hasta) \d+ minutos/, caminho);
     assert.doesNotMatch(html, /(mais|más) cremoso/, caminho);
   }
+});
+
+test('RF-37 o e-mail de contato aparece no rodapé, nas páginas legais, em eventos, nos dados do Google e no security.txt', async () => {
+  const link = /<a href="mailto:contato@dohomer\.com\.br">contato@dohomer\.com\.br<\/a>/;
+  for (const caminho of ['/index.html', '/es/cardapio/index.html', '/termos/index.html', '/cancelamento/index.html', '/privacidade/index.html', '/es/privacidade/index.html', '/eventos/index.html']) {
+    assert.match(await ler(caminho), link, caminho);
+  }
+  assert.match(await ler('/privacidade/index.html'), /o WhatsApp \(92\) 99259-4820 ou o e-mail <a href="mailto:/);
+  assert.match(await ler('/index.html'), /"email":"contato@dohomer\.com\.br"/);
+  const sec = await ler('/.well-known/security.txt');
+  assert.match(sec, /^Contact: mailto:contato@dohomer\.com\.br$/m);
+  const expira = Date.parse(sec.match(/^Expires: (.+)$/m)[1]);
+  assert.ok(expira > Date.now(), 'security.txt vencido: renovar o Expires');
 });

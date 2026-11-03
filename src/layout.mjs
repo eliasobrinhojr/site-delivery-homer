@@ -106,7 +106,7 @@ function rodapeHtml({ lang }) {
 <div class="gh-container rodape__legal">
 <p>${esc(c.avisoTodos)}</p>
 ${temMedicao() ? `<p><button type="button" class="rodape__cookies" data-cookies-reabrir>${esc(c.cookies.preferencias)}</button></p>` : ''}
-<p class="rodape__empresa">${loja.cnpj ? `${esc(linhaEmpresa(lang))} ·&nbsp;©&nbsp;2026` : `© 2026 ${esc(r.direitos)}`}</p>
+<p class="rodape__empresa">${loja.cnpj ? `${esc(linhaEmpresa(lang))} ·&nbsp;©&nbsp;2026` : `© 2026 ${esc(r.direitos)}`}${loja.emailContato ? ` · <a href="mailto:${esc(loja.emailContato)}">${esc(loja.emailContato)}</a>` : ''}</p>
 </div>
 </footer>`;
 }
