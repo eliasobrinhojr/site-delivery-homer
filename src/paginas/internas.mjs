@@ -159,7 +159,7 @@ export function paginaEventos(lang) {
   const corpo = [
     topo(t, { extra: `<div class="acoes">${botaoWhatsapp({ origem: 'eventos', lang, texto: t.cta })}</div>` }),
     secao(`<div class="tres-colunas">${cartoes}</div>`),
-    secao(`<div class="duas-colunas"><div><h2 class="gh-titulo-md">${esc(t.comoTitulo)}</h2><ol class="lista-numerada">${como}</ol></div><div><p class="frase-grande">${esc(t.areaNota)}</p>${botaoWhatsapp({ origem: 'eventos', lang, texto: t.cta })}${empresa ? `<p class="gh-texto-suave eventos__empresa">${esc(t.fornecedor)} ${esc(empresa)}</p>` : ''}</div></div>`, 'fundo-polpa')
+    secao(`<div class="duas-colunas"><div><h2 class="gh-titulo-md">${esc(t.comoTitulo)}</h2><ol class="lista-numerada">${como}</ol></div><div><p class="frase-grande">${esc(t.areaNota)}</p>${botaoWhatsapp({ origem: 'eventos', lang, texto: t.cta })}${empresa ? `<p class="gh-texto-suave eventos__empresa">${esc(t.fornecedor)} ${esc(empresa)}${loja.emailContato ? ` · <a href="mailto:${esc(loja.emailContato)}">${esc(loja.emailContato)}</a>` : ''}</p>` : ''}</div></div>`, 'fundo-polpa')
   ].join('\n');
   return { rotaId: 'eventos', titulo: t.titulo, descricao: t.descricao, corpo };
 }
@@ -190,7 +190,9 @@ function paginaLegal(t, rotaId, lang, { empresaNaPrimeira = false } = {}) {
   const empresa = linhaEmpresa(lang);
   const marcas = (texto) => esc(texto)
     .replaceAll('{contato}', esc(contatoLoja(lang)))
-    .replaceAll('{horario}', esc(resumoHorarios(loja.horarios, lang)));
+    .replaceAll('{horario}', esc(resumoHorarios(loja.horarios, lang)))
+    // RF-37: o e-mail vira link (Decreto 7.962/2013, art. 2º, II: endereço eletrônico).
+    .replaceAll(esc(loja.emailContato ?? '\u0000'), `<a href="mailto:${esc(loja.emailContato)}">${esc(loja.emailContato)}</a>`);
   const secoes = t.secoes.map((s, n) => {
     const paragrafos = s.texto.map((p) => `<p>${marcas(p)}</p>`).join('');
     // RF-14: a primeira seção identifica a empresa (LGPD, art. 9º; Decreto 7.962/2013, art. 2º).

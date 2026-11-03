@@ -1,0 +1,5 @@
+# Guaraná do Homer · contato para relatar problemas de segurança no site (RFC 9116)
+Contact: mailto:contato@dohomer.com.br
+Expires: 2027-10-31T23:59:00-03:00
+Preferred-Languages: pt, es, en
+Canonical: https://dohomer.com.br/.well-known/security.txt

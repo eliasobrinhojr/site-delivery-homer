@@ -12,7 +12,7 @@ export const loja = {
   // Preencher quando existirem (o botão ou link correspondente aparece sozinho).
   ifood: null, // ex.: 'https://www.ifood.com.br/delivery/florianopolis-sc/guarana-do-homer-...'
   instagram: null, // ex.: 'https://www.instagram.com/dohomer/'
-  emailContato: null, // ex.: 'contato@dohomer.com.br'
+  emailContato: 'contato@dohomer.com.br', // RF-37: rodapé, eventos, páginas legais, dados do Google e security.txt
 
   // Empresa (RF-14). Aparece no rodapé de todas as páginas, na privacidade, em eventos e nos dados do Google.
   cnpj: '69.883.553/0001-36', // MEI; os testes conferem os dígitos verificadores
