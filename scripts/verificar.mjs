@@ -9,6 +9,8 @@ const DIST = fileURLToPath(new URL('../dist/', import.meta.url));
 // Regras de comunicação da marca (especificação e kit): nunca podem aparecer no site.
 export const PROIBIDOS = [
   /simpsons?/i, /rosquinha/i, /d'oh/i, /\bduff\b/i,
+  // RN-15 e auditoria de 2/11/2026: prazo é previsão, e nada de superlativo que compare com concorrentes.
+  /(em até|en hasta) \d+ minutos/i, /\b(mais|más) cremoso\b/i,
   /d[áa] energia/i, /emagrece/i, /natural e saud[áa]vel/i, /\bcura\b/i, /imunidade/i,
   /energ[ée]tico natural/i, /venvanse/i, /tadala/i,
   /grande florian[óo]polis/i, // a entrega é só nos Ingleses e no Santinho

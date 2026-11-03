@@ -1,5 +1,6 @@
 import { esc, icone, rotulo, wa, antesDaInauguracao, botaoWhatsapp, botaoPedido, botaoIfood, monteSeuCopo, reais, faixaMg, avisoAlergenicos, copoSvg, seloTurbo, seloOrigem, linhaEmpresa, avisoPix, avisoPrecos, perguntasVisiveis } from '../componentes.mjs';
-import { cardapioPagina, guaranaPagina, sobrePagina, comoPedirPagina, diretoPagina, eventosPagina, privacidadePagina, erroPagina } from '../../conteudo/textos/paginas.mjs';
+import { cardapioPagina, guaranaPagina, sobrePagina, comoPedirPagina, diretoPagina, eventosPagina, erroPagina } from '../../conteudo/textos/paginas.mjs';
+import { privacidadePagina, termosPagina, cancelamentoPagina } from '../../conteudo/textos/legais.mjs';
 import { perguntas } from '../../conteudo/textos/perguntas.mjs';
 import { equipe as textosEquipe } from '../../conteudo/textos/equipe.mjs';
 import { avise as textosAvise } from '../../conteudo/textos/avise.mjs';
@@ -114,7 +115,7 @@ ${loja.ifood ? `<div class="gh-cartao"><h2 class="gh-titulo-sm">${esc(t.ifoodTit
 <div class="gh-cartao"><h2 class="gh-titulo-sm">${esc(t.areaTitulo)}</h2><ul class="lista-icones">${bairros}</ul><p>${esc(t.areaTexto)}</p></div>
 ${loja.retirada ? `<div class="gh-cartao" id="retirada"><h2 class="gh-titulo-sm">${esc(t.retiradaTitulo)}</h2><ul class="lista-icones">${t.retiradaItens.map((i) => `<li>${icone('sacola', { tamanho: 20 })}<span>${esc(i)}</span></li>`).join('')}</ul>${botaoPedido({ origem: 'retirada', lang, texto: t.retiradaCta })}</div>` : ''}
 <div class="gh-cartao"><h2 class="gh-titulo-sm">${esc(t.horarioTitulo)}</h2><p>${esc(maiuscula(resumoHorarios(loja.horarios, lang)))}.</p><h2 class="gh-titulo-sm">${esc(t.tempoTitulo)}</h2><p>${esc(t.tempoTexto)}</p></div>
-<div class="gh-cartao"><h2 class="gh-titulo-sm">${esc(t.politicaTitulo)}</h2><p>${esc(t.politicaTexto)}</p></div>
+<div class="gh-cartao"><h2 class="gh-titulo-sm">${esc(t.politicaTitulo)}</h2><p>${esc(t.politicaTexto)}</p><p><a href="${caminho(lang, 'cancelamento')}">${esc(t.politicaLink)}</a></p></div>
 ${avisoPix(lang)}
 </div>`, 'fundo-polpa')
   ].join('\n');
@@ -175,18 +176,36 @@ export function paginaPerguntas(lang) {
   return { rotaId: 'perguntas', titulo: t.titulo, descricao: t.descricao, corpo, schemas: [schemaFaq(perguntasVisiveis(t.itens))] };
 }
 
-export function paginaPrivacidade(lang) {
-  const t = privacidadePagina[lang];
-  const empresa = linhaEmpresa(lang);
-  const secoes = t.secoes.map((s, n) => {
-    const paragrafos = s.texto.map((p) => `<p>${esc(p)}</p>`).join('');
-    // RF-14: a primeira seção ("Quem somos") identifica o controlador dos dados (LGPD, art. 9º).
-    const extra = n === 0 && empresa ? `<p><strong>${esc(t.responsavel)}</strong> ${esc(empresa)}</p>` : '';
-    return `<h2 class="gh-titulo-sm">${esc(s.titulo)}</h2>${paragrafos}${extra}`;
-  }).join('');
-  const corpo = [topo(t), secao(`<div class="texto-longo">${secoes}<p class="gh-texto-suave">${esc(t.atualizada)}</p></div>`)].join('\n');
-  return { rotaId: 'privacidade', titulo: t.titulo, descricao: t.descricao, corpo };
+// Contato da loja por extenso, para as páginas legais: WhatsApp e, quando existir, e-mail.
+export function contatoLoja(lang) {
+  const d = loja.whatsapp.replace(/^55/, '');
+  const fone = `(${d.slice(0, 2)}) ${d.slice(2, -4)}-${d.slice(-4)}`;
+  const zap = `o WhatsApp ${fone}`;
+  if (lang === 'es') return loja.emailContato ? `WhatsApp ${fone} o el e-mail ${loja.emailContato}` : `WhatsApp ${fone}`;
+  return loja.emailContato ? `${zap} ou o e-mail ${loja.emailContato}` : zap;
 }
+
+/** Páginas legais (RF-34, RF-35, RF-36): seções de texto com {contato} e {horario} trocados pelos dados da loja. */
+function paginaLegal(t, rotaId, lang, { empresaNaPrimeira = false } = {}) {
+  const empresa = linhaEmpresa(lang);
+  const marcas = (texto) => esc(texto)
+    .replaceAll('{contato}', esc(contatoLoja(lang)))
+    .replaceAll('{horario}', esc(resumoHorarios(loja.horarios, lang)));
+  const secoes = t.secoes.map((s, n) => {
+    const paragrafos = s.texto.map((p) => `<p>${marcas(p)}</p>`).join('');
+    // RF-14: a primeira seção identifica a empresa (LGPD, art. 9º; Decreto 7.962/2013, art. 2º).
+    const extra = n === 0 && empresaNaPrimeira && empresa ? `<p><strong>${esc(t.responsavel)}</strong> ${esc(empresa)}</p>` : '';
+    const link = s.link ? `<p><a href="${caminho(lang, s.link.para)}">${esc(s.link.texto)}</a></p>` : '';
+    return `<h2 class="gh-titulo-sm">${esc(s.titulo)}</h2>${paragrafos}${extra}${link}`;
+  }).join('');
+  const lead = t.lead ? `<p class="texto-longo__lead">${esc(t.lead)}</p>` : '';
+  const corpo = [topo(t), secao(`<div class="texto-longo">${lead}${secoes}<p class="gh-texto-suave">${esc(t.atualizada)}</p></div>`)].join('\n');
+  return { rotaId, titulo: t.titulo, descricao: t.descricao, corpo };
+}
+
+export const paginaPrivacidade = (lang) => paginaLegal(privacidadePagina[lang], 'privacidade', lang, { empresaNaPrimeira: true });
+export const paginaTermos = (lang) => paginaLegal(termosPagina[lang], 'termos', lang, { empresaNaPrimeira: true });
+export const paginaCancelamento = (lang) => paginaLegal(cancelamentoPagina[lang], 'cancelamento', lang);
 
 export function paginaErro(lang) {
   const t = erroPagina[lang];

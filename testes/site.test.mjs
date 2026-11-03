@@ -7,8 +7,10 @@ import { verificar } from '../scripts/verificar.mjs';
 const { paginas } = await construir();
 const ler = (caminho) => readFile(new URL(`../dist${caminho}`, import.meta.url), 'utf8');
 
-test('o build gera as 9 páginas nos dois idiomas (RF-08)', () => {
-  assert.equal(paginas.length, 18);
+test('o build gera as 11 páginas nos dois idiomas (RF-08)', () => {
+  assert.equal(paginas.length, 22);
+  assert.ok(paginas.includes('/termos/index.html'));
+  assert.ok(paginas.includes('/es/cancelamento/index.html'));
   assert.ok(paginas.includes('/index.html'));
   assert.ok(paginas.includes('/es/cardapio/index.html'));
 });
@@ -172,4 +174,53 @@ test('RF-33 /avise/ leva direto ao WhatsApp com a mensagem pronta, fora da busca
   assert.match(html, /<meta name="robots" content="noindex">/);
   assert.match(await ler('/robots.txt'), /Disallow: \/avise\//);
   assert.doesNotMatch(await ler('/sitemap.xml'), /\/avise\//);
+});
+
+test('RF-34 os termos de venda identificam a empresa, explicam pagamento, prazo e atendimento, em PT e ES', async () => {
+  const pt = await ler('/termos/index.html');
+  assert.match(pt, /Termos e condições de venda/);
+  assert.match(pt, /CNPJ 69\.883\.553\/0001-36/);
+  assert.match(pt, /WhatsApp \(92\) 99259-4820/);
+  assert.match(pt, /Pix antes do preparo/);
+  assert.match(pt, /cerca de 40 minutos/);
+  assert.match(pt, /em até 5 dias/);
+  assert.match(pt, /href="\/cancelamento\/"/);
+  const es = await ler('/es/termos/index.html');
+  assert.match(es, /Términos y condiciones de venta/);
+  assert.match(es, /href="\/es\/cancelamento\/"/);
+});
+
+test('RF-35 / RN-14 / RN-15 cancelamento e reembolso: livre antes do preparo e escolha do cliente quando algo dá errado', async () => {
+  const pt = await ler('/cancelamento/index.html');
+  assert.match(pt, /devolvemos 100% do valor/);
+  assert.match(pt, /Você escolhe: refazemos o copo sem custo, devolvemos o valor do copo ou damos um abatimento/);
+  assert.match(pt, /Se passar de 60 minutos/);
+  const como = await ler('/como-pedir/index.html');
+  assert.match(como, /você escolhe: refazemos o pedido, devolvemos o valor ou damos um abatimento/);
+  assert.doesNotMatch(como, /dá um cupom para o próximo/);
+  assert.match(como, /href="\/cancelamento\/"/);
+  assert.match(await ler('/es/cancelamento/index.html'), /Cancelación y reembolso/);
+});
+
+test('RF-36 a privacidade traz bases legais, prazos, compartilhamento, direitos e o canal', async () => {
+  const pt = await ler('/privacidade/index.html');
+  for (const t of ['art. 7º, V', 'Marco Civil da Internet, art. 15', 'WhatsApp (Meta)', 'até 6 meses depois do pedido', 'reclamar à ANPD', 'Resolução CD/ANPD nº 2/2022', 'o WhatsApp (92) 99259-4820']) {
+    assert.ok(pt.includes(t), `falta "${t}"`);
+  }
+  assert.match(await ler('/es/privacidade/index.html'), /Por cuánto tiempo guardamos/);
+});
+
+test('o rodapé leva aos termos, ao cancelamento e à privacidade; sem medição, não há botão de cookies', async () => {
+  const html = await ler('/index.html');
+  assert.match(html, /<a href="\/termos\/">Termos de venda<\/a>/);
+  assert.match(html, /<a href="\/cancelamento\/">Cancelamento e reembolso<\/a>/);
+  assert.doesNotMatch(html, /data-cookies-reabrir/);
+});
+
+test('RN-15 prazos são previsão e a frase da marca não compara com concorrentes', async () => {
+  for (const caminho of ['/index.html', '/como-pedir/index.html', '/perguntas/index.html', '/es/index.html']) {
+    const html = await ler(caminho);
+    assert.doesNotMatch(html, /(em até|en hasta) \d+ minutos/, caminho);
+    assert.doesNotMatch(html, /(mais|más) cremoso/, caminho);
+  }
 });

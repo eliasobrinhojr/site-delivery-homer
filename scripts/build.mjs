@@ -10,7 +10,7 @@ import { IDIOMAS, rotas, caminho } from '../src/rotas.mjs';
 import { paginaInicio } from '../src/paginas/inicio.mjs';
 import {
   paginaCardapio, paginaGuarana, paginaSobre, paginaComoPedir, paginaDireto,
-  paginaEventos, paginaPerguntas, paginaPrivacidade, paginaErro, paginaEquipe, paginaAvise
+  paginaEventos, paginaPerguntas, paginaPrivacidade, paginaTermos, paginaCancelamento, paginaErro, paginaEquipe, paginaAvise
 } from '../src/paginas/internas.mjs';
 import { loja } from '../conteudo/loja.mjs';
 
@@ -26,7 +26,9 @@ const GERADORES = {
   direto: paginaDireto,
   eventos: paginaEventos,
   perguntas: paginaPerguntas,
-  privacidade: paginaPrivacidade
+  privacidade: paginaPrivacidade,
+  termos: paginaTermos,
+  cancelamento: paginaCancelamento
 };
 
 // Arquivos JavaScript que vão para o navegador (mesma árvore relativa, para os imports funcionarem).
