@@ -11,7 +11,10 @@ export const rotas = [
   { id: 'direto', slug: 'direto', og: 'direto', prioridade: '0.6' },
   { id: 'eventos', slug: 'eventos', og: 'eventos', prioridade: '0.5' },
   { id: 'perguntas', slug: 'perguntas', og: 'perguntas', prioridade: '0.7' },
-  { id: 'privacidade', slug: 'privacidade', og: 'privacidade', prioridade: '0.2' }
+  { id: 'privacidade', slug: 'privacidade', og: 'privacidade', prioridade: '0.2' },
+  // RF-34 e RF-35: páginas legais. Usam a mesma imagem de prévia da privacidade.
+  { id: 'termos', slug: 'termos', og: 'privacidade', prioridade: '0.2' },
+  { id: 'cancelamento', slug: 'cancelamento', og: 'privacidade', prioridade: '0.3' }
 ];
 
 export const rota = (id) => rotas.find((r) => r.id === id);

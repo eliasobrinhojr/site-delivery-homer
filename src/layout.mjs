@@ -101,18 +101,21 @@ function rodapeHtml({ lang }) {
 </div>
 <div><h2 class="rodape__titulo">${esc(r.horario)}</h2><p>${esc(horario.charAt(0).toUpperCase() + horario.slice(1))}</p><p>${esc(c.area)}</p></div>
 <div><h2 class="rodape__titulo">${esc(r.peca)}</h2><ul>${peca}</ul></div>
-<div><h2 class="rodape__titulo">${esc(r.saibaMais)}</h2><ul>${links(['cardapio', 'guarana', 'sobre', 'comoPedir', 'eventos', 'perguntas', 'privacidade'])}</ul></div>
+<div><h2 class="rodape__titulo">${esc(r.saibaMais)}</h2><ul>${links(['cardapio', 'guarana', 'sobre', 'comoPedir', 'eventos', 'perguntas', 'privacidade', 'termos', 'cancelamento'])}</ul></div>
 </div>
 <div class="gh-container rodape__legal">
 <p>${esc(c.avisoTodos)}</p>
+${temMedicao() ? `<p><button type="button" class="rodape__cookies" data-cookies-reabrir>${esc(c.cookies.preferencias)}</button></p>` : ''}
 <p class="rodape__empresa">${loja.cnpj ? `${esc(linhaEmpresa(lang))} ·&nbsp;©&nbsp;2026` : `© 2026 ${esc(r.direitos)}`}</p>
 </div>
 </footer>`;
 }
 
+// RF-11: só existe aviso (e o botão de preferências no rodapé) quando há medição configurada.
+const temMedicao = () => Boolean(loja.analytics?.metaPixel || loja.analytics?.ga4);
+
 function cookiesHtml({ lang }) {
-  const temMedicao = Boolean(loja.analytics?.metaPixel || loja.analytics?.ga4);
-  if (!temMedicao) return '';
+  if (!temMedicao()) return '';
   const k = comum[lang].cookies;
   return `<div class="cookies" data-cookies hidden role="dialog" aria-live="polite" aria-label="Cookies">
 <p>${esc(k.texto)} <a href="${caminho(lang, 'privacidade')}">${esc(k.saibaMais)}</a></p>

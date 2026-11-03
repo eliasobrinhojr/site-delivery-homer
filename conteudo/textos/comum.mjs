@@ -18,13 +18,15 @@ export const comum = {
       direto: 'Peça direto',
       eventos: 'Eventos e empresas',
       perguntas: 'Perguntas',
-      privacidade: 'Privacidade'
+      privacidade: 'Privacidade',
+      termos: 'Termos de venda',
+      cancelamento: 'Cancelamento e reembolso'
     },
     pedir: 'Pedir',
     pedirWhatsapp: 'Pedir pelo WhatsApp',
     pedirIfood: 'Pedir no iFood',
     trocarIdioma: 'Ver em español',
-    fraseMarca: 'O guaraná batido mais cremoso da Ilha, feito na hora.',
+    fraseMarca: 'O guaraná batido cremoso da Ilha, feito na hora.',
     assinatura: 'Receita do pai, batido na hora.',
     area: 'Entregamos nos Ingleses e no Santinho, no Norte da Ilha. Ou retire sem taxa.',
     areaCurta: 'Ingleses e Santinho · Florianópolis',
@@ -60,7 +62,8 @@ export const comum = {
       texto: 'Usamos cookies de medição para saber quais anúncios trazem pedidos. Só ativamos se você aceitar.',
       aceitar: 'Aceitar',
       recusar: 'Agora não',
-      saibaMais: 'Política de privacidade'
+      saibaMais: 'Política de privacidade',
+      preferencias: 'Preferências de cookies'
     }
   },
   es: {
@@ -80,13 +83,15 @@ export const comum = {
       direto: 'Pedí directo',
       eventos: 'Eventos y empresas',
       perguntas: 'Preguntas',
-      privacidade: 'Privacidad'
+      privacidade: 'Privacidad',
+      termos: 'Términos de venta',
+      cancelamento: 'Cancelación y reembolso'
     },
     pedir: 'Pedir',
     pedirWhatsapp: 'Pedir por WhatsApp',
     pedirIfood: 'Pedir en iFood',
     trocarIdioma: 'Ver em português',
-    fraseMarca: 'El guaraná batido más cremoso de la Isla, hecho en el momento.',
+    fraseMarca: 'El guaraná batido cremoso de la Isla, hecho en el momento.',
     assinatura: 'Receta del papá, batido en el momento.',
     area: 'Entregamos en Ingleses y Santinho, en el norte de la Isla. O retiralo sin tarifa.',
     areaCurta: 'Ingleses y Santinho · Florianópolis',
@@ -121,7 +126,8 @@ export const comum = {
       texto: 'Usamos cookies de medición para saber qué anuncios traen pedidos. Solo las activamos si aceptás.',
       aceitar: 'Aceptar',
       recusar: 'Ahora no',
-      saibaMais: 'Política de privacidad'
+      saibaMais: 'Política de privacidad',
+      preferencias: 'Preferencias de cookies'
     }
   }
 };

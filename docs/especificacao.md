@@ -51,7 +51,7 @@ atualize este arquivo junto.
 | RF-08 | PT/ES, escolha lembrada, navegador em espanhol abre em espanhol | `site.mjs` |
 | RF-09 | Link do iFood | `loja.ifood` (aparece quando preenchido) |
 | RF-10 | Eventos de "Pedir" com origem | `site.mjs` (`data-origem`) |
-| RF-11 | Medição só depois do aceite de cookies | `site.mjs`, `loja.analytics` |
+| RF-11 | Medição só depois do aceite de cookies; quando há medição, botão "Preferências de cookies" no rodapé reabre o aviso para mudar a escolha (LGPD, art. 8º, § 5º) | `site.mjs`, `loja.analytics`, `layout.mjs` |
 | RF-12 | Prévia ao compartilhar (título, descrição, imagem) | `layout.mjs`, `publico/og/` |
 | RF-13 | Aviso do dia no topo | `loja.aviso` |
 | RF-14 | Identificação da empresa: "Guaraná do Homer · MEI · CNPJ" no rodapé de todas as páginas, controlador na privacidade, dados para cadastro de fornecedor em eventos, `taxID` nos dados do Google; chave Pix = CNPJ, mostrada em Como pedir e /direto com aviso contra Pix falso (Decreto 7.962/2013, art. 2º; LGPD, art. 9º) | `loja.cnpj`, `linhaEmpresa()` em `componentes.mjs`; dígitos conferidos em `testes/loja.test.mjs` |
@@ -66,6 +66,9 @@ atualize este arquivo junto.
 | RF-31 | Nossa história (`/sobre/`) e assinatura da capa: contadas pelo **Homer, o fundador**, na primeira pessoa (a capa fala dele na terceira). Ele e a esposa tocam o negócio; os filhos aparecem só como parte da família que veio antes, nunca como narradores nem donos ("meu pai"/"mi papá" não entram). A vinda de Manaus para a Ilha, o nome e a letra dele, ele no preparo, missão, visão e valores. Fala com o cliente: nada de meta interna (número de pedidos, percentual de venda direta), nada de nota de produção ("foto entra aqui") e nada que sugira ponto de atendimento (balcão, salão, mostrador), porque não temos estabelecimento (RN-11) | `sobrePagina` em `conteudo/textos/paginas.mjs`, `assinatura` em `inicio.mjs`, `paginaSobre`; `verificar.mjs` barra os textos |
 | RF-32 | Forma de pagamento: "Como vai pagar: Pix ou Cartão (crédito ou débito)" no monte o seu, com mensagem própria no WhatsApp; Como pedir, passos da capa, /direto, perguntas frequentes e aviso do monte o seu citam Pix e cartão; `paymentAccepted` nos dados do Google. Liga/desliga em `loja.cartao` | `loja.cartao`, `monteSeuCopo`, `mensagemPedido` |
 | RF-33 | Link curto do WhatsApp para a bio do Instagram: `dohomer.com.br/avise/` abre o WhatsApp da loja com a mensagem pronta (antes da inauguração, `inauguracao`; depois, `provar`), por redirecionamento imediato com botão de reserva. O Instagram codifica de novo um link `wa.me` com `%20` e estraga a mensagem; o link curto evita isso. Fora do sitemap e da busca (noindex + robots) | `paginaAvise`, `scripts/build.mjs` |
+| RF-34 | Termos e condições de venda (`/termos/`, `/es/termos/`): quem vende, produto e avisos, área e horário, preços e taxa, pagamento, como o pedido é fechado (resumo no WhatsApp antes de pagar), previsão de prazo, cancelamento, atendimento (até 5 dias) e uso do site (Decreto 7.962/2013, arts. 2º e 4º) | `termosPagina` em `conteudo/textos/legais.mjs`, `paginaTermos` |
+| RF-35 | Cancelamento e reembolso (`/cancelamento/`), com as regras RN-14 e RN-15, link em Como pedir, nos termos e no rodapé | `cancelamentoPagina`, `paginaCancelamento` |
+| RF-36 | Política de privacidade completa (LGPD, arts. 9º e 18): bases legais, o que o site guarda, registro de acesso (Marco Civil, art. 15), compartilhamento (WhatsApp/Meta, banco, maquininha, contador, hospedagem, iFood), prazos de guarda, segurança, crianças, direitos e canal; MEI dispensado de encarregado (Resolução CD/ANPD nº 2/2022) | `privacidadePagina` em `conteudo/textos/legais.mjs` |
 | RF-26 | Loja fechada bloqueia o envio; antes da inauguração vira convite | `monte.mjs` |
 | RF-27 | Lembrar dados no aparelho | **pendente (fase 2)** |
 
@@ -83,9 +86,11 @@ atualize este arquivo junto.
 | RN-08 | Combo de casal: 2 copos de 500 ml por R$ 44 |
 | RN-09 | Nenhuma promoção acima de 15% na primeira temporada |
 | RN-10 | Preço do iFood ~33% maior; nunca como preço do site |
-| RN-11 | Retirada: mesmo preço direto, sem taxa de entrega, para qualquer bairro; Pix antes do preparo ou cartão na hora de retirar (RN-12); copo pronto em até 10 minutos depois do Pix (no cartão, depois do aviso de que o cliente está a caminho); endereço só na confirmação do pedido; sem consumo no local |
+| RN-11 | Retirada: mesmo preço direto, sem taxa de entrega, para qualquer bairro; Pix antes do preparo ou cartão na hora de retirar (RN-12); copo pronto em cerca de 10 minutos depois do Pix (previsão) (no cartão, depois do aviso de que o cliente está a caminho); endereço só na confirmação do pedido; sem consumo no local |
 | RN-12 | Pagamento direto (site e WhatsApp): Pix antes do preparo (chave = CNPJ) **ou cartão de crédito ou débito**, na maquininha, na entrega ou na retirada. Mesmo preço nas duas formas (sem acréscimo no cartão); crédito só à vista. No iFood, o pagamento é pelo app |
 | RN-13 | Cada adicional tem um jeito fixo de ir no copo, porque o cliente toma de canudo e com tampa: **no liquidificador** (amendoim extra, paçoca, mel, leite condensado), **na parede do copo** (caldas de doce de leite e de chocolate, passadas por dentro antes de servir) e **por cima** (canela polvilhada). O site e a comanda mostram o jeito de cada um |
+| RN-14 | Cancelamento: livre até a loja avisar que o preparo começou, com devolução de 100% (Pix em até 1 hora no horário de funcionamento; no cartão não há cobrança). Depois do preparo, sem cancelamento por desistência (consumo imediato). Retirada não buscada até o fechamento: copo descartado, sem devolução. Aprovado pelo Elias em 2/11/2026. |
+| RN-15 | Problema ou atraso (CDC, art. 20): copo errado ou com problema (foto em até 1 hora) ou entrega depois de 60 minutos da confirmação do pagamento → o cliente escolhe refazer, devolução ou abatimento; cupom só se ele preferir. Prazo de entrega é previsão ("cerca de 40 minutos"), nunca promessa ("em até"). Aprovado pelo Elias em 2/11/2026. |
 
 Código de produção: sabor (T/A/B) + tamanho (3/5/7) + X (Turbo) + doçura (− ou +) + adicionais.
 Ex.: `B5X+ MEL PAC`. Códigos dos adicionais: `AMD`, `PAC`, `MEL`, `LC`, `DDL` (calda de doce de leite), `CHO` (calda de

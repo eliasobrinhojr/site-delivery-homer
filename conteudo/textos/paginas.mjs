@@ -68,7 +68,7 @@ export const guaranaPagina = {
     lead: 'Guaraná batido é tradição no Amazonas e no Norte do Brasil. Aqui está o que vai no copo, de onde vem e como a gente bate.',
     origemTitulo: 'Do Amazonas para os Ingleses',
     origemTexto: [
-      'O guaraná é o fruto de uma planta nativa da Amazônia. Ele nasce no interior do Amazonas, em Maués, onde o povo Sateré-Mawé cultiva a planta há gerações. É de lá que vem o guaraná em pó do nosso copo.',
+      'O guaraná é o fruto de uma planta nativa da Amazônia. Ele nasce no interior do Amazonas, em Maués, onde o povo Sateré-Mawé cultiva a planta há gerações. O guaraná em pó do nosso copo vem de produtores de Maués.',
       'Em Manaus, a capital, o guaraná batido se compra nas lanchonetes e em carrinhos de rua que só vendem ele. É esse copo que a gente trouxe para a Ilha.',
       'O pó é feito da semente torrada e moída. É ele que dá o sabor de guaraná de verdade, com aquele amarguinho no fim, e a cafeína do copo.'
     ],
@@ -104,7 +104,7 @@ export const guaranaPagina = {
     lead: 'El guaraná batido es tradición en el Amazonas y el norte de Brasil. Acá te contamos qué lleva el vaso, de dónde viene y cómo lo batimos.',
     origemTitulo: 'Del Amazonas a Ingleses',
     origemTexto: [
-      'El guaraná es el fruto de una planta nativa de la Amazonia. Nace en el interior del Amazonas, en Maués, donde el pueblo sateré-mawé cultiva la planta hace generaciones. De ahí viene el guaraná en polvo de nuestro vaso.',
+      'El guaraná es el fruto de una planta nativa de la Amazonia. Nace en el interior del Amazonas, en Maués, donde el pueblo sateré-mawé cultiva la planta hace generaciones. El guaraná en polvo de nuestro vaso viene de productores de Maués.',
       'En Manaos, la capital, el guaraná batido se compra en cafeterías y en carritos callejeros que venden solo eso. Ese es el vaso que trajimos a la Isla.',
       'El polvo se hace con la semilla tostada y molida. Es lo que le da el sabor de guaraná de verdad, con ese amarguito al final, y la cafeína del vaso.'
     ],
@@ -200,9 +200,9 @@ export const sobrePagina = {
 export const comoPedirPagina = {
   pt: {
     titulo: 'Como pedir · Guaraná do Homer',
-    descricao: 'Peça pelo site ou pelo WhatsApp, pague no Pix ou no cartão e receba em até 40 minutos nos Ingleses e no Santinho, ou retire sem taxa.',
+    descricao: 'Peça pelo site ou pelo WhatsApp, pague no Pix ou no cartão e receba em cerca de 40 minutos nos Ingleses e no Santinho, ou retire sem taxa.',
     rotulo: 'Como pedir',
-    h1: 'Do pedido ao copo gelado em até 40 minutos',
+    h1: 'Do pedido ao copo gelado em cerca de 40 minutos',
     lead: 'Pedindo direto, pelo site ou pelo WhatsApp, você paga o preço da casa. A entrega é nos Ingleses e no Santinho, e a retirada é sem taxa, de qualquer bairro.',
     whatsappTitulo: 'Pelo site ou pelo WhatsApp',
     whatsappItens: [
@@ -215,26 +215,27 @@ export const comoPedirPagina = {
     ifoodTexto: 'Também estamos no iFood, com os preços do aplicativo. Lá dá para escolher entrega ou retirada.',
     horarioTitulo: 'Horário',
     areaTitulo: 'Onde entregamos',
-    areaTexto: 'Só nos Ingleses e no Santinho, no Norte da Ilha. É o que garante o copo gelado em até 40 minutos. Mora em outro bairro? Você pode retirar o pedido, sem taxa.',
+    areaTexto: 'Só nos Ingleses e no Santinho, no Norte da Ilha. É o que nos deixa entregar o copo gelado em cerca de 40 minutos. Mora em outro bairro? Você pode retirar o pedido, sem taxa.',
     retiradaTitulo: 'Prefere buscar?',
     retiradaItens: [
       'Peça pelo site, pelo WhatsApp ou pelo iFood (opção Retirada).',
       'Sem taxa de entrega, para quem mora em qualquer bairro.',
       'O endereço vai junto com a confirmação do pedido.',
-      'O copo é batido na hora e fica pronto em até 10 minutos depois do Pix. No cartão, você paga na retirada: avise quando sair e ele fica pronto quando você chegar.',
+      'O copo é batido na hora e fica pronto em cerca de 10 minutos depois do Pix. No cartão, você paga na retirada: avise quando sair e ele fica pronto quando você chegar.',
       'Não temos salão nem atendimento no local: é só pegar e levar.'
     ],
     retiradaCta: 'Pedir para retirar',
     tempoTitulo: 'Tempo',
-    tempoTexto: 'Até 5 minutos de preparo e até 35 minutos de entrega. Na retirada, o copo fica pronto em até 10 minutos depois do Pix (no cartão, depois do seu aviso de que está a caminho).',
+    tempoTexto: 'Cerca de 5 minutos de preparo e 35 minutos de entrega: é uma previsão, não um prazo fixo. Na retirada, o copo fica pronto em cerca de 10 minutos depois do Pix (no cartão, depois do seu aviso de que está a caminho).',
     politicaTitulo: 'Se algo der errado',
-    politicaTexto: 'Copo errado ou entrega depois de 60 minutos? Fale com a gente no WhatsApp: a gente refaz o pedido ou dá um cupom para o próximo. Pedido cancelado antes do preparo tem o Pix devolvido.'
+    politicaLink: 'Ver cancelamento e reembolso',
+    politicaTexto: 'Copo errado, com problema ou entrega depois de 60 minutos? Fale com a gente no WhatsApp e você escolhe: refazemos o pedido, devolvemos o valor ou damos um abatimento. Pedido cancelado antes do preparo tem o valor devolvido.'
   },
   es: {
     titulo: 'Cómo pedir · Guaraná do Homer',
-    descricao: 'Pedí por el sitio o por WhatsApp, pagá con Pix o con tarjeta y recibilo en hasta 40 minutos en Ingleses y Santinho, o retiralo sin tarifa.',
+    descricao: 'Pedí por el sitio o por WhatsApp, pagá con Pix o con tarjeta y recibilo en unos 40 minutos en Ingleses y Santinho, o retiralo sin tarifa.',
     rotulo: 'Cómo pedir',
-    h1: 'Del pedido al vaso helado en hasta 40 minutos',
+    h1: 'Del pedido al vaso helado en unos 40 minutos',
     lead: 'Pidiendo directo, por el sitio o por WhatsApp, pagás el precio de la casa. Entregamos en Ingleses y Santinho, y el retiro es sin tarifa, desde cualquier barrio.',
     whatsappTitulo: 'Por el sitio o por WhatsApp',
     whatsappItens: [
@@ -247,20 +248,21 @@ export const comoPedirPagina = {
     ifoodTexto: 'También estamos en iFood, con los precios de la aplicación. Ahí podés elegir envío o retiro.',
     horarioTitulo: 'Horario',
     areaTitulo: 'Dónde entregamos',
-    areaTexto: 'Solo en Ingleses y Santinho, en el norte de la Isla. Así garantizamos el vaso helado en hasta 40 minutos. ¿Vivís en otro barrio? Podés retirar el pedido, sin tarifa.',
+    areaTexto: 'Solo en Ingleses y Santinho, en el norte de la Isla. Así podemos entregar el vaso helado en unos 40 minutos. ¿Vivís en otro barrio? Podés retirar el pedido, sin tarifa.',
     retiradaTitulo: '¿Preferís retirarlo?',
     retiradaItens: [
       'Pedí por el sitio, por WhatsApp o por iFood (opción Retiro).',
       'Sin tarifa de envío, vivas en el barrio que vivas.',
       'La dirección va junto con la confirmación del pedido.',
-      'El vaso se bate en el momento y está listo en hasta 10 minutos después del Pix. Con tarjeta, pagás al retirarlo: avisá cuando salgas y va a estar listo cuando llegues.',
+      'El vaso se bate en el momento y está listo en unos 10 minutos después del Pix. Con tarjeta, pagás al retirarlo: avisá cuando salgas y va a estar listo cuando llegues.',
       'No tenemos salón ni atención en el lugar: pasás, lo retirás y listo.'
     ],
     retiradaCta: 'Pedir para retirar',
     tempoTitulo: 'Tiempo',
-    tempoTexto: 'Hasta 5 minutos de preparación y hasta 35 minutos de entrega. Si lo retirás, está listo en hasta 10 minutos después del Pix (con tarjeta, después de tu aviso de que estás en camino).',
+    tempoTexto: 'Unos 5 minutos de preparación y 35 minutos de entrega: es una previsión, no un plazo fijo. Si lo retirás, está listo en unos 10 minutos después del Pix (con tarjeta, después de tu aviso de que estás en camino).',
     politicaTitulo: 'Si algo sale mal',
-    politicaTexto: '¿Vaso equivocado o entrega después de 60 minutos? Escribinos por WhatsApp: rehacemos el pedido o te damos un cupón para el próximo. Si cancelás antes de la preparación, te devolvemos el Pix.'
+    politicaLink: 'Ver cancelación y reembolso',
+    politicaTexto: '¿Vaso equivocado, con algún problema o entrega después de 60 minutos? Escribinos por WhatsApp y elegís: rehacemos el pedido, te devolvemos el valor o te hacemos un descuento. Si cancelás antes de la preparación, te devolvemos el valor.'
   }
 };
 
@@ -345,41 +347,6 @@ export const eventosPagina = {
     fornecedor: 'Datos para el alta de proveedor:',
     areaNota: 'Entregamos en Ingleses y Santinho, o lo retirás con nosotros. Para otra dirección, consultanos: depende de la fecha y del tamaño del pedido.',
     cta: 'Pedir presupuesto por WhatsApp'
-  }
-};
-
-export const privacidadePagina = {
-  pt: {
-    titulo: 'Privacidade · Guaraná do Homer',
-    descricao: 'Como a Guaraná do Homer trata os seus dados no site e no WhatsApp (LGPD).',
-    rotulo: 'Privacidade',
-    h1: 'Política de privacidade',
-    atualizada: 'Atualizada em 29 de outubro de 2026.',
-    responsavel: 'Responsável pelos dados (controlador):',
-    secoes: [
-      { titulo: 'Quem somos', texto: ['A Guaraná do Homer vende guaraná batido por delivery nos Ingleses e no Santinho, em Florianópolis (SC). Somos os responsáveis pelos dados tratados neste site e nas conversas de pedido.'] },
-      { titulo: 'O que o site guarda', texto: ['O site não tem cadastro nem formulário. Ele não guarda o seu nome, telefone ou endereço.', 'No seu próprio navegador, o site guarda só o idioma que você escolheu, para abrir no mesmo idioma da próxima vez.'] },
-      { titulo: 'Pedidos pelo WhatsApp', texto: ['Quando você pede pelo WhatsApp, usamos o seu nome, telefone e endereço só para preparar e entregar o pedido e para falar com você sobre ele.', 'Mensagens de promoção só são enviadas se você pedir ou autorizar, e você pode pedir para parar quando quiser.'] },
-      { titulo: 'Cookies de medição', texto: ['Se um dia usarmos ferramentas de medição de anúncios (como o pixel da Meta ou o Google Analytics), elas só serão ativadas depois que você aceitar no aviso de cookies. Recusar não muda nada no uso do site.'] },
-      { titulo: 'Com quem compartilhamos', texto: ['Com o entregador, só o necessário para a entrega (nome, endereço e telefone). Com o iFood, quando o pedido é feito pelo aplicativo, segundo a política do próprio iFood. Não vendemos dados.'] },
-      { titulo: 'Seus direitos', texto: ['Você pode pedir para saber quais dados temos, corrigir ou apagar, pelo mesmo WhatsApp dos pedidos. Respondemos em até 15 dias.'] }
-    ]
-  },
-  es: {
-    titulo: 'Privacidad · Guaraná do Homer',
-    descricao: 'Cómo Guaraná do Homer trata tus datos en el sitio y en WhatsApp (LGPD).',
-    rotulo: 'Privacidad',
-    h1: 'Política de privacidad',
-    atualizada: 'Actualizada el 29 de octubre de 2026.',
-    responsavel: 'Responsable de los datos:',
-    secoes: [
-      { titulo: 'Quiénes somos', texto: ['Guaraná do Homer vende guaraná batido con delivery en Ingleses y Santinho, en Florianópolis (SC). Somos responsables de los datos tratados en este sitio y en las conversaciones de pedido.'] },
-      { titulo: 'Qué guarda el sitio', texto: ['El sitio no tiene registro ni formularios. No guarda tu nombre, teléfono ni dirección.', 'En tu propio navegador, el sitio guarda solo el idioma que elegiste, para abrir en el mismo idioma la próxima vez.'] },
-      { titulo: 'Pedidos por WhatsApp', texto: ['Cuando pedís por WhatsApp, usamos tu nombre, teléfono y dirección solo para preparar y entregar el pedido y para hablar con vos sobre él.', 'Los mensajes de promoción solo se envían si los pedís o los autorizás, y podés pedir que paremos cuando quieras.'] },
-      { titulo: 'Cookies de medición', texto: ['Si algún día usamos herramientas de medición de anuncios (como el píxel de Meta o Google Analytics), solo se activarán después de que aceptes en el aviso de cookies. Rechazar no cambia nada en el uso del sitio.'] },
-      { titulo: 'Con quién compartimos', texto: ['Con el repartidor, solo lo necesario para la entrega (nombre, dirección y teléfono). Con iFood, cuando el pedido se hace por la aplicación, según la política de iFood. No vendemos datos.'] },
-      { titulo: 'Tus derechos', texto: ['Podés pedir saber qué datos tenemos, corregirlos o borrarlos, por el mismo WhatsApp de los pedidos. Respondemos en hasta 15 días.'] }
-    ]
   }
 };
 

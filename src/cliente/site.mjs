@@ -116,12 +116,22 @@ function carregarMedicao() {
 function cookies() {
   const aviso = document.querySelector('[data-cookies]');
   if (!aviso) return;
+  aviso.querySelector('[data-cookies-aceitar]').addEventListener('click', () => { gravar(CHAVE_COOKIES, 'sim'); aviso.hidden = true; carregarMedicao(); });
+  aviso.querySelector('[data-cookies-recusar]').addEventListener('click', () => {
+    const tinhaAceitado = ler(CHAVE_COOKIES) === 'sim';
+    gravar(CHAVE_COOKIES, 'nao');
+    aviso.hidden = true;
+    if (tinhaAceitado) location.reload(); // descarrega a medição que já estava ativa
+  });
+  // RF-11: o botão do rodapé reabre o aviso, para mudar a escolha a qualquer momento (LGPD, art. 8º, § 5º).
+  document.querySelector('[data-cookies-reabrir]')?.addEventListener('click', () => {
+    aviso.hidden = false;
+    aviso.querySelector('[data-cookies-recusar]').focus();
+  });
   const escolha = ler(CHAVE_COOKIES);
   if (escolha === 'sim') { carregarMedicao(); return; }
   if (escolha === 'nao') return;
   aviso.hidden = false;
-  aviso.querySelector('[data-cookies-aceitar]').addEventListener('click', () => { gravar(CHAVE_COOKIES, 'sim'); aviso.hidden = true; carregarMedicao(); });
-  aviso.querySelector('[data-cookies-recusar]').addEventListener('click', () => { gravar(CHAVE_COOKIES, 'nao'); aviso.hidden = true; });
 }
 
 // RF-10: evento de clique em "Pedir" com a origem (só registra se a medição estiver ativa).
