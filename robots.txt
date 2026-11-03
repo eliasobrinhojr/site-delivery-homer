@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /js/
+Disallow: /equipe/
+Disallow: /avise/
+
+Sitemap: https://dohomer.com.br/sitemap.xml

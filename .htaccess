@@ -1,0 +1,61 @@
+# Guaraná do Homer · regras do servidor (Apache / Hostinger).
+# Mesma base de segurança do site da Draxora (conferida no ar em 22/10/2026), ajustada para site estático.
+# Se mudar de hospedagem, levar estes cabeçalhos para a configuração da nova (ver docs/seguranca.md).
+
+Options -Indexes
+DirectoryIndex index.html
+AddDefaultCharset UTF-8
+ErrorDocument 404 /404.html
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  # Sempre https e sem www (301). X-Forwarded-Proto cobre a CDN da Hostinger.
+  RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
+  RewriteRule ^ https://%1%{REQUEST_URI} [L,R=301]
+  RewriteCond %{HTTPS} off
+  RewriteCond %{HTTP:X-Forwarded-Proto} !https
+  RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+  # Arquivos ocultos e de projeto nunca são servidos (.git, .github, .env, .md...).
+  RewriteRule (^|/)\.(?!well-known/) - [F]
+  RewriteRule \.(md|log|sql|bak|ya?ml|sh|lock)$ - [F,NC]
+</IfModule>
+
+<IfModule mod_mime.c>
+  AddType text/javascript .mjs
+  AddType font/woff .woff
+  AddType font/woff2 .woff2
+  AddType application/manifest+json .webmanifest
+  AddType image/svg+xml .svg
+</IfModule>
+
+<IfModule mod_headers.c>
+  Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains"
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set X-Frame-Options "DENY"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+  Header always set Permissions-Policy "camera=(), microphone=(), geolocation=(), payment=(), usb=(), interest-cohort=()"
+  Header always set Cross-Origin-Opener-Policy "same-origin"
+  Header always set X-Permitted-Cross-Domain-Policies "none"
+  # Só recursos do próprio site. Ao ativar o pixel da Meta ou o GA4 (conteudo/loja.mjs), acrescentar:
+  #   script-src: https://connect.facebook.net https://www.googletagmanager.com
+  #   img-src e connect-src: https://www.facebook.com https://*.google-analytics.com https://*.googletagmanager.com
+  Header always set Content-Security-Policy "default-src 'self'; img-src 'self' data:; style-src 'self'; script-src 'self'; font-src 'self'; connect-src 'self'; manifest-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'; object-src 'none'; upgrade-insecure-requests"
+  Header unset X-Powered-By
+
+  # Cache: HTML sempre revalida; CSS, JS e fontes têm o hash no nome e podem ficar 1 ano.
+  <FilesMatch "\.(html|xml|txt|webmanifest)$">
+    Header set Cache-Control "no-cache"
+  </FilesMatch>
+  <FilesMatch "\.(css|mjs|js|woff2?)$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+  <FilesMatch "\.(svg|png|ico|webp|jpg)$">
+    Header set Cache-Control "public, max-age=604800"
+  </FilesMatch>
+</IfModule>
+
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css text/javascript application/javascript application/json application/xml image/svg+xml application/manifest+json
+</IfModule>
